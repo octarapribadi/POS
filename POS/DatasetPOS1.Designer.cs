@@ -1221,8 +1221,7 @@ namespace POS {
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnharga_id}, true));
                 this.columnharga_id.AutoIncrement = true;
-                this.columnharga_id.AutoIncrementSeed = -1;
-                this.columnharga_id.AutoIncrementStep = -1;
+                this.columnharga_id.AutoIncrementSeed = 1;
                 this.columnharga_id.AllowDBNull = false;
                 this.columnharga_id.ReadOnly = true;
                 this.columnharga_id.Unique = true;
@@ -1526,8 +1525,7 @@ namespace POS {
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnkategori_id}, true));
                 this.columnkategori_id.AutoIncrement = true;
-                this.columnkategori_id.AutoIncrementSeed = -1;
-                this.columnkategori_id.AutoIncrementStep = -1;
+                this.columnkategori_id.AutoIncrementSeed = 1;
                 this.columnkategori_id.AllowDBNull = false;
                 this.columnkategori_id.ReadOnly = true;
                 this.columnkategori_id.Unique = true;
@@ -1883,8 +1881,7 @@ namespace POS {
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnrestok_id}, true));
                 this.columnrestok_id.AutoIncrement = true;
-                this.columnrestok_id.AutoIncrementSeed = -1;
-                this.columnrestok_id.AutoIncrementStep = -1;
+                this.columnrestok_id.AutoIncrementSeed = 1;
                 this.columnrestok_id.AllowDBNull = false;
                 this.columnrestok_id.ReadOnly = true;
                 this.columnrestok_id.Unique = true;
@@ -2188,8 +2185,7 @@ namespace POS {
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnsatuan_id}, true));
                 this.columnsatuan_id.AutoIncrement = true;
-                this.columnsatuan_id.AutoIncrementSeed = -1;
-                this.columnsatuan_id.AutoIncrementStep = -1;
+                this.columnsatuan_id.AutoIncrementSeed = 1;
                 this.columnsatuan_id.AllowDBNull = false;
                 this.columnsatuan_id.ReadOnly = true;
                 this.columnsatuan_id.Unique = true;
@@ -2497,8 +2493,7 @@ namespace POS {
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnstok_id}, true));
                 this.columnstok_id.AutoIncrement = true;
-                this.columnstok_id.AutoIncrementSeed = -1;
-                this.columnstok_id.AutoIncrementStep = -1;
+                this.columnstok_id.AutoIncrementSeed = 1;
                 this.columnstok_id.AllowDBNull = false;
                 this.columnstok_id.ReadOnly = true;
                 this.columnstok_id.Unique = true;
@@ -2844,8 +2839,7 @@ namespace POS {
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnsupplier_id}, true));
                 this.columnsupplier_id.AutoIncrement = true;
-                this.columnsupplier_id.AutoIncrementSeed = -1;
-                this.columnsupplier_id.AutoIncrementStep = -1;
+                this.columnsupplier_id.AutoIncrementSeed = 1;
                 this.columnsupplier_id.AllowDBNull = false;
                 this.columnsupplier_id.ReadOnly = true;
                 this.columnsupplier_id.Unique = true;
@@ -6099,12 +6093,20 @@ SELECT harga_id, barang_id, supplier_id, harga_model, harga_jual, aktif, _defaul
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        harga_id, barang_id, supplier_id, harga_model, harga_jual, aktif, _" +
                 "default_, keterangan\r\nFROM            tbl_harga";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT        tbl_harga.harga_id, tbl_harga.barang_id, tbl_harga.supplier_id, tbl_harga.harga_model, tbl_harga.harga_jual, tbl_harga.aktif, tbl_harga._default_, tbl_harga.keterangan, tbl_supplier.nama_supplier
+FROM            tbl_harga INNER JOIN
+                         tbl_supplier ON tbl_harga.supplier_id = tbl_supplier.supplier_id
+WHERE        (tbl_harga.barang_id = @p1)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "barang_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6129,6 +6131,25 @@ SELECT harga_id, barang_id, supplier_id, harga_model, harga_jual, aktif, _defaul
             DatasetPOS.tbl_hargaDataTable dataTable = new DatasetPOS.tbl_hargaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByBarangID(DatasetPOS.tbl_hargaDataTable dataTable, global::System.Nullable<int> p1) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((p1.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(p1.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

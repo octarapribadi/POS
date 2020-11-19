@@ -11,8 +11,8 @@ namespace POS
     {
         private String connectionString = POS.Properties.Settings.Default.DB_POSConnectionString;
         private String user="admin";
-        private Orientation splitContainerOrientation = Orientation.Horizontal;
-        public int splitterDistance = 300;
+        private Orientation splitContainerOrientation = Orientation.Vertical;
+        public int splitterDistance = 400;
         public void setSplitContainerOrientation(Orientation orientation)
         {
             splitContainerOrientation = orientation;

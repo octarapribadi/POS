@@ -61,8 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AksesKontrol.cs" />
-    <Compile Include="DatasetPOS.Designer.cs">
+    <Compile Include="DatasetPOS1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DatasetPOS.xsd</DependentUpon>
@@ -80,7 +79,6 @@
       <DependentUpon>FormRestok.cs</DependentUpon>
     </Compile>
     <Compile Include="Konfigurasi.cs" />
-    <Compile Include="MySQLAdapter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\FormHome.resx">
@@ -105,7 +103,7 @@
     <None Include="DatasetPOS.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DatasetPOS.Designer.cs</LastGenOutput>
+      <LastGenOutput>DatasetPOS1.Designer.cs</LastGenOutput>
     </None>
     <None Include="DatasetPOS.xss">
       <DependentUpon>DatasetPOS.xsd</DependentUpon>

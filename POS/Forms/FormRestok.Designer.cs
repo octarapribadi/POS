@@ -47,6 +47,7 @@
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.tstCari = new System.Windows.Forms.ToolStripTextBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label9 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -62,31 +63,36 @@
             this.datasetPOS1 = new POS.DatasetPOS();
             this.numQty = new System.Windows.Forms.NumericUpDown();
             this.cmbKategori = new System.Windows.Forms.ComboBox();
+            this.bsKategori = new System.Windows.Forms.BindingSource(this.components);
             this.cmbSupplier = new System.Windows.Forms.ComboBox();
+            this.bsSupplier = new System.Windows.Forms.BindingSource(this.components);
             this.txtBarcode = new System.Windows.Forms.TextBox();
             this.txtKeterangan = new System.Windows.Forms.TextBox();
             this.dtpTanggal = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.cmbSatuan = new System.Windows.Forms.ComboBox();
-            this.txtHargaModal = new System.Windows.Forms.TextBox();
-            this.txtHargaJual = new System.Windows.Forms.TextBox();
+            this.bsSatuan = new System.Windows.Forms.BindingSource(this.components);
+            this.txtHargaModal = new System.Windows.Forms.NumericUpDown();
+            this.txtHargaJual = new System.Windows.Forms.NumericUpDown();
             this.dgvTampil = new System.Windows.Forms.DataGridView();
-            this.tanggalrestokDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hargaidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.barangidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.namabarangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.supplieridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hargamodelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hargajualDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qtyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.satuanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.namasupplierDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aktifDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.defaultDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.keteranganDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsHarga = new System.Windows.Forms.BindingSource(this.components);
             this.bsRestok = new System.Windows.Forms.BindingSource(this.components);
             this.adapterRestok = new POS.DatasetPOSTableAdapters.tbl_restokTableAdapter();
-            this.adapterbarang = new POS.DatasetPOSTableAdapters.tbl_barangTableAdapter();
+            this.adapterBarang = new POS.DatasetPOSTableAdapters.tbl_barangTableAdapter();
             this.adapterKategori = new POS.DatasetPOSTableAdapters.tbl_kategoriTableAdapter();
             this.adapterSupplier = new POS.DatasetPOSTableAdapters.tbl_supplierTableAdapter();
             this.adapterSatuan = new POS.DatasetPOSTableAdapters.tbl_satuanTableAdapter();
             this.adapterStok = new POS.DatasetPOSTableAdapters.tbl_stokTableAdapter();
             this.adapterFormRestok = new POS.DatasetPOSTableAdapters.tbl_formrestokTableAdapter();
+            this.adapterHarga = new POS.DatasetPOSTableAdapters.tbl_hargaTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -97,7 +103,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsBarang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datasetPOS1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numQty)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsKategori)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsSupplier)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsSatuan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHargaModal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHargaJual)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTampil)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsHarga)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsRestok)).BeginInit();
             this.SuspendLayout();
             // 
@@ -252,6 +264,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.button1);
             this.splitContainer1.Panel1.Controls.Add(this.tableLayoutPanel1);
             // 
             // splitContainer1.Panel2
@@ -260,6 +273,16 @@
             this.splitContainer1.Size = new System.Drawing.Size(964, 483);
             this.splitContainer1.SplitterDistance = 527;
             this.splitContainer1.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(35, 443);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -398,6 +421,9 @@
             this.cmbNamaBarang.Size = new System.Drawing.Size(363, 26);
             this.cmbNamaBarang.TabIndex = 8;
             this.cmbNamaBarang.ValueMember = "barang_id";
+            this.cmbNamaBarang.DropDownClosed += new System.EventHandler(this.tes);
+            this.cmbNamaBarang.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbNamaBarang_KeyDown);
+            this.cmbNamaBarang.Leave += new System.EventHandler(this.cmbNamaBarang_Leave);
             // 
             // bsBarang
             // 
@@ -422,13 +448,14 @@
             this.numQty.Size = new System.Drawing.Size(363, 26);
             this.numQty.TabIndex = 9;
             this.numQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numQty.ThousandsSeparator = true;
             // 
             // cmbKategori
             // 
             this.cmbKategori.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbKategori.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbKategori.DataSource = this.datasetPOS1;
-            this.cmbKategori.DisplayMember = "tbl_kategori.kategori";
+            this.cmbKategori.DataSource = this.bsKategori;
+            this.cmbKategori.DisplayMember = "kategori";
             this.cmbKategori.Dock = System.Windows.Forms.DockStyle.Top;
             this.cmbKategori.FormattingEnabled = true;
             this.cmbKategori.Location = new System.Drawing.Point(161, 131);
@@ -437,12 +464,17 @@
             this.cmbKategori.TabIndex = 11;
             this.cmbKategori.ValueMember = "tbl_kategori.kategori_id";
             // 
+            // bsKategori
+            // 
+            this.bsKategori.DataMember = "tbl_kategori";
+            this.bsKategori.DataSource = this.datasetPOS1;
+            // 
             // cmbSupplier
             // 
             this.cmbSupplier.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbSupplier.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbSupplier.DataSource = this.datasetPOS1;
-            this.cmbSupplier.DisplayMember = "tbl_supplier.nama_supplier";
+            this.cmbSupplier.DataSource = this.bsSupplier;
+            this.cmbSupplier.DisplayMember = "nama_supplier";
             this.cmbSupplier.Dock = System.Windows.Forms.DockStyle.Top;
             this.cmbSupplier.FormattingEnabled = true;
             this.cmbSupplier.Location = new System.Drawing.Point(161, 163);
@@ -450,6 +482,11 @@
             this.cmbSupplier.Size = new System.Drawing.Size(363, 26);
             this.cmbSupplier.TabIndex = 12;
             this.cmbSupplier.ValueMember = "tbl_supplier.supplier_id";
+            // 
+            // bsSupplier
+            // 
+            this.bsSupplier.DataMember = "tbl_supplier";
+            this.bsSupplier.DataSource = this.datasetPOS1;
             // 
             // txtBarcode
             // 
@@ -491,8 +528,8 @@
             // 
             this.cmbSatuan.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbSatuan.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbSatuan.DataSource = this.datasetPOS1;
-            this.cmbSatuan.DisplayMember = "tbl_satuan.satuan";
+            this.cmbSatuan.DataSource = this.bsSatuan;
+            this.cmbSatuan.DisplayMember = "satuan";
             this.cmbSatuan.Dock = System.Windows.Forms.DockStyle.Top;
             this.cmbSatuan.FormattingEnabled = true;
             this.cmbSatuan.Location = new System.Drawing.Point(161, 99);
@@ -501,21 +538,40 @@
             this.cmbSatuan.TabIndex = 10;
             this.cmbSatuan.ValueMember = "tbl_satuan.satuan_id";
             // 
+            // bsSatuan
+            // 
+            this.bsSatuan.DataMember = "tbl_satuan";
+            this.bsSatuan.DataSource = this.datasetPOS1;
+            // 
             // txtHargaModal
             // 
             this.txtHargaModal.Dock = System.Windows.Forms.DockStyle.Top;
             this.txtHargaModal.Location = new System.Drawing.Point(161, 195);
+            this.txtHargaModal.Maximum = new decimal(new int[] {
+            1410065407,
+            2,
+            0,
+            0});
             this.txtHargaModal.Name = "txtHargaModal";
             this.txtHargaModal.Size = new System.Drawing.Size(363, 26);
             this.txtHargaModal.TabIndex = 13;
+            this.txtHargaModal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtHargaModal.ThousandsSeparator = true;
             // 
             // txtHargaJual
             // 
             this.txtHargaJual.Dock = System.Windows.Forms.DockStyle.Top;
             this.txtHargaJual.Location = new System.Drawing.Point(161, 227);
+            this.txtHargaJual.Maximum = new decimal(new int[] {
+            1410065407,
+            2,
+            0,
+            0});
             this.txtHargaJual.Name = "txtHargaJual";
             this.txtHargaJual.Size = new System.Drawing.Size(363, 26);
             this.txtHargaJual.TabIndex = 14;
+            this.txtHargaJual.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtHargaJual.ThousandsSeparator = true;
             // 
             // dgvTampil
             // 
@@ -526,15 +582,15 @@
             this.dgvTampil.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvTampil.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTampil.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.tanggalrestokDataGridViewTextBoxColumn,
+            this.hargaidDataGridViewTextBoxColumn,
             this.barangidDataGridViewTextBoxColumn,
-            this.namabarangDataGridViewTextBoxColumn,
+            this.supplieridDataGridViewTextBoxColumn,
             this.hargamodelDataGridViewTextBoxColumn,
             this.hargajualDataGridViewTextBoxColumn,
-            this.qtyDataGridViewTextBoxColumn,
-            this.satuanDataGridViewTextBoxColumn,
-            this.namasupplierDataGridViewTextBoxColumn});
-            this.dgvTampil.DataSource = this.bsRestok;
+            this.aktifDataGridViewCheckBoxColumn,
+            this.defaultDataGridViewCheckBoxColumn,
+            this.keteranganDataGridViewTextBoxColumn});
+            this.dgvTampil.DataSource = this.bsHarga;
             this.dgvTampil.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvTampil.Location = new System.Drawing.Point(0, 0);
             this.dgvTampil.Name = "dgvTampil";
@@ -542,27 +598,27 @@
             this.dgvTampil.Size = new System.Drawing.Size(433, 483);
             this.dgvTampil.TabIndex = 0;
             // 
-            // tanggalrestokDataGridViewTextBoxColumn
+            // hargaidDataGridViewTextBoxColumn
             // 
-            this.tanggalrestokDataGridViewTextBoxColumn.DataPropertyName = "tanggal_restok";
-            this.tanggalrestokDataGridViewTextBoxColumn.HeaderText = "tanggal_restok";
-            this.tanggalrestokDataGridViewTextBoxColumn.Name = "tanggalrestokDataGridViewTextBoxColumn";
-            this.tanggalrestokDataGridViewTextBoxColumn.Width = 173;
+            this.hargaidDataGridViewTextBoxColumn.DataPropertyName = "harga_id";
+            this.hargaidDataGridViewTextBoxColumn.HeaderText = "harga_id";
+            this.hargaidDataGridViewTextBoxColumn.Name = "hargaidDataGridViewTextBoxColumn";
+            this.hargaidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.hargaidDataGridViewTextBoxColumn.Width = 113;
             // 
             // barangidDataGridViewTextBoxColumn
             // 
             this.barangidDataGridViewTextBoxColumn.DataPropertyName = "barang_id";
             this.barangidDataGridViewTextBoxColumn.HeaderText = "barang_id";
             this.barangidDataGridViewTextBoxColumn.Name = "barangidDataGridViewTextBoxColumn";
-            this.barangidDataGridViewTextBoxColumn.ReadOnly = true;
             this.barangidDataGridViewTextBoxColumn.Width = 123;
             // 
-            // namabarangDataGridViewTextBoxColumn
+            // supplieridDataGridViewTextBoxColumn
             // 
-            this.namabarangDataGridViewTextBoxColumn.DataPropertyName = "nama_barang";
-            this.namabarangDataGridViewTextBoxColumn.HeaderText = "nama_barang";
-            this.namabarangDataGridViewTextBoxColumn.Name = "namabarangDataGridViewTextBoxColumn";
-            this.namabarangDataGridViewTextBoxColumn.Width = 143;
+            this.supplieridDataGridViewTextBoxColumn.DataPropertyName = "supplier_id";
+            this.supplieridDataGridViewTextBoxColumn.HeaderText = "supplier_id";
+            this.supplieridDataGridViewTextBoxColumn.Name = "supplieridDataGridViewTextBoxColumn";
+            this.supplieridDataGridViewTextBoxColumn.Width = 143;
             // 
             // hargamodelDataGridViewTextBoxColumn
             // 
@@ -578,39 +634,39 @@
             this.hargajualDataGridViewTextBoxColumn.Name = "hargajualDataGridViewTextBoxColumn";
             this.hargajualDataGridViewTextBoxColumn.Width = 133;
             // 
-            // qtyDataGridViewTextBoxColumn
+            // aktifDataGridViewCheckBoxColumn
             // 
-            this.qtyDataGridViewTextBoxColumn.DataPropertyName = "qty";
-            this.qtyDataGridViewTextBoxColumn.HeaderText = "qty";
-            this.qtyDataGridViewTextBoxColumn.Name = "qtyDataGridViewTextBoxColumn";
-            this.qtyDataGridViewTextBoxColumn.Width = 63;
+            this.aktifDataGridViewCheckBoxColumn.DataPropertyName = "aktif";
+            this.aktifDataGridViewCheckBoxColumn.HeaderText = "aktif";
+            this.aktifDataGridViewCheckBoxColumn.Name = "aktifDataGridViewCheckBoxColumn";
+            this.aktifDataGridViewCheckBoxColumn.Width = 64;
             // 
-            // satuanDataGridViewTextBoxColumn
+            // defaultDataGridViewCheckBoxColumn
             // 
-            this.satuanDataGridViewTextBoxColumn.DataPropertyName = "satuan";
-            this.satuanDataGridViewTextBoxColumn.HeaderText = "satuan";
-            this.satuanDataGridViewTextBoxColumn.Name = "satuanDataGridViewTextBoxColumn";
-            this.satuanDataGridViewTextBoxColumn.Width = 93;
+            this.defaultDataGridViewCheckBoxColumn.DataPropertyName = "_default_";
+            this.defaultDataGridViewCheckBoxColumn.HeaderText = "_default_";
+            this.defaultDataGridViewCheckBoxColumn.Name = "defaultDataGridViewCheckBoxColumn";
+            this.defaultDataGridViewCheckBoxColumn.Width = 104;
             // 
-            // namasupplierDataGridViewTextBoxColumn
+            // keteranganDataGridViewTextBoxColumn
             // 
-            this.namasupplierDataGridViewTextBoxColumn.DataPropertyName = "nama_supplier";
-            this.namasupplierDataGridViewTextBoxColumn.HeaderText = "nama_supplier";
-            this.namasupplierDataGridViewTextBoxColumn.Name = "namasupplierDataGridViewTextBoxColumn";
-            this.namasupplierDataGridViewTextBoxColumn.Width = 163;
+            this.keteranganDataGridViewTextBoxColumn.DataPropertyName = "keterangan";
+            this.keteranganDataGridViewTextBoxColumn.HeaderText = "keterangan";
+            this.keteranganDataGridViewTextBoxColumn.Name = "keteranganDataGridViewTextBoxColumn";
+            this.keteranganDataGridViewTextBoxColumn.Width = 133;
             // 
-            // bsRestok
+            // bsHarga
             // 
-            this.bsRestok.DataMember = "tbl_formrestok";
-            this.bsRestok.DataSource = this.datasetPOS1;
+            this.bsHarga.DataMember = "tbl_harga";
+            this.bsHarga.DataSource = this.datasetPOS1;
             // 
             // adapterRestok
             // 
             this.adapterRestok.ClearBeforeFill = true;
             // 
-            // adapterbarang
+            // adapterBarang
             // 
-            this.adapterbarang.ClearBeforeFill = true;
+            this.adapterBarang.ClearBeforeFill = true;
             // 
             // adapterKategori
             // 
@@ -631,6 +687,10 @@
             // adapterFormRestok
             // 
             this.adapterFormRestok.ClearBeforeFill = true;
+            // 
+            // adapterHarga
+            // 
+            this.adapterHarga.ClearBeforeFill = true;
             // 
             // FormRestok
             // 
@@ -657,7 +717,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsBarang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datasetPOS1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numQty)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsKategori)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsSupplier)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsSatuan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHargaModal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHargaJual)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTampil)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsHarga)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsRestok)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -704,24 +770,30 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cmbSatuan;
         private DatasetPOSTableAdapters.tbl_restokTableAdapter adapterRestok;
-        private DatasetPOS datasetPOS1;
         private System.Windows.Forms.BindingSource bsRestok;
-        private DatasetPOSTableAdapters.tbl_barangTableAdapter adapterbarang;
+        private DatasetPOSTableAdapters.tbl_barangTableAdapter adapterBarang;
         private DatasetPOSTableAdapters.tbl_kategoriTableAdapter adapterKategori;
         private DatasetPOSTableAdapters.tbl_supplierTableAdapter adapterSupplier;
         private DatasetPOSTableAdapters.tbl_satuanTableAdapter adapterSatuan;
         private DatasetPOSTableAdapters.tbl_stokTableAdapter adapterStok;
         private DatasetPOSTableAdapters.tbl_formrestokTableAdapter adapterFormRestok;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tanggalrestokDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource bsBarang;
+        private System.Windows.Forms.BindingSource bsSatuan;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.BindingSource bsKategori;
+        private System.Windows.Forms.BindingSource bsSupplier;
+        private System.Windows.Forms.BindingSource bsHarga;
+        private DatasetPOS datasetPOS1;
+        private System.Windows.Forms.NumericUpDown txtHargaModal;
+        private System.Windows.Forms.NumericUpDown txtHargaJual;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hargaidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn barangidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn namabarangDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn supplieridDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hargamodelDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hargajualDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qtyDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn satuanDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn namasupplierDataGridViewTextBoxColumn;
-        private System.Windows.Forms.TextBox txtHargaModal;
-        private System.Windows.Forms.TextBox txtHargaJual;
-        private System.Windows.Forms.BindingSource bsBarang;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn aktifDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn defaultDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn keteranganDataGridViewTextBoxColumn;
+        private DatasetPOSTableAdapters.tbl_hargaTableAdapter adapterHarga;
     }
 }
