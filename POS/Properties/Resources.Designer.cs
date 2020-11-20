@@ -143,6 +143,16 @@ namespace POS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Filter_256x {
+            get {
+                object obj = ResourceManager.GetObject("Filter_256x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap i_resetallBlue_F12 {
             get {
                 object obj = ResourceManager.GetObject("i_resetallBlue_F12", resourceCulture);
