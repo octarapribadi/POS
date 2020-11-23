@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBarang));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
@@ -63,8 +64,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.cmbNamaBarang = new System.Windows.Forms.ComboBox();
-            this.cmbKategori = new System.Windows.Forms.ComboBox();
             this.datasetPOS1 = new POS.DatasetPOS();
+            this.cmbKategori = new System.Windows.Forms.ComboBox();
             this.txtBarcode = new System.Windows.Forms.TextBox();
             this.cmbSatuan = new System.Windows.Forms.ComboBox();
             this.cmbSupplier = new System.Windows.Forms.ComboBox();
@@ -74,6 +75,7 @@
             this.txtKeterangan = new System.Windows.Forms.TextBox();
             this.numHargaModal = new System.Windows.Forms.NumericUpDown();
             this.numHargaJual = new System.Windows.Forms.NumericUpDown();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.barangidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.namabarangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -92,8 +94,8 @@
             this.adapterSatuan = new POS.DatasetPOSTableAdapters.tbl_satuanTableAdapter();
             this.adapterSupplier = new POS.DatasetPOSTableAdapters.tbl_supplierTableAdapter();
             this.adapterHarga = new POS.DatasetPOSTableAdapters.tbl_hargaTableAdapter();
-            this.tbl_barang_viewTableAdapter = new POS.DatasetPOSTableAdapters.tbl_barang_viewTableAdapter();
             this.adapterBarangView = new POS.DatasetPOSTableAdapters.tbl_barang_viewTableAdapter();
+            this.adapterStok = new POS.DatasetPOSTableAdapters.tbl_stokTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -105,6 +107,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numStok)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numHargaModal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numHargaJual)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsBarangView)).BeginInit();
             this.SuspendLayout();
@@ -226,6 +229,7 @@
             this.tsbHapus.Name = "tsbHapus";
             this.tsbHapus.Size = new System.Drawing.Size(78, 22);
             this.tsbHapus.Text = "HAPUS";
+            this.tsbHapus.Click += new System.EventHandler(this.tsbHapus_Click);
             // 
             // tsbReset
             // 
@@ -261,6 +265,7 @@
             this.tsbCari.Name = "tsbCari";
             this.tsbCari.Size = new System.Drawing.Size(88, 22);
             this.tsbCari.Text = "FILTER";
+            this.tsbCari.Click += new System.EventHandler(this.tsbCari_Click);
             // 
             // splitContainer1
             // 
@@ -274,7 +279,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
+            this.splitContainer1.Panel2.Controls.Add(this.panel1);
             this.splitContainer1.Size = new System.Drawing.Size(1190, 496);
             this.splitContainer1.SplitterDistance = 595;
             this.splitContainer1.TabIndex = 2;
@@ -310,6 +315,7 @@
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(5);
             this.tableLayoutPanel1.RowCount = 11;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -328,7 +334,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Location = new System.Drawing.Point(8, 5);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(118, 18);
             this.label1.TabIndex = 0;
@@ -337,7 +343,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 32);
+            this.label2.Location = new System.Drawing.Point(8, 37);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(128, 18);
             this.label2.TabIndex = 1;
@@ -346,7 +352,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 59);
+            this.label3.Location = new System.Drawing.Point(8, 69);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(88, 18);
             this.label3.TabIndex = 2;
@@ -355,7 +361,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 86);
+            this.label4.Location = new System.Drawing.Point(8, 101);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 18);
             this.label4.TabIndex = 3;
@@ -364,7 +370,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 118);
+            this.label5.Location = new System.Drawing.Point(8, 133);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(68, 18);
             this.label5.TabIndex = 4;
@@ -373,7 +379,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 145);
+            this.label6.Location = new System.Drawing.Point(8, 165);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(88, 18);
             this.label6.TabIndex = 5;
@@ -382,7 +388,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 172);
+            this.label7.Location = new System.Drawing.Point(8, 197);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(118, 18);
             this.label7.TabIndex = 6;
@@ -391,7 +397,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(3, 204);
+            this.label11.Location = new System.Drawing.Point(8, 229);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(108, 18);
             this.label11.TabIndex = 10;
@@ -401,15 +407,15 @@
             // 
             this.txtKodeBarang.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtKodeBarang.Enabled = false;
-            this.txtKodeBarang.Location = new System.Drawing.Point(181, 3);
+            this.txtKodeBarang.Location = new System.Drawing.Point(183, 8);
             this.txtKodeBarang.Name = "txtKodeBarang";
-            this.txtKodeBarang.Size = new System.Drawing.Size(411, 26);
+            this.txtKodeBarang.Size = new System.Drawing.Size(404, 26);
             this.txtKodeBarang.TabIndex = 11;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(3, 264);
+            this.label10.Location = new System.Drawing.Point(8, 289);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(48, 18);
             this.label10.TabIndex = 9;
@@ -418,7 +424,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(3, 296);
+            this.label9.Location = new System.Drawing.Point(8, 321);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(108, 18);
             this.label9.TabIndex = 8;
@@ -426,26 +432,20 @@
             // 
             // cmbNamaBarang
             // 
+            this.cmbNamaBarang.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbNamaBarang.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbNamaBarang.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.cmbNamaBarang.DataSource = this.datasetPOS1;
+            this.cmbNamaBarang.DisplayMember = "tbl_barang_view.nama_barang";
             this.cmbNamaBarang.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbNamaBarang.ForeColor = System.Drawing.SystemColors.WindowText;
             this.cmbNamaBarang.FormattingEnabled = true;
-            this.cmbNamaBarang.Location = new System.Drawing.Point(181, 35);
+            this.cmbNamaBarang.Location = new System.Drawing.Point(183, 40);
             this.cmbNamaBarang.Name = "cmbNamaBarang";
-            this.cmbNamaBarang.Size = new System.Drawing.Size(411, 26);
+            this.cmbNamaBarang.Size = new System.Drawing.Size(404, 26);
             this.cmbNamaBarang.TabIndex = 12;
-            // 
-            // cmbKategori
-            // 
-            this.cmbKategori.DataSource = this.datasetPOS1;
-            this.cmbKategori.DisplayMember = "tbl_kategori.kategori";
-            this.cmbKategori.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmbKategori.FormattingEnabled = true;
-            this.cmbKategori.Location = new System.Drawing.Point(181, 62);
-            this.cmbKategori.Name = "cmbKategori";
-            this.cmbKategori.Size = new System.Drawing.Size(411, 26);
-            this.cmbKategori.TabIndex = 13;
-            this.cmbKategori.ValueMember = "tbl_kategori.kategori_id";
+            this.cmbNamaBarang.ValueMember = "tbl_barang.barang_id";
+            this.cmbNamaBarang.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbNamaBarang_KeyDown);
             // 
             // datasetPOS1
             // 
@@ -453,35 +453,54 @@
             this.datasetPOS1.Locale = new System.Globalization.CultureInfo("en-US");
             this.datasetPOS1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // cmbKategori
+            // 
+            this.cmbKategori.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbKategori.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbKategori.DataSource = this.datasetPOS1;
+            this.cmbKategori.DisplayMember = "tbl_kategori.kategori";
+            this.cmbKategori.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbKategori.FormattingEnabled = true;
+            this.cmbKategori.Location = new System.Drawing.Point(183, 72);
+            this.cmbKategori.Name = "cmbKategori";
+            this.cmbKategori.Size = new System.Drawing.Size(404, 26);
+            this.cmbKategori.TabIndex = 13;
+            this.cmbKategori.ValueMember = "tbl_kategori.kategori_id";
+            this.cmbKategori.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbKategori_KeyDown);
+            // 
             // txtBarcode
             // 
             this.txtBarcode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtBarcode.Location = new System.Drawing.Point(181, 89);
+            this.txtBarcode.Location = new System.Drawing.Point(183, 104);
             this.txtBarcode.Name = "txtBarcode";
-            this.txtBarcode.Size = new System.Drawing.Size(411, 26);
+            this.txtBarcode.Size = new System.Drawing.Size(404, 26);
             this.txtBarcode.TabIndex = 14;
             // 
             // cmbSatuan
             // 
+            this.cmbSatuan.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbSatuan.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbSatuan.DataSource = this.datasetPOS1;
             this.cmbSatuan.DisplayMember = "tbl_satuan.satuan";
             this.cmbSatuan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbSatuan.FormattingEnabled = true;
-            this.cmbSatuan.Location = new System.Drawing.Point(181, 121);
+            this.cmbSatuan.Location = new System.Drawing.Point(183, 136);
             this.cmbSatuan.Name = "cmbSatuan";
-            this.cmbSatuan.Size = new System.Drawing.Size(411, 26);
+            this.cmbSatuan.Size = new System.Drawing.Size(404, 26);
             this.cmbSatuan.TabIndex = 15;
             this.cmbSatuan.ValueMember = "tbl_satuan.satuan_id";
             // 
             // cmbSupplier
             // 
+            this.cmbSupplier.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbSupplier.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbSupplier.DataSource = this.datasetPOS1;
             this.cmbSupplier.DisplayMember = "tbl_supplier.nama_supplier";
             this.cmbSupplier.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbSupplier.FormattingEnabled = true;
-            this.cmbSupplier.Location = new System.Drawing.Point(181, 148);
+            this.cmbSupplier.Location = new System.Drawing.Point(183, 168);
             this.cmbSupplier.Name = "cmbSupplier";
-            this.cmbSupplier.Size = new System.Drawing.Size(411, 26);
+            this.cmbSupplier.Size = new System.Drawing.Size(404, 26);
             this.cmbSupplier.TabIndex = 16;
             this.cmbSupplier.ValueMember = "tbl_supplier.supplier_id";
             // 
@@ -489,9 +508,9 @@
             // 
             this.chkAktif.AutoSize = true;
             this.chkAktif.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chkAktif.Location = new System.Drawing.Point(181, 239);
+            this.chkAktif.Location = new System.Drawing.Point(183, 264);
             this.chkAktif.Name = "chkAktif";
-            this.chkAktif.Size = new System.Drawing.Size(411, 22);
+            this.chkAktif.Size = new System.Drawing.Size(404, 22);
             this.chkAktif.TabIndex = 19;
             this.chkAktif.Text = "Ceklist Jika Barang Masih Mau Dijual";
             this.chkAktif.UseVisualStyleBackColor = true;
@@ -499,7 +518,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 236);
+            this.label8.Location = new System.Drawing.Point(8, 261);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(68, 18);
             this.label8.TabIndex = 7;
@@ -508,14 +527,14 @@
             // numStok
             // 
             this.numStok.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numStok.Location = new System.Drawing.Point(181, 267);
+            this.numStok.Location = new System.Drawing.Point(183, 292);
             this.numStok.Maximum = new decimal(new int[] {
             999999,
             0,
             0,
             0});
             this.numStok.Name = "numStok";
-            this.numStok.Size = new System.Drawing.Size(411, 26);
+            this.numStok.Size = new System.Drawing.Size(404, 26);
             this.numStok.TabIndex = 20;
             this.numStok.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numStok.ThousandsSeparator = true;
@@ -524,23 +543,23 @@
             // txtKeterangan
             // 
             this.txtKeterangan.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtKeterangan.Location = new System.Drawing.Point(181, 299);
+            this.txtKeterangan.Location = new System.Drawing.Point(183, 324);
             this.txtKeterangan.Multiline = true;
             this.txtKeterangan.Name = "txtKeterangan";
-            this.txtKeterangan.Size = new System.Drawing.Size(411, 143);
+            this.txtKeterangan.Size = new System.Drawing.Size(404, 143);
             this.txtKeterangan.TabIndex = 21;
             // 
             // numHargaModal
             // 
             this.numHargaModal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numHargaModal.Location = new System.Drawing.Point(181, 175);
+            this.numHargaModal.Location = new System.Drawing.Point(183, 200);
             this.numHargaModal.Maximum = new decimal(new int[] {
             1410065407,
             2,
             0,
             0});
             this.numHargaModal.Name = "numHargaModal";
-            this.numHargaModal.Size = new System.Drawing.Size(411, 26);
+            this.numHargaModal.Size = new System.Drawing.Size(404, 26);
             this.numHargaModal.TabIndex = 17;
             this.numHargaModal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numHargaModal.ThousandsSeparator = true;
@@ -549,25 +568,38 @@
             // numHargaJual
             // 
             this.numHargaJual.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numHargaJual.Location = new System.Drawing.Point(181, 207);
+            this.numHargaJual.Location = new System.Drawing.Point(183, 232);
             this.numHargaJual.Maximum = new decimal(new int[] {
             1410065407,
             2,
             0,
             0});
             this.numHargaJual.Name = "numHargaJual";
-            this.numHargaJual.Size = new System.Drawing.Size(411, 26);
+            this.numHargaJual.Size = new System.Drawing.Size(404, 26);
             this.numHargaJual.TabIndex = 18;
             this.numHargaJual.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numHargaJual.ThousandsSeparator = true;
             this.numHargaJual.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(10);
+            this.panel1.Size = new System.Drawing.Size(591, 496);
+            this.panel1.TabIndex = 1;
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.barangidDataGridViewTextBoxColumn,
@@ -583,12 +615,12 @@
             this.namasupplierDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.bsBarangView;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Location = new System.Drawing.Point(10, 10);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(591, 496);
+            this.dataGridView1.Size = new System.Drawing.Size(571, 476);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -598,7 +630,7 @@
             this.barangidDataGridViewTextBoxColumn.HeaderText = "barang_id";
             this.barangidDataGridViewTextBoxColumn.Name = "barangidDataGridViewTextBoxColumn";
             this.barangidDataGridViewTextBoxColumn.ReadOnly = true;
-            this.barangidDataGridViewTextBoxColumn.Width = 50;
+            this.barangidDataGridViewTextBoxColumn.Width = 123;
             // 
             // namabarangDataGridViewTextBoxColumn
             // 
@@ -606,7 +638,7 @@
             this.namabarangDataGridViewTextBoxColumn.HeaderText = "nama_barang";
             this.namabarangDataGridViewTextBoxColumn.Name = "namabarangDataGridViewTextBoxColumn";
             this.namabarangDataGridViewTextBoxColumn.ReadOnly = true;
-            this.namabarangDataGridViewTextBoxColumn.Width = 50;
+            this.namabarangDataGridViewTextBoxColumn.Width = 143;
             // 
             // kodebarcodeDataGridViewTextBoxColumn
             // 
@@ -614,7 +646,7 @@
             this.kodebarcodeDataGridViewTextBoxColumn.HeaderText = "kode_barcode";
             this.kodebarcodeDataGridViewTextBoxColumn.Name = "kodebarcodeDataGridViewTextBoxColumn";
             this.kodebarcodeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.kodebarcodeDataGridViewTextBoxColumn.Width = 49;
+            this.kodebarcodeDataGridViewTextBoxColumn.Width = 153;
             // 
             // aktifDataGridViewCheckBoxColumn
             // 
@@ -622,7 +654,7 @@
             this.aktifDataGridViewCheckBoxColumn.HeaderText = "aktif";
             this.aktifDataGridViewCheckBoxColumn.Name = "aktifDataGridViewCheckBoxColumn";
             this.aktifDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.aktifDataGridViewCheckBoxColumn.Width = 50;
+            this.aktifDataGridViewCheckBoxColumn.Width = 64;
             // 
             // keteranganDataGridViewTextBoxColumn
             // 
@@ -630,29 +662,29 @@
             this.keteranganDataGridViewTextBoxColumn.HeaderText = "keterangan";
             this.keteranganDataGridViewTextBoxColumn.Name = "keteranganDataGridViewTextBoxColumn";
             this.keteranganDataGridViewTextBoxColumn.ReadOnly = true;
-            this.keteranganDataGridViewTextBoxColumn.Width = 50;
+            this.keteranganDataGridViewTextBoxColumn.Width = 133;
             // 
             // hargamodelDataGridViewTextBoxColumn
             // 
             this.hargamodelDataGridViewTextBoxColumn.DataPropertyName = "harga_model";
-            dataGridViewCellStyle1.Format = "C0";
-            dataGridViewCellStyle1.NullValue = "0";
-            this.hargamodelDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Format = "C0";
+            dataGridViewCellStyle2.NullValue = "0";
+            this.hargamodelDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.hargamodelDataGridViewTextBoxColumn.HeaderText = "harga_modal";
             this.hargamodelDataGridViewTextBoxColumn.Name = "hargamodelDataGridViewTextBoxColumn";
             this.hargamodelDataGridViewTextBoxColumn.ReadOnly = true;
-            this.hargamodelDataGridViewTextBoxColumn.Width = 50;
+            this.hargamodelDataGridViewTextBoxColumn.Width = 143;
             // 
             // hargajualDataGridViewTextBoxColumn
             // 
             this.hargajualDataGridViewTextBoxColumn.DataPropertyName = "harga_jual";
-            dataGridViewCellStyle2.Format = "C0";
-            dataGridViewCellStyle2.NullValue = "0";
-            this.hargajualDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Format = "C0";
+            dataGridViewCellStyle3.NullValue = "0";
+            this.hargajualDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.hargajualDataGridViewTextBoxColumn.HeaderText = "harga_jual";
             this.hargajualDataGridViewTextBoxColumn.Name = "hargajualDataGridViewTextBoxColumn";
             this.hargajualDataGridViewTextBoxColumn.ReadOnly = true;
-            this.hargajualDataGridViewTextBoxColumn.Width = 50;
+            this.hargajualDataGridViewTextBoxColumn.Width = 133;
             // 
             // kategoriDataGridViewTextBoxColumn
             // 
@@ -660,7 +692,7 @@
             this.kategoriDataGridViewTextBoxColumn.HeaderText = "kategori";
             this.kategoriDataGridViewTextBoxColumn.Name = "kategoriDataGridViewTextBoxColumn";
             this.kategoriDataGridViewTextBoxColumn.ReadOnly = true;
-            this.kategoriDataGridViewTextBoxColumn.Width = 50;
+            this.kategoriDataGridViewTextBoxColumn.Width = 113;
             // 
             // satuanDataGridViewTextBoxColumn
             // 
@@ -668,7 +700,7 @@
             this.satuanDataGridViewTextBoxColumn.HeaderText = "satuan";
             this.satuanDataGridViewTextBoxColumn.Name = "satuanDataGridViewTextBoxColumn";
             this.satuanDataGridViewTextBoxColumn.ReadOnly = true;
-            this.satuanDataGridViewTextBoxColumn.Width = 49;
+            this.satuanDataGridViewTextBoxColumn.Width = 93;
             // 
             // stokDataGridViewTextBoxColumn
             // 
@@ -676,7 +708,7 @@
             this.stokDataGridViewTextBoxColumn.HeaderText = "stok";
             this.stokDataGridViewTextBoxColumn.Name = "stokDataGridViewTextBoxColumn";
             this.stokDataGridViewTextBoxColumn.ReadOnly = true;
-            this.stokDataGridViewTextBoxColumn.Width = 50;
+            this.stokDataGridViewTextBoxColumn.Width = 73;
             // 
             // namasupplierDataGridViewTextBoxColumn
             // 
@@ -684,7 +716,7 @@
             this.namasupplierDataGridViewTextBoxColumn.HeaderText = "nama_supplier";
             this.namasupplierDataGridViewTextBoxColumn.Name = "namasupplierDataGridViewTextBoxColumn";
             this.namasupplierDataGridViewTextBoxColumn.ReadOnly = true;
-            this.namasupplierDataGridViewTextBoxColumn.Width = 50;
+            this.namasupplierDataGridViewTextBoxColumn.Width = 163;
             // 
             // bsBarangView
             // 
@@ -712,13 +744,13 @@
             // 
             this.adapterHarga.ClearBeforeFill = true;
             // 
-            // tbl_barang_viewTableAdapter
-            // 
-            this.tbl_barang_viewTableAdapter.ClearBeforeFill = true;
-            // 
             // adapterBarangView
             // 
             this.adapterBarangView.ClearBeforeFill = true;
+            // 
+            // adapterStok
+            // 
+            this.adapterStok.ClearBeforeFill = true;
             // 
             // FormBarang
             // 
@@ -745,6 +777,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numStok)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numHargaModal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numHargaJual)).EndInit();
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsBarangView)).EndInit();
             this.ResumeLayout(false);
@@ -800,7 +833,6 @@
         private DatasetPOSTableAdapters.tbl_supplierTableAdapter adapterSupplier;
         private DatasetPOSTableAdapters.tbl_hargaTableAdapter adapterHarga;
         private System.Windows.Forms.BindingSource bsBarangView;
-        private DatasetPOSTableAdapters.tbl_barang_viewTableAdapter tbl_barang_viewTableAdapter;
         private DatasetPOSTableAdapters.tbl_barang_viewTableAdapter adapterBarangView;
         private System.Windows.Forms.DataGridViewTextBoxColumn barangidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn namabarangDataGridViewTextBoxColumn;
@@ -816,5 +848,7 @@
         private System.Windows.Forms.NumericUpDown numHargaModal;
         private System.Windows.Forms.NumericUpDown numHargaJual;
         private System.Windows.Forms.ToolStripButton tsbCari;
+        private System.Windows.Forms.Panel panel1;
+        private DatasetPOSTableAdapters.tbl_stokTableAdapter adapterStok;
     }
 }

@@ -5,7 +5,6 @@ D:\belajar\github\POS\POS\obj\Debug\POS.csproj.GenerateResource.Cache
 D:\belajar\github\POS\POS\bin\Debug\POS.exe.config
 D:\belajar\github\POS\POS\bin\Debug\POS.exe
 D:\belajar\github\POS\POS\bin\Debug\POS.pdb
-D:\belajar\github\POS\POS\obj\Debug\POS.csprojResolveAssemblyReference.cache
 D:\belajar\github\POS\POS\obj\Debug\POS.exe
 D:\belajar\github\POS\POS\obj\Debug\POS.pdb
 D:\Program Files\GitHub\POS\POS\bin\Debug\POS.exe.config
@@ -19,3 +18,14 @@ D:\Program Files\GitHub\POS\POS\obj\Debug\POS.csproj.GenerateResource.Cache
 D:\Program Files\GitHub\POS\POS\obj\Debug\POS.exe
 D:\Program Files\GitHub\POS\POS\obj\Debug\POS.pdb
 D:\Program Files\GitHub\POS\POS\obj\Debug\POS.csprojResolveAssemblyReference.cache
+D:\belajar\github\POS\POS\obj\Debug\POS.Forms.FormBarang.resources
+D:\belajar\github\POS\POS\obj\Debug\POS.csprojResolveAssemblyReference.cache
+D:\belajar\github\POS - Copy\POS\bin\Debug\POS.exe.config
+D:\belajar\github\POS - Copy\POS\obj\Debug\POS.exe
+D:\belajar\github\POS - Copy\POS\obj\Debug\POS.pdb
+D:\belajar\github\POS - Copy\POS\obj\Debug\POS.Forms.FormBarang.resources
+D:\belajar\github\POS - Copy\POS\obj\Debug\POS.Forms.FormHome.resources
+D:\belajar\github\POS - Copy\POS\obj\Debug\POS.Properties.Resources.resources
+D:\belajar\github\POS - Copy\POS\obj\Debug\POS.csproj.GenerateResource.Cache
+D:\belajar\github\POS - Copy\POS\bin\Debug\POS.exe
+D:\belajar\github\POS - Copy\POS\bin\Debug\POS.pdb

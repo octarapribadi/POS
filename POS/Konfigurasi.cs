@@ -9,6 +9,10 @@ namespace POS
 {
     class Konfigurasi
     {
+        public void showError(Exception ex)
+        {
+            MessageBox.Show("Error, hubungi administrator\n" + ex.StackTrace + "\n" + ex.Message);
+        }
         private String connectionString = POS.Properties.Settings.Default.DB_POSConnectionString;
         private String user="admin";
         private Orientation splitContainerOrientation = Orientation.Vertical;
