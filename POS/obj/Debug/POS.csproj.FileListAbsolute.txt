@@ -1,5 +1,4 @@
 D:\belajar\github\POS\POS\obj\Debug\POS.Forms.FormHome.resources
-D:\belajar\github\POS\POS\obj\Debug\POS.Forms.FormRestok.resources
 D:\belajar\github\POS\POS\obj\Debug\POS.Properties.Resources.resources
 D:\belajar\github\POS\POS\obj\Debug\POS.csproj.GenerateResource.Cache
 D:\belajar\github\POS\POS\bin\Debug\POS.exe.config
@@ -29,3 +28,4 @@ D:\belajar\github\POS - Copy\POS\obj\Debug\POS.Properties.Resources.resources
 D:\belajar\github\POS - Copy\POS\obj\Debug\POS.csproj.GenerateResource.Cache
 D:\belajar\github\POS - Copy\POS\bin\Debug\POS.exe
 D:\belajar\github\POS - Copy\POS\bin\Debug\POS.pdb
+D:\belajar\github\POS\POS\obj\Debug\POS.Forms.FormKategori.resources

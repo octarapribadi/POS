@@ -5575,12 +5575,32 @@ SELECT barang_id, nama_barang, kategori_id, kode_barcode, supplier_id, satuan_id
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        barang_id, nama_barang, kategori_id, kode_barcode, supplier_id, sat" +
                 "uan_id, harga_id, aktif, keterangan\r\nFROM            tbl_barang";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "delete from tbl_barang where tbl_barang.barang_id = @barangid";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@barangid", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "barang_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "UPDATE [tbl_barang] SET [nama_barang] = @nama_barang, [kategori_id] = @kategori_i" +
+                "d, [kode_barcode] = @kode_barcode, [supplier_id] = @supplier_id, [satuan_id] = @" +
+                "satuan_id, [aktif] = @aktif, [keterangan] = @keterangan WHERE [barang_id] = @bar" +
+                "ang_id";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nama_barang", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "nama_barang", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kategori_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "kategori_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kode_barcode", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "kode_barcode", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@supplier_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "supplier_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@satuan_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "satuan_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@aktif", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "aktif", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@keterangan", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "keterangan", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@barang_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "barang_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5969,6 +5989,96 @@ SELECT barang_id, nama_barang, kategori_id, kode_barcode, supplier_id, satuan_id
                     string Original_keterangan) {
             return this.Update(Original_barang_id, nama_barang, kategori_id, kode_barcode, supplier_id, satuan_id, harga_id, aktif, keterangan, Original_barang_id, Original_nama_barang, Original_kategori_id, Original_kode_barcode, Original_supplier_id, Original_satuan_id, Original_harga_id, Original_aktif, Original_keterangan);
         }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
+        public virtual int DeleteQueryByBarangID(int barangid) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            command.Parameters[0].Value = ((int)(barangid));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateQueryByBarangID(string nama_barang, global::System.Nullable<int> kategori_id, string kode_barcode, global::System.Nullable<int> supplier_id, global::System.Nullable<int> satuan_id, global::System.Nullable<bool> aktif, string keterangan, int barang_id) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            if ((nama_barang == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((string)(nama_barang));
+            }
+            if ((kategori_id.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(kategori_id.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((kode_barcode == null)) {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[2].Value = ((string)(kode_barcode));
+            }
+            if ((supplier_id.HasValue == true)) {
+                command.Parameters[3].Value = ((int)(supplier_id.Value));
+            }
+            else {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((satuan_id.HasValue == true)) {
+                command.Parameters[4].Value = ((int)(satuan_id.Value));
+            }
+            else {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((aktif.HasValue == true)) {
+                command.Parameters[5].Value = ((bool)(aktif.Value));
+            }
+            else {
+                command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((keterangan == null)) {
+                command.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[6].Value = ((string)(keterangan));
+            }
+            command.Parameters[7].Value = ((int)(barang_id));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
     }
     
     /// <summary>
@@ -6173,12 +6283,27 @@ SELECT harga_id, barang_id, supplier_id, harga_model, harga_jual, aktif, _defaul
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        harga_id, barang_id, supplier_id, harga_model, harga_jual, aktif, _" +
                 "default_, keterangan\r\nFROM            tbl_harga";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "DELETE FROM tbl_harga WHERE tbl_harga.barang_id = @barang_id";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@barang_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "barang_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "UPDATE       tbl_harga\r\nSET                supplier_id = @supplier_id, harga_mode" +
+                "l = @harga_model, harga_jual = @harga_jual\r\nWHERE        (barang_id = @barang_id" +
+                ")";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@supplier_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "supplier_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@harga_model", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "harga_model", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@harga_jual", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "harga_jual", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@barang_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "barang_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6519,6 +6644,82 @@ SELECT harga_id, barang_id, supplier_id, harga_model, harga_jual, aktif, _defaul
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(global::System.Nullable<int> barang_id, global::System.Nullable<int> supplier_id, global::System.Nullable<decimal> harga_model, global::System.Nullable<decimal> harga_jual, global::System.Nullable<bool> aktif, global::System.Nullable<bool> _default_, string keterangan, int Original_harga_id, global::System.Nullable<int> Original_barang_id, global::System.Nullable<int> Original_supplier_id, global::System.Nullable<decimal> Original_harga_model, global::System.Nullable<decimal> Original_harga_jual, global::System.Nullable<bool> Original_aktif, global::System.Nullable<bool> Original__default_, string Original_keterangan) {
             return this.Update(Original_harga_id, barang_id, supplier_id, harga_model, harga_jual, aktif, _default_, keterangan, Original_harga_id, Original_barang_id, Original_supplier_id, Original_harga_model, Original_harga_jual, Original_aktif, Original__default_, Original_keterangan);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
+        public virtual int DeleteQueryByBarangID(global::System.Nullable<int> barang_id) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            if ((barang_id.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(barang_id.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateQueryByBarangID(global::System.Nullable<int> supplier_id, global::System.Nullable<decimal> harga_model, global::System.Nullable<decimal> harga_jual, global::System.Nullable<int> barang_id) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            if ((supplier_id.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(supplier_id.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((harga_model.HasValue == true)) {
+                command.Parameters[1].Value = ((decimal)(harga_model.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((harga_jual.HasValue == true)) {
+                command.Parameters[2].Value = ((decimal)(harga_jual.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((barang_id.HasValue == true)) {
+                command.Parameters[3].Value = ((int)(barang_id.Value));
+            }
+            else {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     
@@ -7486,11 +7687,23 @@ SELECT stok_id, barang_id, stok, keterangan FROM tbl_stok WHERE (stok_id = @stok
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        stok_id, barang_id, stok, keterangan\r\nFROM            tbl_stok";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "delete from tbl_stok where tbl_stok.barang_id = @barangid";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@barangid", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "barang_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "UPDATE       tbl_stok\r\nSET                stok = @stok\r\nWHERE        (barang_id =" +
+                " @barang_id)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@stok", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "stok", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@barang_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "barang_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7679,6 +7892,60 @@ SELECT stok_id, barang_id, stok, keterangan FROM tbl_stok WHERE (stok_id = @stok
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(int barang_id, global::System.Nullable<int> stok, string keterangan, int Original_stok_id, int Original_barang_id, global::System.Nullable<int> Original_stok, string Original_keterangan) {
             return this.Update(Original_stok_id, barang_id, stok, keterangan, Original_stok_id, Original_barang_id, Original_stok, Original_keterangan);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
+        public virtual int DeleteQueryByBarangID(int barangid) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            command.Parameters[0].Value = ((int)(barangid));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateQueryByBarangID(global::System.Nullable<int> stok, int barang_id) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            if ((stok.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(stok.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            command.Parameters[1].Value = ((int)(barang_id));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     
@@ -8356,12 +8623,12 @@ WHERE tbl_barang.barang_id = @barang_id";
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = @"SELECT        tbl_barang.barang_id, tbl_barang.nama_barang, tbl_barang.kode_barcode, tbl_barang.aktif, tbl_barang.keterangan, tbl_harga.harga_model, tbl_harga.harga_jual, tbl_kategori.kategori, tbl_satuan.satuan, 
                          tbl_supplier.nama_supplier, tbl_stok.stok
-FROM            tbl_barang INNER JOIN
-                         tbl_harga ON tbl_barang.barang_id = tbl_harga.barang_id INNER JOIN
-                         tbl_kategori ON tbl_barang.kategori_id = tbl_kategori.kategori_id INNER JOIN
-                         tbl_satuan ON tbl_barang.satuan_id = tbl_satuan.satuan_id INNER JOIN
-                         tbl_stok ON tbl_barang.barang_id = tbl_stok.barang_id INNER JOIN
-                         tbl_supplier ON tbl_barang.supplier_id = tbl_supplier.supplier_id AND tbl_harga.supplier_id = tbl_supplier.supplier_id
+FROM            tbl_barang LEFT JOIN
+                         tbl_harga ON tbl_barang.barang_id = tbl_harga.barang_id LEFT JOIN
+                         tbl_kategori ON tbl_barang.kategori_id = tbl_kategori.kategori_id LEFT JOIN
+                         tbl_satuan ON tbl_barang.satuan_id = tbl_satuan.satuan_id LEFT JOIN
+                         tbl_stok ON tbl_barang.barang_id = tbl_stok.barang_id LEFT JOIN
+                         tbl_supplier ON tbl_barang.supplier_id = tbl_supplier.supplier_id
 WHERE tbl_harga._default_ = 1";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
         }

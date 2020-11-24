@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBarang));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
@@ -283,6 +283,7 @@
             this.splitContainer1.Size = new System.Drawing.Size(1190, 496);
             this.splitContainer1.SplitterDistance = 595;
             this.splitContainer1.TabIndex = 2;
+            this.splitContainer1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.splitContainer1_MouseDoubleClick);
             // 
             // tableLayoutPanel1
             // 
@@ -596,8 +597,8 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Silver;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -667,9 +668,9 @@
             // hargamodelDataGridViewTextBoxColumn
             // 
             this.hargamodelDataGridViewTextBoxColumn.DataPropertyName = "harga_model";
-            dataGridViewCellStyle2.Format = "C0";
-            dataGridViewCellStyle2.NullValue = "0";
-            this.hargamodelDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Format = "C0";
+            dataGridViewCellStyle5.NullValue = "0";
+            this.hargamodelDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.hargamodelDataGridViewTextBoxColumn.HeaderText = "harga_modal";
             this.hargamodelDataGridViewTextBoxColumn.Name = "hargamodelDataGridViewTextBoxColumn";
             this.hargamodelDataGridViewTextBoxColumn.ReadOnly = true;
@@ -678,9 +679,9 @@
             // hargajualDataGridViewTextBoxColumn
             // 
             this.hargajualDataGridViewTextBoxColumn.DataPropertyName = "harga_jual";
-            dataGridViewCellStyle3.Format = "C0";
-            dataGridViewCellStyle3.NullValue = "0";
-            this.hargajualDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Format = "C0";
+            dataGridViewCellStyle6.NullValue = "0";
+            this.hargajualDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
             this.hargajualDataGridViewTextBoxColumn.HeaderText = "harga_jual";
             this.hargajualDataGridViewTextBoxColumn.Name = "hargajualDataGridViewTextBoxColumn";
             this.hargajualDataGridViewTextBoxColumn.ReadOnly = true;
