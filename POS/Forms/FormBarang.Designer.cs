@@ -30,10 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBarang));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bsBarangView = new System.Windows.Forms.BindingSource(this.components);
+            this.datasetPOS1 = new POS.DatasetPOS();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -64,7 +66,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.cmbNamaBarang = new System.Windows.Forms.ComboBox();
-            this.datasetPOS1 = new POS.DatasetPOS();
             this.cmbKategori = new System.Windows.Forms.ComboBox();
             this.txtBarcode = new System.Windows.Forms.TextBox();
             this.cmbSatuan = new System.Windows.Forms.ComboBox();
@@ -88,7 +89,6 @@
             this.satuanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stokDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.namasupplierDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bsBarangView = new System.Windows.Forms.BindingSource(this.components);
             this.adapterBarang = new POS.DatasetPOSTableAdapters.tbl_barangTableAdapter();
             this.adapterKategori = new POS.DatasetPOSTableAdapters.tbl_kategoriTableAdapter();
             this.adapterSatuan = new POS.DatasetPOSTableAdapters.tbl_satuanTableAdapter();
@@ -98,23 +98,24 @@
             this.adapterStok = new POS.DatasetPOSTableAdapters.tbl_stokTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsBarangView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datasetPOS1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.datasetPOS1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numStok)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numHargaModal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numHargaJual)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsBarangView)).BeginInit();
             this.SuspendLayout();
             // 
             // bindingNavigator1
             // 
             this.bindingNavigator1.AddNewItem = null;
+            this.bindingNavigator1.BindingSource = this.bsBarangView;
             this.bindingNavigator1.CountItem = this.toolStripLabel1;
             this.bindingNavigator1.DeleteItem = null;
             this.bindingNavigator1.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -145,6 +146,18 @@
             this.bindingNavigator1.Size = new System.Drawing.Size(1190, 25);
             this.bindingNavigator1.TabIndex = 1;
             this.bindingNavigator1.Text = "bindingNavigator2";
+            // 
+            // bsBarangView
+            // 
+            this.bsBarangView.DataMember = "tbl_barang_view";
+            this.bsBarangView.DataSource = this.datasetPOS1;
+            this.bsBarangView.PositionChanged += new System.EventHandler(this.bsBarangView_PositionChanged);
+            // 
+            // datasetPOS1
+            // 
+            this.datasetPOS1.DataSetName = "DatasetPOS";
+            this.datasetPOS1.Locale = new System.Globalization.CultureInfo("en-US");
+            this.datasetPOS1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // toolStripLabel1
             // 
@@ -448,12 +461,6 @@
             this.cmbNamaBarang.ValueMember = "tbl_barang.barang_id";
             this.cmbNamaBarang.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbNamaBarang_KeyDown);
             // 
-            // datasetPOS1
-            // 
-            this.datasetPOS1.DataSetName = "DatasetPOS";
-            this.datasetPOS1.Locale = new System.Globalization.CultureInfo("en-US");
-            this.datasetPOS1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // cmbKategori
             // 
             this.cmbKategori.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
@@ -597,8 +604,8 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Silver;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -668,9 +675,9 @@
             // hargamodelDataGridViewTextBoxColumn
             // 
             this.hargamodelDataGridViewTextBoxColumn.DataPropertyName = "harga_model";
-            dataGridViewCellStyle5.Format = "C0";
-            dataGridViewCellStyle5.NullValue = "0";
-            this.hargamodelDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Format = "C0";
+            dataGridViewCellStyle2.NullValue = "0";
+            this.hargamodelDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.hargamodelDataGridViewTextBoxColumn.HeaderText = "harga_modal";
             this.hargamodelDataGridViewTextBoxColumn.Name = "hargamodelDataGridViewTextBoxColumn";
             this.hargamodelDataGridViewTextBoxColumn.ReadOnly = true;
@@ -679,9 +686,9 @@
             // hargajualDataGridViewTextBoxColumn
             // 
             this.hargajualDataGridViewTextBoxColumn.DataPropertyName = "harga_jual";
-            dataGridViewCellStyle6.Format = "C0";
-            dataGridViewCellStyle6.NullValue = "0";
-            this.hargajualDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Format = "C0";
+            dataGridViewCellStyle3.NullValue = "0";
+            this.hargajualDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.hargajualDataGridViewTextBoxColumn.HeaderText = "harga_jual";
             this.hargajualDataGridViewTextBoxColumn.Name = "hargajualDataGridViewTextBoxColumn";
             this.hargajualDataGridViewTextBoxColumn.ReadOnly = true;
@@ -718,12 +725,6 @@
             this.namasupplierDataGridViewTextBoxColumn.Name = "namasupplierDataGridViewTextBoxColumn";
             this.namasupplierDataGridViewTextBoxColumn.ReadOnly = true;
             this.namasupplierDataGridViewTextBoxColumn.Width = 163;
-            // 
-            // bsBarangView
-            // 
-            this.bsBarangView.DataMember = "tbl_barang_view";
-            this.bsBarangView.DataSource = this.datasetPOS1;
-            this.bsBarangView.PositionChanged += new System.EventHandler(this.bsBarangView_PositionChanged);
             // 
             // adapterBarang
             // 
@@ -768,19 +769,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsBarangView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datasetPOS1)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.datasetPOS1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numStok)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numHargaModal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numHargaJual)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsBarangView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

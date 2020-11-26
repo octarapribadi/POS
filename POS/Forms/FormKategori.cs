@@ -67,6 +67,7 @@ namespace POS.Forms
 
         private void tsbCari_Click(object sender, EventArgs e)
         {
+
             try
             {
                 bsKategori.Filter = tstCari.Text;
@@ -75,6 +76,7 @@ namespace POS.Forms
             {
                 konfigurasi.showError(ex);
             }
+
         }
 
         private void tstCari_KeyDown(object sender, KeyEventArgs e)
@@ -93,23 +95,23 @@ namespace POS.Forms
                 if (txtKategoriID.Text == "")
                 {
                     Int32 kategoriID = incrementLastIDFromTable(datasetPOS1.tbl_kategori,"kategori_id");
+                    adapterKategori.Insert(kategoriID, cmbKategori.Text, txtKeterangan.Text, chkAktif.Checked);
                     DataRow row = datasetPOS1.tbl_kategori.NewRow();
                     row["kategori_id"] = kategoriID;
                     row["kategori"] = cmbKategori.Text;
                     row["keterangan"] = txtKeterangan.Text;
                     row["aktif"] = (Boolean)chkAktif.Checked;
                     datasetPOS1.tbl_kategori.Rows.Add(row);
-                    adapterKategori.Insert(kategoriID, cmbKategori.Text, txtKeterangan.Text, chkAktif.Checked);
                     tsbReset_Click(sender, e);
                 }
                 else
                 {
-                    Int32 kategoriID = (Int32)cmbKategori.SelectedValue;
-                    DataRow[] row = datasetPOS1.tbl_kategori.Select(String.Format("kategori_id = {0}",kategoriID.ToString()));
+                    String kategoriID = txtKategoriID.Text;
+                    DataRow[] row = datasetPOS1.tbl_kategori.Select(String.Format("kategori_id = {0}",kategoriID));
                     row[0]["kategori"] = cmbKategori.Text;
                     row[0]["keterangan"] = txtKeterangan.Text;
                     row[0]["aktif"] = (Boolean)chkAktif.Checked;
-                    adapterKategori.Update(row[0]);
+                    adapterKategori.UpdateQueryByKategoriID(cmbKategori.Text, txtKeterangan.Text, chkAktif.Checked, Convert.ToInt32(kategoriID));
                 }
             }
             catch(Exception ex)
@@ -125,6 +127,35 @@ namespace POS.Forms
             return x;
         }
 
+        private void tsbHapus_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                String kategoriID = txtKategoriID.Text;
+                if ( kategoriID != "")
+                {
+                    var result = MessageBox.Show("Peringatan: Data yang dihapus tidak dapat dikembalikan lagi!\nApakah yakin akan menghapus data?", "Hapus Data", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (result == DialogResult.Yes)
+                    {
+                        adapterKategori.DeleteQueryByKategoriID(Convert.ToInt32(kategoriID));
+                        bsKategori.RemoveCurrent();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Pilih terlebih dahulu data yang akan dihapus!");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                konfigurasi.showError(ex);
+            }
+            finally
+            {
+                tsbReset_Click(sender, e);
+            }
+        }
     }
 
 }

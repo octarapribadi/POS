@@ -12,6 +12,8 @@ namespace POS.Forms
 {
     public partial class FormHome : Form
     {
+        
+        
         public FormHome()
         {
             InitializeComponent();
@@ -20,6 +22,38 @@ namespace POS.Forms
         private void kELUARToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void kATEGORIToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            FormKategori frmKategori;
+            frmKategori = new FormKategori();
+            frmKategori.MdiParent = this;
+            frmKategori.Show();
+            
+
+        }
+
+        private void dATABARANGToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormBarang frmBarang = null;
+            frmBarang = new FormBarang();
+            frmBarang.MdiParent = this;
+            frmBarang.Show();
+        }
+
+        private void sUPPLIERToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormSupplier frmSupplier = null;
+            frmSupplier = new FormSupplier();
+            frmSupplier.MdiParent = this;
+            frmSupplier.Show();
+        }
+
+        private void FormHome_Load(object sender, EventArgs e)
+        {
+            this.Icon = POS.Properties.Resources.icon;
         }
     }
 }
