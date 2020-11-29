@@ -55,5 +55,21 @@ namespace POS.Forms
         {
             this.Icon = POS.Properties.Resources.icon;
         }
+
+        private void hARGAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormHarga frmHarga = null;
+            frmHarga = new FormHarga();
+            frmHarga.MdiParent = this;
+            frmHarga.Show();
+        }
+
+        private void sTOKToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormStok frmStok = null;
+            frmStok = new FormStok();
+            frmStok.MdiParent = this;
+            frmStok.Show();
+        }
     }
 }

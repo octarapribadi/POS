@@ -1,6 +1,6 @@
 ﻿namespace POS.Forms
 {
-    partial class FormSupplier
+    partial class FormHarga
     {
         /// <summary>
         /// Required designer variable.
@@ -29,11 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSupplier));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHarga));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bsSupplier = new System.Windows.Forms.BindingSource(this.components);
-            this.datasetPOS1 = new POS.DatasetPOS();
+            this.bsHargaBarangSupplier = new System.Windows.Forms.BindingSource(this.components);
+            this.datasetPOS = new POS.DatasetPOS();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -52,45 +54,55 @@
             this.tsbCari = new System.Windows.Forms.ToolStripButton();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.cmbBarang = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.txtHargaID = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtSupplierID = new System.Windows.Forms.TextBox();
-            this.cmbNamaSupplier = new System.Windows.Forms.ComboBox();
-            this.txtAlamat = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtTelepon = new System.Windows.Forms.TextBox();
+            this.cmbSupplier = new System.Windows.Forms.ComboBox();
+            this.numHargaModal = new System.Windows.Forms.NumericUpDown();
+            this.numHargaJual = new System.Windows.Forms.NumericUpDown();
             this.chkAktif = new System.Windows.Forms.CheckBox();
+            this.chkDefault = new System.Windows.Forms.CheckBox();
             this.txtKeterangan = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.hargaidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.barangidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namabarangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.supplieridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.namasupplierDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.alamatsupplierDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailsupplierDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.teleponsupplierDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hargamodelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hargajualDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aktifDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.defaultDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.keteranganDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adapterHargaBarangSupplier = new POS.DatasetPOSTableAdapters.tbl_harga_barang_supplierTableAdapter();
             this.adapterSupplier = new POS.DatasetPOSTableAdapters.tbl_supplierTableAdapter();
+            this.adapterBarang = new POS.DatasetPOSTableAdapters.tbl_barangTableAdapter();
+            this.adapterHarga = new POS.DatasetPOSTableAdapters.tbl_hargaTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsSupplier)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datasetPOS1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsHargaBarangSupplier)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datasetPOS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numHargaModal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numHargaJual)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // bindingNavigator1
             // 
             this.bindingNavigator1.AddNewItem = null;
-            this.bindingNavigator1.BindingSource = this.bsSupplier;
+            this.bindingNavigator1.BindingSource = this.bsHargaBarangSupplier;
             this.bindingNavigator1.CountItem = this.toolStripLabel1;
             this.bindingNavigator1.DeleteItem = null;
             this.bindingNavigator1.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -119,20 +131,20 @@
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.bindingNavigator1.PositionItem = this.toolStripTextBox1;
-            this.bindingNavigator1.Size = new System.Drawing.Size(1073, 25);
-            this.bindingNavigator1.TabIndex = 2;
+            this.bindingNavigator1.Size = new System.Drawing.Size(1024, 25);
+            this.bindingNavigator1.TabIndex = 3;
             this.bindingNavigator1.Text = "bindingNavigator2";
             // 
-            // bsSupplier
+            // bsHargaBarangSupplier
             // 
-            this.bsSupplier.DataMember = "tbl_supplier";
-            this.bsSupplier.DataSource = this.datasetPOS1;
+            this.bsHargaBarangSupplier.DataMember = "tbl_harga_barang_supplier";
+            this.bsHargaBarangSupplier.DataSource = this.datasetPOS;
             // 
-            // datasetPOS1
+            // datasetPOS
             // 
-            this.datasetPOS1.DataSetName = "DatasetPOS";
-            this.datasetPOS1.Locale = new System.Globalization.CultureInfo("en-US");
-            this.datasetPOS1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.datasetPOS.DataSetName = "DatasetPOS";
+            this.datasetPOS.Locale = new System.Globalization.CultureInfo("en-US");
+            this.datasetPOS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // toolStripLabel1
             // 
@@ -259,47 +271,47 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 25);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.tableLayoutPanel1);
-            this.splitContainer1.Panel1.Padding = new System.Windows.Forms.Padding(9, 7, 9, 7);
+            this.splitContainer1.Panel1.Padding = new System.Windows.Forms.Padding(5);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
-            this.splitContainer1.Panel2.Padding = new System.Windows.Forms.Padding(17, 13, 17, 13);
-            this.splitContainer1.Size = new System.Drawing.Size(1073, 401);
-            this.splitContainer1.SplitterDistance = 504;
-            this.splitContainer1.SplitterWidth = 7;
-            this.splitContainer1.TabIndex = 3;
-            this.splitContainer1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.splitContainer1_MouseDoubleClick);
+            this.splitContainer1.Panel2.Padding = new System.Windows.Forms.Padding(10);
+            this.splitContainer1.Size = new System.Drawing.Size(1024, 464);
+            this.splitContainer1.SplitterDistance = 401;
+            this.splitContainer1.TabIndex = 4;
+            this.splitContainer1.DoubleClick += new System.EventHandler(this.splitContainer1_DoubleClick);
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.77366F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.22634F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel1.Controls.Add(this.label8, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.label7, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.cmbBarang, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.txtHargaID, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.label6, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.label7, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.txtSupplierID, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.cmbNamaSupplier, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtAlamat, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.txtEmail, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.txtTelepon, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.cmbSupplier, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.numHargaModal, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.numHargaJual, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.chkAktif, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.txtKeterangan, 1, 6);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(9, 7);
+            this.tableLayoutPanel1.Controls.Add(this.chkDefault, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.txtKeterangan, 1, 7);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(5, 5);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 7;
+            this.tableLayoutPanel1.RowCount = 8;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -307,140 +319,183 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(486, 358);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(391, 454);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(3, 216);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(108, 18);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Keterangan";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(3, 188);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(88, 18);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "Default?";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 18);
+            this.label1.Size = new System.Drawing.Size(88, 18);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Supplier ID";
+            this.label1.Text = "Harga ID";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(3, 32);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(148, 18);
+            this.label2.Size = new System.Drawing.Size(118, 18);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Nama Supplier*";
+            this.label2.Text = "Nama Barang";
+            // 
+            // cmbBarang
+            // 
+            this.cmbBarang.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbBarang.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbBarang.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.cmbBarang.DataSource = this.datasetPOS;
+            this.cmbBarang.DisplayMember = "tbl_barang.nama_barang";
+            this.cmbBarang.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cmbBarang.FormattingEnabled = true;
+            this.cmbBarang.Location = new System.Drawing.Point(159, 35);
+            this.cmbBarang.Name = "cmbBarang";
+            this.cmbBarang.Size = new System.Drawing.Size(229, 26);
+            this.cmbBarang.TabIndex = 2;
+            this.cmbBarang.ValueMember = "tbl_barang.barang_id";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(3, 64);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 18);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Alamat";
+            this.label3.Size = new System.Drawing.Size(138, 18);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Nama Supplier";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 143);
+            this.label4.Location = new System.Drawing.Point(3, 96);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 18);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Email";
+            this.label4.Size = new System.Drawing.Size(118, 18);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Harga Modal";
+            // 
+            // txtHargaID
+            // 
+            this.txtHargaID.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtHargaID.Enabled = false;
+            this.txtHargaID.Location = new System.Drawing.Point(159, 3);
+            this.txtHargaID.Name = "txtHargaID";
+            this.txtHargaID.Size = new System.Drawing.Size(229, 26);
+            this.txtHargaID.TabIndex = 5;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 175);
+            this.label5.Location = new System.Drawing.Point(3, 128);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 18);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Telepon";
+            this.label5.Size = new System.Drawing.Size(108, 18);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Harga Jual";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 207);
+            this.label6.Location = new System.Drawing.Point(3, 160);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(68, 18);
-            this.label6.TabIndex = 5;
+            this.label6.TabIndex = 7;
             this.label6.Text = "Aktif?";
             // 
-            // label7
+            // cmbSupplier
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 235);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(108, 18);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Keterangan";
+            this.cmbSupplier.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbSupplier.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbSupplier.DataSource = this.datasetPOS;
+            this.cmbSupplier.DisplayMember = "tbl_supplier.nama_supplier";
+            this.cmbSupplier.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cmbSupplier.FormattingEnabled = true;
+            this.cmbSupplier.Location = new System.Drawing.Point(159, 67);
+            this.cmbSupplier.Name = "cmbSupplier";
+            this.cmbSupplier.Size = new System.Drawing.Size(229, 26);
+            this.cmbSupplier.TabIndex = 9;
+            this.cmbSupplier.ValueMember = "tbl_supplier.supplier_id";
             // 
-            // txtSupplierID
+            // numHargaModal
             // 
-            this.txtSupplierID.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtSupplierID.Enabled = false;
-            this.txtSupplierID.Location = new System.Drawing.Point(171, 3);
-            this.txtSupplierID.Name = "txtSupplierID";
-            this.txtSupplierID.Size = new System.Drawing.Size(312, 26);
-            this.txtSupplierID.TabIndex = 7;
+            this.numHargaModal.Dock = System.Windows.Forms.DockStyle.Top;
+            this.numHargaModal.Location = new System.Drawing.Point(159, 99);
+            this.numHargaModal.Maximum = new decimal(new int[] {
+            1410065407,
+            2,
+            0,
+            0});
+            this.numHargaModal.Name = "numHargaModal";
+            this.numHargaModal.Size = new System.Drawing.Size(229, 26);
+            this.numHargaModal.TabIndex = 10;
+            this.numHargaModal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numHargaModal.ThousandsSeparator = true;
+            this.numHargaModal.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
             // 
-            // cmbNamaSupplier
+            // numHargaJual
             // 
-            this.cmbNamaSupplier.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.cmbNamaSupplier.DataSource = this.bsSupplier;
-            this.cmbNamaSupplier.DisplayMember = "nama_supplier";
-            this.cmbNamaSupplier.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cmbNamaSupplier.FormattingEnabled = true;
-            this.cmbNamaSupplier.Location = new System.Drawing.Point(171, 35);
-            this.cmbNamaSupplier.Name = "cmbNamaSupplier";
-            this.cmbNamaSupplier.Size = new System.Drawing.Size(312, 26);
-            this.cmbNamaSupplier.TabIndex = 8;
-            this.cmbNamaSupplier.ValueMember = "supplier_id";
-            // 
-            // txtAlamat
-            // 
-            this.txtAlamat.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtAlamat.Location = new System.Drawing.Point(171, 67);
-            this.txtAlamat.Multiline = true;
-            this.txtAlamat.Name = "txtAlamat";
-            this.txtAlamat.Size = new System.Drawing.Size(312, 73);
-            this.txtAlamat.TabIndex = 9;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtEmail.Location = new System.Drawing.Point(171, 146);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(312, 26);
-            this.txtEmail.TabIndex = 10;
-            // 
-            // txtTelepon
-            // 
-            this.txtTelepon.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtTelepon.Location = new System.Drawing.Point(171, 178);
-            this.txtTelepon.Name = "txtTelepon";
-            this.txtTelepon.Size = new System.Drawing.Size(312, 26);
-            this.txtTelepon.TabIndex = 11;
+            this.numHargaJual.Dock = System.Windows.Forms.DockStyle.Top;
+            this.numHargaJual.Location = new System.Drawing.Point(159, 131);
+            this.numHargaJual.Maximum = new decimal(new int[] {
+            1410065407,
+            2,
+            0,
+            0});
+            this.numHargaJual.Name = "numHargaJual";
+            this.numHargaJual.Size = new System.Drawing.Size(229, 26);
+            this.numHargaJual.TabIndex = 11;
+            this.numHargaJual.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numHargaJual.ThousandsSeparator = true;
+            this.numHargaJual.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
             // 
             // chkAktif
             // 
             this.chkAktif.AutoSize = true;
-            this.chkAktif.Checked = true;
-            this.chkAktif.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkAktif.Dock = System.Windows.Forms.DockStyle.Top;
-            this.chkAktif.Location = new System.Drawing.Point(171, 210);
+            this.chkAktif.Location = new System.Drawing.Point(159, 163);
             this.chkAktif.Name = "chkAktif";
-            this.chkAktif.Size = new System.Drawing.Size(312, 22);
+            this.chkAktif.Size = new System.Drawing.Size(229, 22);
             this.chkAktif.TabIndex = 12;
-            this.chkAktif.Text = "Ceklist untuk mengaktifkan";
+            this.chkAktif.Text = "Centang Aktif";
             this.chkAktif.UseVisualStyleBackColor = true;
+            // 
+            // chkDefault
+            // 
+            this.chkDefault.AutoSize = true;
+            this.chkDefault.Dock = System.Windows.Forms.DockStyle.Top;
+            this.chkDefault.Location = new System.Drawing.Point(159, 191);
+            this.chkDefault.Name = "chkDefault";
+            this.chkDefault.Size = new System.Drawing.Size(229, 22);
+            this.chkDefault.TabIndex = 13;
+            this.chkDefault.Text = "Centang Default";
+            this.chkDefault.UseVisualStyleBackColor = true;
+            this.chkDefault.Click += new System.EventHandler(this.chkDefault_Click);
             // 
             // txtKeterangan
             // 
             this.txtKeterangan.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtKeterangan.Location = new System.Drawing.Point(171, 238);
+            this.txtKeterangan.Location = new System.Drawing.Point(159, 219);
             this.txtKeterangan.Multiline = true;
             this.txtKeterangan.Name = "txtKeterangan";
-            this.txtKeterangan.Size = new System.Drawing.Size(312, 98);
-            this.txtKeterangan.TabIndex = 13;
+            this.txtKeterangan.Size = new System.Drawing.Size(229, 113);
+            this.txtKeterangan.TabIndex = 15;
             // 
             // dataGridView1
             // 
@@ -453,23 +508,50 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.hargaidDataGridViewTextBoxColumn,
+            this.barangidDataGridViewTextBoxColumn,
+            this.namabarangDataGridViewTextBoxColumn,
             this.supplieridDataGridViewTextBoxColumn,
             this.namasupplierDataGridViewTextBoxColumn,
-            this.alamatsupplierDataGridViewTextBoxColumn,
-            this.emailsupplierDataGridViewTextBoxColumn,
-            this.teleponsupplierDataGridViewTextBoxColumn,
+            this.hargamodelDataGridViewTextBoxColumn,
+            this.hargajualDataGridViewTextBoxColumn,
             this.aktifDataGridViewCheckBoxColumn,
+            this.defaultDataGridViewCheckBoxColumn,
             this.keteranganDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.bsSupplier;
+            this.dataGridView1.DataSource = this.bsHargaBarangSupplier;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(17, 13);
+            this.dataGridView1.Location = new System.Drawing.Point(10, 10);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(528, 375);
+            this.dataGridView1.Size = new System.Drawing.Size(599, 444);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // hargaidDataGridViewTextBoxColumn
+            // 
+            this.hargaidDataGridViewTextBoxColumn.DataPropertyName = "harga_id";
+            this.hargaidDataGridViewTextBoxColumn.HeaderText = "harga_id";
+            this.hargaidDataGridViewTextBoxColumn.Name = "hargaidDataGridViewTextBoxColumn";
+            this.hargaidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.hargaidDataGridViewTextBoxColumn.Width = 113;
+            // 
+            // barangidDataGridViewTextBoxColumn
+            // 
+            this.barangidDataGridViewTextBoxColumn.DataPropertyName = "barang_id";
+            this.barangidDataGridViewTextBoxColumn.HeaderText = "barang_id";
+            this.barangidDataGridViewTextBoxColumn.Name = "barangidDataGridViewTextBoxColumn";
+            this.barangidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.barangidDataGridViewTextBoxColumn.Width = 123;
+            // 
+            // namabarangDataGridViewTextBoxColumn
+            // 
+            this.namabarangDataGridViewTextBoxColumn.DataPropertyName = "nama_barang";
+            this.namabarangDataGridViewTextBoxColumn.HeaderText = "nama_barang";
+            this.namabarangDataGridViewTextBoxColumn.Name = "namabarangDataGridViewTextBoxColumn";
+            this.namabarangDataGridViewTextBoxColumn.ReadOnly = true;
+            this.namabarangDataGridViewTextBoxColumn.Width = 143;
             // 
             // supplieridDataGridViewTextBoxColumn
             // 
@@ -487,29 +569,27 @@
             this.namasupplierDataGridViewTextBoxColumn.ReadOnly = true;
             this.namasupplierDataGridViewTextBoxColumn.Width = 163;
             // 
-            // alamatsupplierDataGridViewTextBoxColumn
+            // hargamodelDataGridViewTextBoxColumn
             // 
-            this.alamatsupplierDataGridViewTextBoxColumn.DataPropertyName = "alamat_supplier";
-            this.alamatsupplierDataGridViewTextBoxColumn.HeaderText = "alamat_supplier";
-            this.alamatsupplierDataGridViewTextBoxColumn.Name = "alamatsupplierDataGridViewTextBoxColumn";
-            this.alamatsupplierDataGridViewTextBoxColumn.ReadOnly = true;
-            this.alamatsupplierDataGridViewTextBoxColumn.Width = 183;
+            this.hargamodelDataGridViewTextBoxColumn.DataPropertyName = "harga_model";
+            dataGridViewCellStyle2.Format = "C0";
+            dataGridViewCellStyle2.NullValue = null;
+            this.hargamodelDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.hargamodelDataGridViewTextBoxColumn.HeaderText = "harga_model";
+            this.hargamodelDataGridViewTextBoxColumn.Name = "hargamodelDataGridViewTextBoxColumn";
+            this.hargamodelDataGridViewTextBoxColumn.ReadOnly = true;
+            this.hargamodelDataGridViewTextBoxColumn.Width = 143;
             // 
-            // emailsupplierDataGridViewTextBoxColumn
+            // hargajualDataGridViewTextBoxColumn
             // 
-            this.emailsupplierDataGridViewTextBoxColumn.DataPropertyName = "email_supplier";
-            this.emailsupplierDataGridViewTextBoxColumn.HeaderText = "email_supplier";
-            this.emailsupplierDataGridViewTextBoxColumn.Name = "emailsupplierDataGridViewTextBoxColumn";
-            this.emailsupplierDataGridViewTextBoxColumn.ReadOnly = true;
-            this.emailsupplierDataGridViewTextBoxColumn.Width = 173;
-            // 
-            // teleponsupplierDataGridViewTextBoxColumn
-            // 
-            this.teleponsupplierDataGridViewTextBoxColumn.DataPropertyName = "telepon_supplier";
-            this.teleponsupplierDataGridViewTextBoxColumn.HeaderText = "telepon_supplier";
-            this.teleponsupplierDataGridViewTextBoxColumn.Name = "teleponsupplierDataGridViewTextBoxColumn";
-            this.teleponsupplierDataGridViewTextBoxColumn.ReadOnly = true;
-            this.teleponsupplierDataGridViewTextBoxColumn.Width = 193;
+            this.hargajualDataGridViewTextBoxColumn.DataPropertyName = "harga_jual";
+            dataGridViewCellStyle3.Format = "C0";
+            dataGridViewCellStyle3.NullValue = null;
+            this.hargajualDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.hargajualDataGridViewTextBoxColumn.HeaderText = "harga_jual";
+            this.hargajualDataGridViewTextBoxColumn.Name = "hargajualDataGridViewTextBoxColumn";
+            this.hargajualDataGridViewTextBoxColumn.ReadOnly = true;
+            this.hargajualDataGridViewTextBoxColumn.Width = 133;
             // 
             // aktifDataGridViewCheckBoxColumn
             // 
@@ -519,6 +599,14 @@
             this.aktifDataGridViewCheckBoxColumn.ReadOnly = true;
             this.aktifDataGridViewCheckBoxColumn.Width = 64;
             // 
+            // defaultDataGridViewCheckBoxColumn
+            // 
+            this.defaultDataGridViewCheckBoxColumn.DataPropertyName = "_default_";
+            this.defaultDataGridViewCheckBoxColumn.HeaderText = "_default_";
+            this.defaultDataGridViewCheckBoxColumn.Name = "defaultDataGridViewCheckBoxColumn";
+            this.defaultDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.defaultDataGridViewCheckBoxColumn.Width = 104;
+            // 
             // keteranganDataGridViewTextBoxColumn
             // 
             this.keteranganDataGridViewTextBoxColumn.DataPropertyName = "keterangan";
@@ -527,34 +615,48 @@
             this.keteranganDataGridViewTextBoxColumn.ReadOnly = true;
             this.keteranganDataGridViewTextBoxColumn.Width = 133;
             // 
+            // adapterHargaBarangSupplier
+            // 
+            this.adapterHargaBarangSupplier.ClearBeforeFill = true;
+            // 
             // adapterSupplier
             // 
             this.adapterSupplier.ClearBeforeFill = true;
             // 
-            // FormSupplier
+            // adapterBarang
+            // 
+            this.adapterBarang.ClearBeforeFill = true;
+            // 
+            // adapterHarga
+            // 
+            this.adapterHarga.ClearBeforeFill = true;
+            // 
+            // FormHarga
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1073, 426);
+            this.ClientSize = new System.Drawing.Size(1024, 489);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.bindingNavigator1);
             this.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FormSupplier";
-            this.Text = "FormSupplier";
-            this.Load += new System.EventHandler(this.FormSupplier_Load);
+            this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.Name = "FormHarga";
+            this.Text = "FormHarga";
+            this.Load += new System.EventHandler(this.FormHarga_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsSupplier)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datasetPOS1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsHargaBarangSupplier)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datasetPOS)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numHargaModal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numHargaJual)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -582,30 +684,38 @@
         private System.Windows.Forms.ToolStripButton tsbCari;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private DatasetPOS datasetPOS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hargaidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn barangidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn namabarangDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn supplieridDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn namasupplierDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hargamodelDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hargajualDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn aktifDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn defaultDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn keteranganDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource bsHargaBarangSupplier;
+        private DatasetPOSTableAdapters.tbl_harga_barang_supplierTableAdapter adapterHargaBarangSupplier;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cmbBarang;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtHargaID;
+        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtSupplierID;
-        private System.Windows.Forms.ComboBox cmbNamaSupplier;
-        private System.Windows.Forms.TextBox txtAlamat;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtTelepon;
+        private System.Windows.Forms.ComboBox cmbSupplier;
+        private System.Windows.Forms.NumericUpDown numHargaModal;
+        private System.Windows.Forms.NumericUpDown numHargaJual;
         private System.Windows.Forms.CheckBox chkAktif;
+        private System.Windows.Forms.CheckBox chkDefault;
+        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtKeterangan;
-        private DatasetPOS datasetPOS1;
         private DatasetPOSTableAdapters.tbl_supplierTableAdapter adapterSupplier;
-        private System.Windows.Forms.BindingSource bsSupplier;
-        private System.Windows.Forms.DataGridViewTextBoxColumn supplieridDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn namasupplierDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn alamatsupplierDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailsupplierDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn teleponsupplierDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn aktifDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn keteranganDataGridViewTextBoxColumn;
+        private DatasetPOSTableAdapters.tbl_barangTableAdapter adapterBarang;
+        private DatasetPOSTableAdapters.tbl_hargaTableAdapter adapterHarga;
     }
 }

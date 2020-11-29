@@ -80,7 +80,7 @@
     <Compile Include="DatasetPOS.cs">
       <DependentUpon>DatasetPOS.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DatasetPOS1.Designer.cs">
+    <Compile Include="DatasetPOS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DatasetPOS.xsd</DependentUpon>
@@ -90,6 +90,12 @@
     </Compile>
     <Compile Include="Forms\FormBarang.Designer.cs">
       <DependentUpon>FormBarang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormHarga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormHarga.Designer.cs">
+      <DependentUpon>FormHarga.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormHome.cs">
       <SubType>Form</SubType>
@@ -103,6 +109,12 @@
     <Compile Include="Forms\FormKategori.Designer.cs">
       <DependentUpon>FormKategori.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormStok.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormStok.Designer.cs">
+      <DependentUpon>FormStok.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,11 +127,17 @@
     <EmbeddedResource Include="Forms\FormBarang.resx">
       <DependentUpon>FormBarang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormHarga.resx">
+      <DependentUpon>FormHarga.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormHome.resx">
       <DependentUpon>FormHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormKategori.resx">
       <DependentUpon>FormKategori.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormStok.resx">
+      <DependentUpon>FormStok.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormSupplier.resx">
       <DependentUpon>FormSupplier.cs</DependentUpon>
@@ -140,7 +158,7 @@
     <None Include="DatasetPOS.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DatasetPOS1.Designer.cs</LastGenOutput>
+      <LastGenOutput>DatasetPOS.Designer.cs</LastGenOutput>
     </None>
     <None Include="DatasetPOS.xss">
       <DependentUpon>DatasetPOS.xsd</DependentUpon>

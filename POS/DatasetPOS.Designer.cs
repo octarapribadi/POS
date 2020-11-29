@@ -40,6 +40,10 @@ namespace POS {
         
         private tbl_restokDataTable tabletbl_restok;
         
+        private tbl_harga_barang_supplierDataTable tabletbl_harga_barang_supplier;
+        
+        private tbl_stok_barangDataTable tabletbl_stok_barang;
+        
         private global::System.Data.DataRelation relationFK_tbl_harga_tbl_barang;
         
         private global::System.Data.DataRelation relationFK_tbl_barang_tbl_kategori;
@@ -61,6 +65,20 @@ namespace POS {
         private global::System.Data.DataRelation relationFK_tbl_restok_tbl_satuan;
         
         private global::System.Data.DataRelation relationFK_tbl_restok_tbl_supplier;
+        
+        private global::System.Data.DataRelation relationFK_tbl_harga_tbl_barang2;
+        
+        private global::System.Data.DataRelation relationFK_tbl_stok_tbl_barang2;
+        
+        private global::System.Data.DataRelation relationFK_tbl_restok_tbl_barang1;
+        
+        private global::System.Data.DataRelation relationFK_tbl_barang_tbl_supplier1;
+        
+        private global::System.Data.DataRelation relationFK_tbl_harga_tbl_barang3;
+        
+        private global::System.Data.DataRelation relationFK_tbl_stok_tbl_barang3;
+        
+        private global::System.Data.DataRelation relationFK_tbl_restok_tbl_barang2;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -113,6 +131,12 @@ namespace POS {
                 }
                 if ((ds.Tables["tbl_restok"] != null)) {
                     base.Tables.Add(new tbl_restokDataTable(ds.Tables["tbl_restok"]));
+                }
+                if ((ds.Tables["tbl_harga_barang_supplier"] != null)) {
+                    base.Tables.Add(new tbl_harga_barang_supplierDataTable(ds.Tables["tbl_harga_barang_supplier"]));
+                }
+                if ((ds.Tables["tbl_stok_barang"] != null)) {
+                    base.Tables.Add(new tbl_stok_barangDataTable(ds.Tables["tbl_stok_barang"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -214,6 +238,26 @@ namespace POS {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public tbl_harga_barang_supplierDataTable tbl_harga_barang_supplier {
+            get {
+                return this.tabletbl_harga_barang_supplier;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public tbl_stok_barangDataTable tbl_stok_barang {
+            get {
+                return this.tabletbl_stok_barang;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -303,6 +347,12 @@ namespace POS {
                 if ((ds.Tables["tbl_restok"] != null)) {
                     base.Tables.Add(new tbl_restokDataTable(ds.Tables["tbl_restok"]));
                 }
+                if ((ds.Tables["tbl_harga_barang_supplier"] != null)) {
+                    base.Tables.Add(new tbl_harga_barang_supplierDataTable(ds.Tables["tbl_harga_barang_supplier"]));
+                }
+                if ((ds.Tables["tbl_stok_barang"] != null)) {
+                    base.Tables.Add(new tbl_stok_barangDataTable(ds.Tables["tbl_stok_barang"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -384,6 +434,18 @@ namespace POS {
                     this.tabletbl_restok.InitVars();
                 }
             }
+            this.tabletbl_harga_barang_supplier = ((tbl_harga_barang_supplierDataTable)(base.Tables["tbl_harga_barang_supplier"]));
+            if ((initTable == true)) {
+                if ((this.tabletbl_harga_barang_supplier != null)) {
+                    this.tabletbl_harga_barang_supplier.InitVars();
+                }
+            }
+            this.tabletbl_stok_barang = ((tbl_stok_barangDataTable)(base.Tables["tbl_stok_barang"]));
+            if ((initTable == true)) {
+                if ((this.tabletbl_stok_barang != null)) {
+                    this.tabletbl_stok_barang.InitVars();
+                }
+            }
             this.relationFK_tbl_harga_tbl_barang = this.Relations["FK_tbl_harga_tbl_barang"];
             this.relationFK_tbl_barang_tbl_kategori = this.Relations["FK_tbl_barang_tbl_kategori"];
             this.relationFK_tbl_barang_tbl_satuan = this.Relations["FK_tbl_barang_tbl_satuan"];
@@ -395,6 +457,13 @@ namespace POS {
             this.relationFK_tbl_restok_tbl_barang = this.Relations["FK_tbl_restok_tbl_barang"];
             this.relationFK_tbl_restok_tbl_satuan = this.Relations["FK_tbl_restok_tbl_satuan"];
             this.relationFK_tbl_restok_tbl_supplier = this.Relations["FK_tbl_restok_tbl_supplier"];
+            this.relationFK_tbl_harga_tbl_barang2 = this.Relations["FK_tbl_harga_tbl_barang2"];
+            this.relationFK_tbl_stok_tbl_barang2 = this.Relations["FK_tbl_stok_tbl_barang2"];
+            this.relationFK_tbl_restok_tbl_barang1 = this.Relations["FK_tbl_restok_tbl_barang1"];
+            this.relationFK_tbl_barang_tbl_supplier1 = this.Relations["FK_tbl_barang_tbl_supplier1"];
+            this.relationFK_tbl_harga_tbl_barang3 = this.Relations["FK_tbl_harga_tbl_barang3"];
+            this.relationFK_tbl_stok_tbl_barang3 = this.Relations["FK_tbl_stok_tbl_barang3"];
+            this.relationFK_tbl_restok_tbl_barang2 = this.Relations["FK_tbl_restok_tbl_barang2"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -422,6 +491,10 @@ namespace POS {
             base.Tables.Add(this.tabletbl_barang_view);
             this.tabletbl_restok = new tbl_restokDataTable();
             base.Tables.Add(this.tabletbl_restok);
+            this.tabletbl_harga_barang_supplier = new tbl_harga_barang_supplierDataTable();
+            base.Tables.Add(this.tabletbl_harga_barang_supplier);
+            this.tabletbl_stok_barang = new tbl_stok_barangDataTable();
+            base.Tables.Add(this.tabletbl_stok_barang);
             this.relationFK_tbl_harga_tbl_barang = new global::System.Data.DataRelation("FK_tbl_harga_tbl_barang", new global::System.Data.DataColumn[] {
                         this.tabletbl_barang.barang_idColumn}, new global::System.Data.DataColumn[] {
                         this.tabletbl_harga.barang_idColumn}, false);
@@ -466,6 +539,34 @@ namespace POS {
                         this.tabletbl_supplier.supplier_idColumn}, new global::System.Data.DataColumn[] {
                         this.tabletbl_restok.supplier_idColumn}, false);
             this.Relations.Add(this.relationFK_tbl_restok_tbl_supplier);
+            this.relationFK_tbl_harga_tbl_barang2 = new global::System.Data.DataRelation("FK_tbl_harga_tbl_barang2", new global::System.Data.DataColumn[] {
+                        this.tabletbl_harga_barang_supplier.barang_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tabletbl_harga.barang_idColumn}, false);
+            this.Relations.Add(this.relationFK_tbl_harga_tbl_barang2);
+            this.relationFK_tbl_stok_tbl_barang2 = new global::System.Data.DataRelation("FK_tbl_stok_tbl_barang2", new global::System.Data.DataColumn[] {
+                        this.tabletbl_harga_barang_supplier.barang_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tabletbl_stok.barang_idColumn}, false);
+            this.Relations.Add(this.relationFK_tbl_stok_tbl_barang2);
+            this.relationFK_tbl_restok_tbl_barang1 = new global::System.Data.DataRelation("FK_tbl_restok_tbl_barang1", new global::System.Data.DataColumn[] {
+                        this.tabletbl_harga_barang_supplier.barang_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tabletbl_restok.barang_idColumn}, false);
+            this.Relations.Add(this.relationFK_tbl_restok_tbl_barang1);
+            this.relationFK_tbl_barang_tbl_supplier1 = new global::System.Data.DataRelation("FK_tbl_barang_tbl_supplier1", new global::System.Data.DataColumn[] {
+                        this.tabletbl_supplier.supplier_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tabletbl_harga_barang_supplier.supplier_idColumn}, false);
+            this.Relations.Add(this.relationFK_tbl_barang_tbl_supplier1);
+            this.relationFK_tbl_harga_tbl_barang3 = new global::System.Data.DataRelation("FK_tbl_harga_tbl_barang3", new global::System.Data.DataColumn[] {
+                        this.tabletbl_stok_barang.barang_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tabletbl_harga.barang_idColumn}, false);
+            this.Relations.Add(this.relationFK_tbl_harga_tbl_barang3);
+            this.relationFK_tbl_stok_tbl_barang3 = new global::System.Data.DataRelation("FK_tbl_stok_tbl_barang3", new global::System.Data.DataColumn[] {
+                        this.tabletbl_stok_barang.barang_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tabletbl_stok.barang_idColumn}, false);
+            this.Relations.Add(this.relationFK_tbl_stok_tbl_barang3);
+            this.relationFK_tbl_restok_tbl_barang2 = new global::System.Data.DataRelation("FK_tbl_restok_tbl_barang2", new global::System.Data.DataColumn[] {
+                        this.tabletbl_stok_barang.barang_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tabletbl_restok.barang_idColumn}, false);
+            this.Relations.Add(this.relationFK_tbl_restok_tbl_barang2);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -513,6 +614,18 @@ namespace POS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializetbl_restok() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializetbl_harga_barang_supplier() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializetbl_stok_barang() {
             return false;
         }
         
@@ -594,6 +707,12 @@ namespace POS {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void tbl_restokRowChangeEventHandler(object sender, tbl_restokRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void tbl_harga_barang_supplierRowChangeEventHandler(object sender, tbl_harga_barang_supplierRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void tbl_stok_barangRowChangeEventHandler(object sender, tbl_stok_barangRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -3370,6 +3489,713 @@ namespace POS {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class tbl_harga_barang_supplierDataTable : global::System.Data.TypedTableBase<tbl_harga_barang_supplierRow> {
+            
+            private global::System.Data.DataColumn columnharga_id;
+            
+            private global::System.Data.DataColumn columnbarang_id;
+            
+            private global::System.Data.DataColumn columnsupplier_id;
+            
+            private global::System.Data.DataColumn columnharga_model;
+            
+            private global::System.Data.DataColumn columnharga_jual;
+            
+            private global::System.Data.DataColumn columnaktif;
+            
+            private global::System.Data.DataColumn column_default_;
+            
+            private global::System.Data.DataColumn columnketerangan;
+            
+            private global::System.Data.DataColumn columnnama_barang;
+            
+            private global::System.Data.DataColumn columnnama_supplier;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbl_harga_barang_supplierDataTable() {
+                this.TableName = "tbl_harga_barang_supplier";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal tbl_harga_barang_supplierDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected tbl_harga_barang_supplierDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn harga_idColumn {
+                get {
+                    return this.columnharga_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn barang_idColumn {
+                get {
+                    return this.columnbarang_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn supplier_idColumn {
+                get {
+                    return this.columnsupplier_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn harga_modelColumn {
+                get {
+                    return this.columnharga_model;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn harga_jualColumn {
+                get {
+                    return this.columnharga_jual;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn aktifColumn {
+                get {
+                    return this.columnaktif;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn _default_Column {
+                get {
+                    return this.column_default_;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn keteranganColumn {
+                get {
+                    return this.columnketerangan;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn nama_barangColumn {
+                get {
+                    return this.columnnama_barang;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn nama_supplierColumn {
+                get {
+                    return this.columnnama_supplier;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbl_harga_barang_supplierRow this[int index] {
+                get {
+                    return ((tbl_harga_barang_supplierRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event tbl_harga_barang_supplierRowChangeEventHandler tbl_harga_barang_supplierRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event tbl_harga_barang_supplierRowChangeEventHandler tbl_harga_barang_supplierRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event tbl_harga_barang_supplierRowChangeEventHandler tbl_harga_barang_supplierRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event tbl_harga_barang_supplierRowChangeEventHandler tbl_harga_barang_supplierRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Addtbl_harga_barang_supplierRow(tbl_harga_barang_supplierRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbl_harga_barang_supplierRow Addtbl_harga_barang_supplierRow(int harga_id, int barang_id, tbl_supplierRow parenttbl_supplierRowByFK_tbl_barang_tbl_supplier1, decimal harga_model, decimal harga_jual, bool aktif, bool _default_, string keterangan, string nama_barang, string nama_supplier) {
+                tbl_harga_barang_supplierRow rowtbl_harga_barang_supplierRow = ((tbl_harga_barang_supplierRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        harga_id,
+                        barang_id,
+                        null,
+                        harga_model,
+                        harga_jual,
+                        aktif,
+                        _default_,
+                        keterangan,
+                        nama_barang,
+                        nama_supplier};
+                if ((parenttbl_supplierRowByFK_tbl_barang_tbl_supplier1 != null)) {
+                    columnValuesArray[2] = parenttbl_supplierRowByFK_tbl_barang_tbl_supplier1[0];
+                }
+                rowtbl_harga_barang_supplierRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowtbl_harga_barang_supplierRow);
+                return rowtbl_harga_barang_supplierRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbl_harga_barang_supplierRow FindByharga_id(int harga_id) {
+                return ((tbl_harga_barang_supplierRow)(this.Rows.Find(new object[] {
+                            harga_id})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                tbl_harga_barang_supplierDataTable cln = ((tbl_harga_barang_supplierDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new tbl_harga_barang_supplierDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnharga_id = base.Columns["harga_id"];
+                this.columnbarang_id = base.Columns["barang_id"];
+                this.columnsupplier_id = base.Columns["supplier_id"];
+                this.columnharga_model = base.Columns["harga_model"];
+                this.columnharga_jual = base.Columns["harga_jual"];
+                this.columnaktif = base.Columns["aktif"];
+                this.column_default_ = base.Columns["_default_"];
+                this.columnketerangan = base.Columns["keterangan"];
+                this.columnnama_barang = base.Columns["nama_barang"];
+                this.columnnama_supplier = base.Columns["nama_supplier"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnharga_id = new global::System.Data.DataColumn("harga_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnharga_id);
+                this.columnbarang_id = new global::System.Data.DataColumn("barang_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbarang_id);
+                this.columnsupplier_id = new global::System.Data.DataColumn("supplier_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsupplier_id);
+                this.columnharga_model = new global::System.Data.DataColumn("harga_model", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnharga_model);
+                this.columnharga_jual = new global::System.Data.DataColumn("harga_jual", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnharga_jual);
+                this.columnaktif = new global::System.Data.DataColumn("aktif", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnaktif);
+                this.column_default_ = new global::System.Data.DataColumn("_default_", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column_default_);
+                this.columnketerangan = new global::System.Data.DataColumn("keterangan", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnketerangan);
+                this.columnnama_barang = new global::System.Data.DataColumn("nama_barang", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnama_barang);
+                this.columnnama_supplier = new global::System.Data.DataColumn("nama_supplier", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnama_supplier);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnharga_id}, true));
+                this.columnharga_id.AllowDBNull = false;
+                this.columnharga_id.Unique = true;
+                this.columnketerangan.MaxLength = 100;
+                this.columnnama_barang.MaxLength = 50;
+                this.columnnama_supplier.MaxLength = 50;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbl_harga_barang_supplierRow Newtbl_harga_barang_supplierRow() {
+                return ((tbl_harga_barang_supplierRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new tbl_harga_barang_supplierRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(tbl_harga_barang_supplierRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.tbl_harga_barang_supplierRowChanged != null)) {
+                    this.tbl_harga_barang_supplierRowChanged(this, new tbl_harga_barang_supplierRowChangeEvent(((tbl_harga_barang_supplierRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.tbl_harga_barang_supplierRowChanging != null)) {
+                    this.tbl_harga_barang_supplierRowChanging(this, new tbl_harga_barang_supplierRowChangeEvent(((tbl_harga_barang_supplierRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.tbl_harga_barang_supplierRowDeleted != null)) {
+                    this.tbl_harga_barang_supplierRowDeleted(this, new tbl_harga_barang_supplierRowChangeEvent(((tbl_harga_barang_supplierRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.tbl_harga_barang_supplierRowDeleting != null)) {
+                    this.tbl_harga_barang_supplierRowDeleting(this, new tbl_harga_barang_supplierRowChangeEvent(((tbl_harga_barang_supplierRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Removetbl_harga_barang_supplierRow(tbl_harga_barang_supplierRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DatasetPOS ds = new DatasetPOS();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "tbl_harga_barang_supplierDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class tbl_stok_barangDataTable : global::System.Data.TypedTableBase<tbl_stok_barangRow> {
+            
+            private global::System.Data.DataColumn columnstok_id;
+            
+            private global::System.Data.DataColumn columnbarang_id;
+            
+            private global::System.Data.DataColumn columnnama_barang;
+            
+            private global::System.Data.DataColumn columnstok;
+            
+            private global::System.Data.DataColumn columnketerangan;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbl_stok_barangDataTable() {
+                this.TableName = "tbl_stok_barang";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal tbl_stok_barangDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected tbl_stok_barangDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn stok_idColumn {
+                get {
+                    return this.columnstok_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn barang_idColumn {
+                get {
+                    return this.columnbarang_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn nama_barangColumn {
+                get {
+                    return this.columnnama_barang;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn stokColumn {
+                get {
+                    return this.columnstok;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn keteranganColumn {
+                get {
+                    return this.columnketerangan;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbl_stok_barangRow this[int index] {
+                get {
+                    return ((tbl_stok_barangRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event tbl_stok_barangRowChangeEventHandler tbl_stok_barangRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event tbl_stok_barangRowChangeEventHandler tbl_stok_barangRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event tbl_stok_barangRowChangeEventHandler tbl_stok_barangRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event tbl_stok_barangRowChangeEventHandler tbl_stok_barangRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Addtbl_stok_barangRow(tbl_stok_barangRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbl_stok_barangRow Addtbl_stok_barangRow(int stok_id, int barang_id, string nama_barang, int stok, string keterangan) {
+                tbl_stok_barangRow rowtbl_stok_barangRow = ((tbl_stok_barangRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        stok_id,
+                        barang_id,
+                        nama_barang,
+                        stok,
+                        keterangan};
+                rowtbl_stok_barangRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowtbl_stok_barangRow);
+                return rowtbl_stok_barangRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbl_stok_barangRow FindBystok_id(int stok_id) {
+                return ((tbl_stok_barangRow)(this.Rows.Find(new object[] {
+                            stok_id})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                tbl_stok_barangDataTable cln = ((tbl_stok_barangDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new tbl_stok_barangDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnstok_id = base.Columns["stok_id"];
+                this.columnbarang_id = base.Columns["barang_id"];
+                this.columnnama_barang = base.Columns["nama_barang"];
+                this.columnstok = base.Columns["stok"];
+                this.columnketerangan = base.Columns["keterangan"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnstok_id = new global::System.Data.DataColumn("stok_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstok_id);
+                this.columnbarang_id = new global::System.Data.DataColumn("barang_id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbarang_id);
+                this.columnnama_barang = new global::System.Data.DataColumn("nama_barang", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnama_barang);
+                this.columnstok = new global::System.Data.DataColumn("stok", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstok);
+                this.columnketerangan = new global::System.Data.DataColumn("keterangan", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnketerangan);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnstok_id}, true));
+                this.columnstok_id.AllowDBNull = false;
+                this.columnstok_id.Unique = true;
+                this.columnbarang_id.AllowDBNull = false;
+                this.columnnama_barang.MaxLength = 50;
+                this.columnketerangan.MaxLength = 100;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbl_stok_barangRow Newtbl_stok_barangRow() {
+                return ((tbl_stok_barangRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new tbl_stok_barangRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(tbl_stok_barangRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.tbl_stok_barangRowChanged != null)) {
+                    this.tbl_stok_barangRowChanged(this, new tbl_stok_barangRowChangeEvent(((tbl_stok_barangRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.tbl_stok_barangRowChanging != null)) {
+                    this.tbl_stok_barangRowChanging(this, new tbl_stok_barangRowChangeEvent(((tbl_stok_barangRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.tbl_stok_barangRowDeleted != null)) {
+                    this.tbl_stok_barangRowDeleted(this, new tbl_stok_barangRowChangeEvent(((tbl_stok_barangRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.tbl_stok_barangRowDeleting != null)) {
+                    this.tbl_stok_barangRowDeleting(this, new tbl_stok_barangRowChangeEvent(((tbl_stok_barangRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Removetbl_stok_barangRow(tbl_stok_barangRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DatasetPOS ds = new DatasetPOS();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "tbl_stok_barangDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class tbl_barangRow : global::System.Data.DataRow {
@@ -3857,6 +4683,28 @@ namespace POS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbl_harga_barang_supplierRow tbl_harga_barang_supplierRow {
+                get {
+                    return ((tbl_harga_barang_supplierRow)(this.GetParentRow(this.Table.ParentRelations["FK_tbl_harga_tbl_barang2"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_tbl_harga_tbl_barang2"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbl_stok_barangRow tbl_stok_barangRow {
+                get {
+                    return ((tbl_stok_barangRow)(this.GetParentRow(this.Table.ParentRelations["FK_tbl_harga_tbl_barang3"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_tbl_harga_tbl_barang3"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Isbarang_idNull() {
                 return this.IsNull(this.tabletbl_harga.barang_idColumn);
             }
@@ -4285,6 +5133,28 @@ namespace POS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbl_harga_barang_supplierRow tbl_harga_barang_supplierRow {
+                get {
+                    return ((tbl_harga_barang_supplierRow)(this.GetParentRow(this.Table.ParentRelations["FK_tbl_stok_tbl_barang2"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_tbl_stok_tbl_barang2"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbl_stok_barangRow tbl_stok_barangRow {
+                get {
+                    return ((tbl_stok_barangRow)(this.GetParentRow(this.Table.ParentRelations["FK_tbl_stok_tbl_barang3"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_tbl_stok_tbl_barang3"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsstokNull() {
                 return this.IsNull(this.tabletbl_stok.stokColumn);
             }
@@ -4531,6 +5401,17 @@ namespace POS {
                 }
                 else {
                     return ((tbl_restokRow[])(base.GetChildRows(this.Table.ChildRelations["FK_tbl_restok_tbl_supplier"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbl_harga_barang_supplierRow[] Gettbl_harga_barang_supplierRows() {
+                if ((this.Table.ChildRelations["FK_tbl_barang_tbl_supplier1"] == null)) {
+                    return new tbl_harga_barang_supplierRow[0];
+                }
+                else {
+                    return ((tbl_harga_barang_supplierRow[])(base.GetChildRows(this.Table.ChildRelations["FK_tbl_barang_tbl_supplier1"])));
                 }
             }
         }
@@ -5019,6 +5900,28 @@ namespace POS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbl_harga_barang_supplierRow tbl_harga_barang_supplierRow {
+                get {
+                    return ((tbl_harga_barang_supplierRow)(this.GetParentRow(this.Table.ParentRelations["FK_tbl_restok_tbl_barang1"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_tbl_restok_tbl_barang1"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbl_stok_barangRow tbl_stok_barangRow {
+                get {
+                    return ((tbl_stok_barangRow)(this.GetParentRow(this.Table.ParentRelations["FK_tbl_restok_tbl_barang2"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_tbl_restok_tbl_barang2"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Istanggal_restokNull() {
                 return this.IsNull(this.tabletbl_restok.tanggal_restokColumn);
             }
@@ -5087,6 +5990,488 @@ namespace POS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetketeranganNull() {
                 this[this.tabletbl_restok.keteranganColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class tbl_harga_barang_supplierRow : global::System.Data.DataRow {
+            
+            private tbl_harga_barang_supplierDataTable tabletbl_harga_barang_supplier;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal tbl_harga_barang_supplierRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tabletbl_harga_barang_supplier = ((tbl_harga_barang_supplierDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int harga_id {
+                get {
+                    return ((int)(this[this.tabletbl_harga_barang_supplier.harga_idColumn]));
+                }
+                set {
+                    this[this.tabletbl_harga_barang_supplier.harga_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int barang_id {
+                get {
+                    try {
+                        return ((int)(this[this.tabletbl_harga_barang_supplier.barang_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'barang_id\' in table \'tbl_harga_barang_supplier\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletbl_harga_barang_supplier.barang_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int supplier_id {
+                get {
+                    try {
+                        return ((int)(this[this.tabletbl_harga_barang_supplier.supplier_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'supplier_id\' in table \'tbl_harga_barang_supplier\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tabletbl_harga_barang_supplier.supplier_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal harga_model {
+                get {
+                    try {
+                        return ((decimal)(this[this.tabletbl_harga_barang_supplier.harga_modelColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'harga_model\' in table \'tbl_harga_barang_supplier\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tabletbl_harga_barang_supplier.harga_modelColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal harga_jual {
+                get {
+                    try {
+                        return ((decimal)(this[this.tabletbl_harga_barang_supplier.harga_jualColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'harga_jual\' in table \'tbl_harga_barang_supplier\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tabletbl_harga_barang_supplier.harga_jualColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool aktif {
+                get {
+                    try {
+                        return ((bool)(this[this.tabletbl_harga_barang_supplier.aktifColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'aktif\' in table \'tbl_harga_barang_supplier\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletbl_harga_barang_supplier.aktifColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool _default_ {
+                get {
+                    try {
+                        return ((bool)(this[this.tabletbl_harga_barang_supplier._default_Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'_default_\' in table \'tbl_harga_barang_supplier\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletbl_harga_barang_supplier._default_Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string keterangan {
+                get {
+                    try {
+                        return ((string)(this[this.tabletbl_harga_barang_supplier.keteranganColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'keterangan\' in table \'tbl_harga_barang_supplier\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tabletbl_harga_barang_supplier.keteranganColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string nama_barang {
+                get {
+                    try {
+                        return ((string)(this[this.tabletbl_harga_barang_supplier.nama_barangColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'nama_barang\' in table \'tbl_harga_barang_supplier\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tabletbl_harga_barang_supplier.nama_barangColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string nama_supplier {
+                get {
+                    try {
+                        return ((string)(this[this.tabletbl_harga_barang_supplier.nama_supplierColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'nama_supplier\' in table \'tbl_harga_barang_supplier\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tabletbl_harga_barang_supplier.nama_supplierColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbl_supplierRow tbl_supplierRow {
+                get {
+                    return ((tbl_supplierRow)(this.GetParentRow(this.Table.ParentRelations["FK_tbl_barang_tbl_supplier1"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_tbl_barang_tbl_supplier1"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isbarang_idNull() {
+                return this.IsNull(this.tabletbl_harga_barang_supplier.barang_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setbarang_idNull() {
+                this[this.tabletbl_harga_barang_supplier.barang_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Issupplier_idNull() {
+                return this.IsNull(this.tabletbl_harga_barang_supplier.supplier_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setsupplier_idNull() {
+                this[this.tabletbl_harga_barang_supplier.supplier_idColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isharga_modelNull() {
+                return this.IsNull(this.tabletbl_harga_barang_supplier.harga_modelColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setharga_modelNull() {
+                this[this.tabletbl_harga_barang_supplier.harga_modelColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isharga_jualNull() {
+                return this.IsNull(this.tabletbl_harga_barang_supplier.harga_jualColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setharga_jualNull() {
+                this[this.tabletbl_harga_barang_supplier.harga_jualColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsaktifNull() {
+                return this.IsNull(this.tabletbl_harga_barang_supplier.aktifColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetaktifNull() {
+                this[this.tabletbl_harga_barang_supplier.aktifColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is_default_Null() {
+                return this.IsNull(this.tabletbl_harga_barang_supplier._default_Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set_default_Null() {
+                this[this.tabletbl_harga_barang_supplier._default_Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsketeranganNull() {
+                return this.IsNull(this.tabletbl_harga_barang_supplier.keteranganColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetketeranganNull() {
+                this[this.tabletbl_harga_barang_supplier.keteranganColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isnama_barangNull() {
+                return this.IsNull(this.tabletbl_harga_barang_supplier.nama_barangColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setnama_barangNull() {
+                this[this.tabletbl_harga_barang_supplier.nama_barangColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isnama_supplierNull() {
+                return this.IsNull(this.tabletbl_harga_barang_supplier.nama_supplierColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setnama_supplierNull() {
+                this[this.tabletbl_harga_barang_supplier.nama_supplierColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbl_hargaRow[] Gettbl_hargaRows() {
+                if ((this.Table.ChildRelations["FK_tbl_harga_tbl_barang2"] == null)) {
+                    return new tbl_hargaRow[0];
+                }
+                else {
+                    return ((tbl_hargaRow[])(base.GetChildRows(this.Table.ChildRelations["FK_tbl_harga_tbl_barang2"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbl_stokRow[] Gettbl_stokRows() {
+                if ((this.Table.ChildRelations["FK_tbl_stok_tbl_barang2"] == null)) {
+                    return new tbl_stokRow[0];
+                }
+                else {
+                    return ((tbl_stokRow[])(base.GetChildRows(this.Table.ChildRelations["FK_tbl_stok_tbl_barang2"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbl_restokRow[] Gettbl_restokRows() {
+                if ((this.Table.ChildRelations["FK_tbl_restok_tbl_barang1"] == null)) {
+                    return new tbl_restokRow[0];
+                }
+                else {
+                    return ((tbl_restokRow[])(base.GetChildRows(this.Table.ChildRelations["FK_tbl_restok_tbl_barang1"])));
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class tbl_stok_barangRow : global::System.Data.DataRow {
+            
+            private tbl_stok_barangDataTable tabletbl_stok_barang;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal tbl_stok_barangRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tabletbl_stok_barang = ((tbl_stok_barangDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int stok_id {
+                get {
+                    return ((int)(this[this.tabletbl_stok_barang.stok_idColumn]));
+                }
+                set {
+                    this[this.tabletbl_stok_barang.stok_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int barang_id {
+                get {
+                    return ((int)(this[this.tabletbl_stok_barang.barang_idColumn]));
+                }
+                set {
+                    this[this.tabletbl_stok_barang.barang_idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string nama_barang {
+                get {
+                    try {
+                        return ((string)(this[this.tabletbl_stok_barang.nama_barangColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'nama_barang\' in table \'tbl_stok_barang\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletbl_stok_barang.nama_barangColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int stok {
+                get {
+                    try {
+                        return ((int)(this[this.tabletbl_stok_barang.stokColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'stok\' in table \'tbl_stok_barang\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletbl_stok_barang.stokColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string keterangan {
+                get {
+                    try {
+                        return ((string)(this[this.tabletbl_stok_barang.keteranganColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'keterangan\' in table \'tbl_stok_barang\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletbl_stok_barang.keteranganColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isnama_barangNull() {
+                return this.IsNull(this.tabletbl_stok_barang.nama_barangColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setnama_barangNull() {
+                this[this.tabletbl_stok_barang.nama_barangColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsstokNull() {
+                return this.IsNull(this.tabletbl_stok_barang.stokColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetstokNull() {
+                this[this.tabletbl_stok_barang.stokColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsketeranganNull() {
+                return this.IsNull(this.tabletbl_stok_barang.keteranganColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetketeranganNull() {
+                this[this.tabletbl_stok_barang.keteranganColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbl_hargaRow[] Gettbl_hargaRows() {
+                if ((this.Table.ChildRelations["FK_tbl_harga_tbl_barang3"] == null)) {
+                    return new tbl_hargaRow[0];
+                }
+                else {
+                    return ((tbl_hargaRow[])(base.GetChildRows(this.Table.ChildRelations["FK_tbl_harga_tbl_barang3"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbl_stokRow[] Gettbl_stokRows() {
+                if ((this.Table.ChildRelations["FK_tbl_stok_tbl_barang3"] == null)) {
+                    return new tbl_stokRow[0];
+                }
+                else {
+                    return ((tbl_stokRow[])(base.GetChildRows(this.Table.ChildRelations["FK_tbl_stok_tbl_barang3"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbl_restokRow[] Gettbl_restokRows() {
+                if ((this.Table.ChildRelations["FK_tbl_restok_tbl_barang2"] == null)) {
+                    return new tbl_restokRow[0];
+                }
+                else {
+                    return ((tbl_restokRow[])(base.GetChildRows(this.Table.ChildRelations["FK_tbl_restok_tbl_barang2"])));
+                }
             }
         }
         
@@ -5348,6 +6733,74 @@ namespace POS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public tbl_restokRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class tbl_harga_barang_supplierRowChangeEvent : global::System.EventArgs {
+            
+            private tbl_harga_barang_supplierRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbl_harga_barang_supplierRowChangeEvent(tbl_harga_barang_supplierRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbl_harga_barang_supplierRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class tbl_stok_barangRowChangeEvent : global::System.EventArgs {
+            
+            private tbl_stok_barangRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbl_stok_barangRowChangeEvent(tbl_stok_barangRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbl_stok_barangRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -6283,7 +7736,7 @@ SELECT harga_id, barang_id, supplier_id, harga_model, harga_jual, aktif, _defaul
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[6];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        harga_id, barang_id, supplier_id, harga_model, harga_jual, aktif, _" +
@@ -6296,14 +7749,37 @@ SELECT harga_id, barang_id, supplier_id, harga_model, harga_jual, aktif, _defaul
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@barang_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "barang_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "UPDATE       tbl_harga\r\nSET                supplier_id = @supplier_id, harga_mode" +
+            this._commandCollection[2].CommandText = "DELETE FROM [tbl_harga] WHERE harga_id = @harga_id";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@harga_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "harga_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "UPDATE tbl_harga SET _default_ = 0 where barang_id = @barang_id";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@barang_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "barang_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "UPDATE       tbl_harga\r\nSET                supplier_id = @supplier_id, harga_mode" +
                 "l = @harga_model, harga_jual = @harga_jual\r\nWHERE        (barang_id = @barang_id" +
                 ")";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@supplier_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "supplier_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@harga_model", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "harga_model", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@harga_jual", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "harga_jual", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@barang_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "barang_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@supplier_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "supplier_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@harga_model", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "harga_model", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@harga_jual", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "harga_jual", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@barang_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "barang_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = "UPDATE [tbl_harga] SET [supplier_id] = @supplier_id, [harga_model] = @harga_model" +
+                ", [harga_jual] = @harga_jual, [aktif] = @aktif, [_default_] = @_default_, [keter" +
+                "angan] = @keterangan WHERE harga_id = @harga_id";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@supplier_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "supplier_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@harga_model", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "harga_model", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@harga_jual", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 0, 0, "harga_jual", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@aktif", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "aktif", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@_default_", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "_default_", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@keterangan", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "keterangan", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@harga_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "harga_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6678,9 +8154,62 @@ SELECT harga_id, barang_id, supplier_id, harga_model, harga_jual, aktif, _defaul
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
+        public virtual int DeleteQueryByHargaID(int harga_id) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            command.Parameters[0].Value = ((int)(harga_id));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int Update_Default_ByBarangID(global::System.Nullable<int> barang_id) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            if ((barang_id.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(barang_id.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int UpdateQueryByBarangID(global::System.Nullable<int> supplier_id, global::System.Nullable<decimal> harga_model, global::System.Nullable<decimal> harga_jual, global::System.Nullable<int> barang_id) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
             if ((supplier_id.HasValue == true)) {
                 command.Parameters[0].Value = ((int)(supplier_id.Value));
             }
@@ -6705,6 +8234,66 @@ SELECT harga_id, barang_id, supplier_id, harga_model, harga_jual, aktif, _defaul
             else {
                 command.Parameters[3].Value = global::System.DBNull.Value;
             }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateQueryByHargaID(global::System.Nullable<int> supplier_id, global::System.Nullable<decimal> harga_model, global::System.Nullable<decimal> harga_jual, global::System.Nullable<bool> aktif, global::System.Nullable<bool> _default_, string keterangan, int harga_id) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
+            if ((supplier_id.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(supplier_id.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((harga_model.HasValue == true)) {
+                command.Parameters[1].Value = ((decimal)(harga_model.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((harga_jual.HasValue == true)) {
+                command.Parameters[2].Value = ((decimal)(harga_jual.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((aktif.HasValue == true)) {
+                command.Parameters[3].Value = ((bool)(aktif.Value));
+            }
+            else {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((_default_.HasValue == true)) {
+                command.Parameters[4].Value = ((bool)(_default_.Value));
+            }
+            else {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((keterangan == null)) {
+                command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[5].Value = ((string)(keterangan));
+            }
+            command.Parameters[6].Value = ((int)(harga_id));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -8226,12 +9815,31 @@ SELECT supplier_id, nama_supplier, alamat_supplier, email_supplier, telepon_supp
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        supplier_id, nama_supplier, alamat_supplier, email_supplier, telepo" +
                 "n_supplier, aktif, keterangan\r\nFROM            tbl_supplier";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "DELETE FROM [tbl_supplier] WHERE supplier_id = @supplier_id";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@supplier_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "supplier_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "UPDATE [tbl_supplier] SET [nama_supplier] = @nama_supplier, [alamat_supplier] = @" +
+                "alamat_supplier, [email_supplier] = @email_supplier, [telepon_supplier] = @telep" +
+                "on_supplier, [aktif] = @aktif, [keterangan] = @keterangan WHERE supplier_id = @s" +
+                "upplier_id";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nama_supplier", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "nama_supplier", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@alamat_supplier", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "alamat_supplier", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@email_supplier", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "email_supplier", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@telepon_supplier", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "telepon_supplier", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@aktif", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "aktif", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@keterangan", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "keterangan", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@supplier_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "supplier_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8528,6 +10136,90 @@ SELECT supplier_id, nama_supplier, alamat_supplier, email_supplier, telepon_supp
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(string nama_supplier, string alamat_supplier, string email_supplier, string telepon_supplier, global::System.Nullable<bool> aktif, string keterangan, int Original_supplier_id, string Original_nama_supplier, string Original_alamat_supplier, string Original_email_supplier, string Original_telepon_supplier, global::System.Nullable<bool> Original_aktif, string Original_keterangan) {
             return this.Update(Original_supplier_id, nama_supplier, alamat_supplier, email_supplier, telepon_supplier, aktif, keterangan, Original_supplier_id, Original_nama_supplier, Original_alamat_supplier, Original_email_supplier, Original_telepon_supplier, Original_aktif, Original_keterangan);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
+        public virtual int DeleteQueryBySupplierID(int supplier_id) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            command.Parameters[0].Value = ((int)(supplier_id));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateQueryBySupplierID(string nama_supplier, string alamat_supplier, string email_supplier, string telepon_supplier, global::System.Nullable<bool> aktif, string keterangan, int supplier_id) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            if ((nama_supplier == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((string)(nama_supplier));
+            }
+            if ((alamat_supplier == null)) {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[1].Value = ((string)(alamat_supplier));
+            }
+            if ((email_supplier == null)) {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[2].Value = ((string)(email_supplier));
+            }
+            if ((telepon_supplier == null)) {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[3].Value = ((string)(telepon_supplier));
+            }
+            if ((aktif.HasValue == true)) {
+                command.Parameters[4].Value = ((bool)(aktif.Value));
+            }
+            else {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((keterangan == null)) {
+                command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[5].Value = ((string)(keterangan));
+            }
+            command.Parameters[6].Value = ((int)(supplier_id));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     
@@ -9251,6 +10943,337 @@ SELECT restok_id, tanggal_restok, barang_id, supplier_id, satuan_id, qty, ketera
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(global::System.Nullable<global::System.DateTime> tanggal_restok, global::System.Nullable<int> barang_id, global::System.Nullable<int> supplier_id, global::System.Nullable<int> satuan_id, global::System.Nullable<int> qty, string keterangan, long Original_restok_id, global::System.Nullable<global::System.DateTime> Original_tanggal_restok, global::System.Nullable<int> Original_barang_id, global::System.Nullable<int> Original_supplier_id, global::System.Nullable<int> Original_satuan_id, global::System.Nullable<int> Original_qty, string Original_keterangan) {
             return this.Update(tanggal_restok, barang_id, supplier_id, satuan_id, qty, keterangan, Original_restok_id, Original_tanggal_restok, Original_barang_id, Original_supplier_id, Original_satuan_id, Original_qty, Original_keterangan, Original_restok_id);
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class tbl_harga_barang_supplierTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public tbl_harga_barang_supplierTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "tbl_harga_barang_supplier";
+            tableMapping.ColumnMappings.Add("harga_id", "harga_id");
+            tableMapping.ColumnMappings.Add("barang_id", "barang_id");
+            tableMapping.ColumnMappings.Add("supplier_id", "supplier_id");
+            tableMapping.ColumnMappings.Add("harga_model", "harga_model");
+            tableMapping.ColumnMappings.Add("harga_jual", "harga_jual");
+            tableMapping.ColumnMappings.Add("aktif", "aktif");
+            tableMapping.ColumnMappings.Add("_default_", "_default_");
+            tableMapping.ColumnMappings.Add("keterangan", "keterangan");
+            tableMapping.ColumnMappings.Add("nama_barang", "nama_barang");
+            tableMapping.ColumnMappings.Add("nama_supplier", "nama_supplier");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::POS.Properties.Settings.Default.DB_POSConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT        tbl_harga.harga_id, tbl_harga.barang_id, tbl_harga.supplier_id, tbl_harga.harga_model, tbl_harga.harga_jual, tbl_harga.aktif, tbl_harga._default_, tbl_harga.keterangan, tbl_barang.nama_barang, 
+                         tbl_supplier.nama_supplier
+FROM            tbl_harga LEFT JOIN
+                         tbl_barang ON tbl_harga.barang_id = tbl_barang.barang_id LEFT JOIN
+                         tbl_supplier ON tbl_harga.supplier_id = tbl_supplier.supplier_id AND tbl_barang.supplier_id = tbl_supplier.supplier_id";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DatasetPOS.tbl_harga_barang_supplierDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class tbl_stok_barangTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public tbl_stok_barangTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "tbl_stok_barang";
+            tableMapping.ColumnMappings.Add("stok_id", "stok_id");
+            tableMapping.ColumnMappings.Add("barang_id", "barang_id");
+            tableMapping.ColumnMappings.Add("nama_barang", "nama_barang");
+            tableMapping.ColumnMappings.Add("stok", "stok");
+            tableMapping.ColumnMappings.Add("keterangan", "keterangan");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::POS.Properties.Settings.Default.DB_POSConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT        tbl_stok.stok_id, tbl_stok.barang_id, tbl_barang.nama_barang, tbl_s" +
+                "tok.stok, tbl_stok.keterangan\r\nFROM            tbl_stok INNER JOIN\r\n            " +
+                "             tbl_barang ON tbl_stok.barang_id = tbl_barang.barang_id";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DatasetPOS.tbl_stok_barangDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
     }
     

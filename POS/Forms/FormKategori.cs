@@ -91,18 +91,24 @@ namespace POS.Forms
         {
             try
             {
-                
                 if (txtKategoriID.Text == "")
                 {
-                    Int32 kategoriID = incrementLastIDFromTable(datasetPOS1.tbl_kategori,"kategori_id");
-                    adapterKategori.Insert(kategoriID, cmbKategori.Text, txtKeterangan.Text, chkAktif.Checked);
-                    DataRow row = datasetPOS1.tbl_kategori.NewRow();
-                    row["kategori_id"] = kategoriID;
-                    row["kategori"] = cmbKategori.Text;
-                    row["keterangan"] = txtKeterangan.Text;
-                    row["aktif"] = (Boolean)chkAktif.Checked;
-                    datasetPOS1.tbl_kategori.Rows.Add(row);
-                    tsbReset_Click(sender, e);
+                    if (cmbKategori.Text != "")
+                    {
+                        Int32 kategoriID = incrementLastIDFromTable(datasetPOS1.tbl_kategori, "kategori_id");
+                        adapterKategori.Insert(kategoriID, cmbKategori.Text, txtKeterangan.Text, chkAktif.Checked);
+                        DataRow row = datasetPOS1.tbl_kategori.NewRow();
+                        row["kategori_id"] = kategoriID;
+                        row["kategori"] = cmbKategori.Text;
+                        row["keterangan"] = txtKeterangan.Text;
+                        row["aktif"] = (Boolean)chkAktif.Checked;
+                        datasetPOS1.tbl_kategori.Rows.Add(row);
+                        tsbReset_Click(sender, e);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Kategori Tidak Boleh Kosong!", "Perhatian", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
                 else
                 {

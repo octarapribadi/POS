@@ -17,7 +17,6 @@ D:\Program Files\GitHub\POS\POS\obj\Debug\POS.exe
 D:\Program Files\GitHub\POS\POS\obj\Debug\POS.pdb
 D:\Program Files\GitHub\POS\POS\obj\Debug\POS.csprojResolveAssemblyReference.cache
 D:\belajar\github\POS\POS\obj\Debug\POS.Forms.FormBarang.resources
-D:\belajar\github\POS\POS\obj\Debug\POS.csprojResolveAssemblyReference.cache
 D:\belajar\github\POS - Copy\POS\bin\Debug\POS.exe.config
 D:\belajar\github\POS - Copy\POS\obj\Debug\POS.exe
 D:\belajar\github\POS - Copy\POS\obj\Debug\POS.pdb
@@ -34,3 +33,10 @@ D:\Program Files\GitHub\POS\POS\bin\Debug\POS.exe.manifest
 D:\Program Files\GitHub\POS\POS\bin\Debug\POS.application
 D:\Program Files\GitHub\POS\POS\obj\Debug\POS.exe.manifest
 D:\Program Files\GitHub\POS\POS\obj\Debug\POS.application
+D:\belajar\github\POS\POS\bin\Debug\POS.exe.manifest
+D:\belajar\github\POS\POS\bin\Debug\POS.application
+D:\belajar\github\POS\POS\obj\Debug\POS.Forms.FormSupplier.resources
+D:\belajar\github\POS\POS\obj\Debug\POS.exe.manifest
+D:\belajar\github\POS\POS\obj\Debug\POS.application
+D:\belajar\github\POS\POS\obj\Debug\POS.Forms.FormHarga.resources
+D:\belajar\github\POS\POS\obj\Debug\POS.Forms.FormStok.resources
