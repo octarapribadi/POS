@@ -10402,7 +10402,7 @@ FROM            tbl_barang LEFT JOIN
                          tbl_kategori ON tbl_barang.kategori_id = tbl_kategori.kategori_id LEFT JOIN
                          tbl_satuan ON tbl_barang.satuan_id = tbl_satuan.satuan_id LEFT JOIN
                          tbl_stok ON tbl_barang.barang_id = tbl_stok.barang_id LEFT JOIN
-                         tbl_supplier ON tbl_barang.supplier_id = tbl_supplier.supplier_id
+                         tbl_supplier ON tbl_harga.supplier_id = tbl_supplier.supplier_id
 WHERE tbl_harga._default_ = 1";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
         }

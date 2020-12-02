@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStok));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
@@ -50,14 +50,14 @@
             this.tsbCari = new System.Windows.Forms.ToolStripButton();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.bsStok = new System.Windows.Forms.BindingSource(this.components);
-            this.datasetPOS = new POS.DatasetPOS();
-            this.adapterStokBarang = new POS.DatasetPOSTableAdapters.tbl_stok_barangTableAdapter();
             this.stokidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.barangidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.namabarangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stokDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.keteranganDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsStok = new System.Windows.Forms.BindingSource(this.components);
+            this.datasetPOS = new POS.DatasetPOS();
+            this.adapterStokBarang = new POS.DatasetPOSTableAdapters.tbl_stok_barangTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -71,6 +71,7 @@
             // bindingNavigator1
             // 
             this.bindingNavigator1.AddNewItem = null;
+            this.bindingNavigator1.BindingSource = this.bsStok;
             this.bindingNavigator1.CountItem = this.toolStripLabel1;
             this.bindingNavigator1.DeleteItem = null;
             this.bindingNavigator1.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -239,8 +240,8 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -259,21 +260,6 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(645, 512);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // bsStok
-            // 
-            this.bsStok.DataMember = "tbl_stok_barang";
-            this.bsStok.DataSource = this.datasetPOS;
-            // 
-            // datasetPOS
-            // 
-            this.datasetPOS.DataSetName = "DatasetPOS";
-            this.datasetPOS.Locale = new System.Globalization.CultureInfo("en-US");
-            this.datasetPOS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // adapterStokBarang
-            // 
-            this.adapterStokBarang.ClearBeforeFill = true;
             // 
             // stokidDataGridViewTextBoxColumn
             // 
@@ -314,6 +300,21 @@
             this.keteranganDataGridViewTextBoxColumn.Name = "keteranganDataGridViewTextBoxColumn";
             this.keteranganDataGridViewTextBoxColumn.ReadOnly = true;
             this.keteranganDataGridViewTextBoxColumn.Width = 133;
+            // 
+            // bsStok
+            // 
+            this.bsStok.DataMember = "tbl_stok_barang";
+            this.bsStok.DataSource = this.datasetPOS;
+            // 
+            // datasetPOS
+            // 
+            this.datasetPOS.DataSetName = "DatasetPOS";
+            this.datasetPOS.Locale = new System.Globalization.CultureInfo("en-US");
+            this.datasetPOS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // adapterStokBarang
+            // 
+            this.adapterStokBarang.ClearBeforeFill = true;
             // 
             // FormStok
             // 
