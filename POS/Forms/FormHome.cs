@@ -71,5 +71,21 @@ namespace POS.Forms
             frmStok.MdiParent = this;
             frmStok.Show();
         }
+
+        private void bARANGMASUKToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormRestok frmRestok = null;
+            frmRestok = new FormRestok();
+            frmRestok.MdiParent = this;
+            frmRestok.Show();
+        }
+
+        private void pENJUALANToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPenjualan frmPenjualan = null;
+            frmPenjualan = new FormPenjualan();
+            frmPenjualan.MdiParent = this;
+            frmPenjualan.Show();
+        }
     }
 }

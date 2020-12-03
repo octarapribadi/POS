@@ -98,9 +98,18 @@ namespace POS.Forms
 
         private Int32 incrementLastIDFromTable(DataTable table, String ID)
         {
-            Int32 x = table.Rows.Count == 0 ? 1 : (Int32)table.Rows[table.Rows.Count - 1][ID] + 1;
-            //MessageBox.Show(x.ToString());
-            return x;
+            if (table.Rows.Count == 0)
+                return 1;
+            else
+            {
+                Int32 max = 0;
+                foreach (DataRow row in table.Rows)
+                {
+                    Int32 data = (Int32)row[ID];
+                    max = Math.Max(data, max);
+                }
+                return max + 1;
+            }
         }
 
         private void tsbReset_Click(object sender, EventArgs e)

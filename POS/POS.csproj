@@ -79,6 +79,7 @@
   <ItemGroup>
     <Compile Include="DatasetPOS.cs">
       <DependentUpon>DatasetPOS.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="DatasetPOS.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -109,6 +110,18 @@
     <Compile Include="Forms\FormKategori.Designer.cs">
       <DependentUpon>FormKategori.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormPenjualan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormPenjualan.Designer.cs">
+      <DependentUpon>FormPenjualan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormRestok.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormRestok.Designer.cs">
+      <DependentUpon>FormRestok.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormStok.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +149,12 @@
     <EmbeddedResource Include="Forms\FormKategori.resx">
       <DependentUpon>FormKategori.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormPenjualan.resx">
+      <DependentUpon>FormPenjualan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormRestok.resx">
+      <DependentUpon>FormRestok.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormStok.resx">
       <DependentUpon>FormStok.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,14 +173,17 @@
     </Compile>
     <None Include="DatasetPOS.xsc">
       <DependentUpon>DatasetPOS.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="DatasetPOS.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>DatasetPOS.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="DatasetPOS.xss">
       <DependentUpon>DatasetPOS.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="POS_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
@@ -242,6 +264,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cart_white.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

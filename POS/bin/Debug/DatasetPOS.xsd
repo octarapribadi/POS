@@ -1013,16 +1013,7 @@ SELECT lstpenjualan_id, penjualan_id, barang_id, quantity, harga_jual, diskon, k
               <Mapping SourceColumn="diskon" DataSetColumn="diskon" />
               <Mapping SourceColumn="keterangan" DataSetColumn="keterangan" />
             </Mappings>
-            <Sources>
-              <DbSource ConnectionRef="DB_POSConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="getMaxListPenjualanID" Modifier="Public" Name="getMaxListPenjualanID" QueryType="Scalar" ScalarCallRetval="System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="getMaxListPenjualanID">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT MAX(lstpenjualan_id) FROM tbl_lstpenjualan</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </Sources>
+            <Sources />
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tbl_penjualanTableAdapter" GeneratorDataComponentClassName="tbl_penjualanTableAdapter" Name="tbl_penjualan" UserDataComponentName="tbl_penjualanTableAdapter">
             <MainSource>
