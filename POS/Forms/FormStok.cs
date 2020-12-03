@@ -36,7 +36,37 @@ namespace POS.Forms
 
         private void FormStok_Load(object sender, EventArgs e)
         {
-            adapterStokBarang.Fill(datasetPOS.tbl_stok_barang);
+            try
+            {
+                adapterStokBarang.Fill(datasetPOS.tbl_stok_barang);
+                adapterBarang.Fill(datasetPOS.tbl_barang);
+            }
+            catch (Exception ex)
+            {
+                konfigurasi.showError(ex);
+            }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void tsbSimpan_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Int32 stokID;
+                DataRowView rowView = (DataRowView)bsStok.Current;
+                stokID = Convert.ToInt32(rowView["stok_id"]);
+                rowView.Row["stok"] = numStok.Value;
+                rowView.Row["keterangan"] = txtKeterangan.Text;
+                adapterStokBarang.UpdateQueryByStokID(Convert.ToInt32(numStok.Value), txtKeterangan.Text, stokID);
+            }
+            catch(Exception ex)
+            {
+                konfigurasi.showError(ex);
+            }
         }
     }
 }

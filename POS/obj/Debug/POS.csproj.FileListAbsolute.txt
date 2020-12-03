@@ -42,3 +42,4 @@ D:\belajar\github\POS\POS\obj\Debug\POS.Forms.FormHarga.resources
 D:\belajar\github\POS\POS\obj\Debug\POS.Forms.FormStok.resources
 D:\Program Files\GitHub\POS\POS\obj\Debug\POS.Forms.FormHarga.resources
 D:\Program Files\GitHub\POS\POS\obj\Debug\POS.Forms.FormStok.resources
+D:\belajar\github\POS\POS\obj\Debug\POS.csprojResolveAssemblyReference.cache

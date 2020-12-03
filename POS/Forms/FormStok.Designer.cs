@@ -30,8 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStok));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bsStok = new System.Windows.Forms.BindingSource(this.components);
+            this.datasetPOS = new POS.DatasetPOS();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -55,17 +57,28 @@
             this.namabarangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stokDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.keteranganDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bsStok = new System.Windows.Forms.BindingSource(this.components);
-            this.datasetPOS = new POS.DatasetPOS();
             this.adapterStokBarang = new POS.DatasetPOSTableAdapters.tbl_stok_barangTableAdapter();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtStokID = new System.Windows.Forms.TextBox();
+            this.cmbNamaBarang = new System.Windows.Forms.ComboBox();
+            this.numStok = new System.Windows.Forms.NumericUpDown();
+            this.txtKeterangan = new System.Windows.Forms.TextBox();
+            this.adapterBarang = new POS.DatasetPOSTableAdapters.tbl_barangTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsStok)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datasetPOS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsStok)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datasetPOS)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numStok)).BeginInit();
             this.SuspendLayout();
             // 
             // bindingNavigator1
@@ -103,6 +116,17 @@
             this.bindingNavigator1.Size = new System.Drawing.Size(1014, 25);
             this.bindingNavigator1.TabIndex = 3;
             this.bindingNavigator1.Text = "bindingNavigator2";
+            // 
+            // bsStok
+            // 
+            this.bsStok.DataMember = "tbl_stok_barang";
+            this.bsStok.DataSource = this.datasetPOS;
+            // 
+            // datasetPOS
+            // 
+            this.datasetPOS.DataSetName = "DatasetPOS";
+            this.datasetPOS.Locale = new System.Globalization.CultureInfo("en-US");
+            this.datasetPOS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // toolStripLabel1
             // 
@@ -178,6 +202,7 @@
             this.tsbSimpan.Name = "tsbSimpan";
             this.tsbSimpan.Size = new System.Drawing.Size(88, 22);
             this.tsbSimpan.Text = "SIMPAN";
+            this.tsbSimpan.Click += new System.EventHandler(this.tsbSimpan_Click);
             // 
             // tsbHapus
             // 
@@ -190,6 +215,7 @@
             // 
             // tsbReset
             // 
+            this.tsbReset.Enabled = false;
             this.tsbReset.Image = global::POS.Properties.Resources.i_resetallBlue_F12;
             this.tsbReset.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbReset.Name = "tsbReset";
@@ -227,11 +253,17 @@
             this.splitContainer1.Location = new System.Drawing.Point(0, 25);
             this.splitContainer1.Name = "splitContainer1";
             // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.tableLayoutPanel1);
+            this.splitContainer1.Panel1.Padding = new System.Windows.Forms.Padding(5);
+            // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
+            this.splitContainer1.Panel2.Padding = new System.Windows.Forms.Padding(10);
             this.splitContainer1.Size = new System.Drawing.Size(1014, 512);
-            this.splitContainer1.SplitterDistance = 365;
+            this.splitContainer1.SplitterDistance = 377;
             this.splitContainer1.TabIndex = 4;
             this.splitContainer1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.splitContainer1_MouseDoubleClick);
             // 
@@ -240,8 +272,8 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -253,13 +285,14 @@
             this.keteranganDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.bsStok;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Location = new System.Drawing.Point(10, 10);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(645, 512);
+            this.dataGridView1.Size = new System.Drawing.Size(613, 492);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // stokidDataGridViewTextBoxColumn
             // 
@@ -301,20 +334,132 @@
             this.keteranganDataGridViewTextBoxColumn.ReadOnly = true;
             this.keteranganDataGridViewTextBoxColumn.Width = 133;
             // 
-            // bsStok
-            // 
-            this.bsStok.DataMember = "tbl_stok_barang";
-            this.bsStok.DataSource = this.datasetPOS;
-            // 
-            // datasetPOS
-            // 
-            this.datasetPOS.DataSetName = "DatasetPOS";
-            this.datasetPOS.Locale = new System.Globalization.CultureInfo("en-US");
-            this.datasetPOS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // adapterStokBarang
             // 
             this.adapterStokBarang.ClearBeforeFill = true;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.AutoScroll = true;
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.txtStokID, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.cmbNamaBarang, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.numStok, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.txtKeterangan, 1, 3);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(5, 5);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(367, 359);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(78, 18);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Stok ID";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 32);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(118, 18);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Nama Barang";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 64);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(48, 18);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Stok";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 96);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(108, 18);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Keterangan";
+            // 
+            // txtStokID
+            // 
+            this.txtStokID.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsStok, "stok_id", true));
+            this.txtStokID.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtStokID.Enabled = false;
+            this.txtStokID.Location = new System.Drawing.Point(149, 3);
+            this.txtStokID.Name = "txtStokID";
+            this.txtStokID.Size = new System.Drawing.Size(215, 26);
+            this.txtStokID.TabIndex = 4;
+            // 
+            // cmbNamaBarang
+            // 
+            this.cmbNamaBarang.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbNamaBarang.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbNamaBarang.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsStok, "nama_barang", true));
+            this.cmbNamaBarang.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bsStok, "barang_id", true));
+            this.cmbNamaBarang.DataSource = this.datasetPOS;
+            this.cmbNamaBarang.DisplayMember = "tbl_barang.nama_barang";
+            this.cmbNamaBarang.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cmbNamaBarang.FormattingEnabled = true;
+            this.cmbNamaBarang.Location = new System.Drawing.Point(149, 35);
+            this.cmbNamaBarang.Name = "cmbNamaBarang";
+            this.cmbNamaBarang.Size = new System.Drawing.Size(215, 26);
+            this.cmbNamaBarang.TabIndex = 5;
+            this.cmbNamaBarang.ValueMember = "tbl_barang.barang_id";
+            // 
+            // numStok
+            // 
+            this.numStok.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bsStok, "stok", true));
+            this.numStok.Dock = System.Windows.Forms.DockStyle.Top;
+            this.numStok.Location = new System.Drawing.Point(149, 67);
+            this.numStok.Maximum = new decimal(new int[] {
+            1410065407,
+            2,
+            0,
+            0});
+            this.numStok.Minimum = new decimal(new int[] {
+            1410065407,
+            2,
+            0,
+            -2147483648});
+            this.numStok.Name = "numStok";
+            this.numStok.Size = new System.Drawing.Size(215, 26);
+            this.numStok.TabIndex = 6;
+            this.numStok.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numStok.ThousandsSeparator = true;
+            this.numStok.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
+            // 
+            // txtKeterangan
+            // 
+            this.txtKeterangan.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsStok, "keterangan", true));
+            this.txtKeterangan.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtKeterangan.Location = new System.Drawing.Point(149, 99);
+            this.txtKeterangan.Multiline = true;
+            this.txtKeterangan.Name = "txtKeterangan";
+            this.txtKeterangan.Size = new System.Drawing.Size(215, 116);
+            this.txtKeterangan.TabIndex = 7;
+            // 
+            // adapterBarang
+            // 
+            this.adapterBarang.ClearBeforeFill = true;
             // 
             // FormStok
             // 
@@ -332,12 +477,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsStok)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datasetPOS)).EndInit();
+            this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsStok)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datasetPOS)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numStok)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -372,5 +521,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn stokDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn keteranganDataGridViewTextBoxColumn;
         private DatasetPOSTableAdapters.tbl_stok_barangTableAdapter adapterStokBarang;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtStokID;
+        private System.Windows.Forms.ComboBox cmbNamaBarang;
+        private System.Windows.Forms.NumericUpDown numStok;
+        private System.Windows.Forms.TextBox txtKeterangan;
+        private DatasetPOSTableAdapters.tbl_barangTableAdapter adapterBarang;
     }
 }
