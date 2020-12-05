@@ -48,4 +48,5 @@ D:\Program Files\GitHub\POS\POS\obj\Debug\POS.exe.manifest
 D:\Program Files\GitHub\POS\POS\obj\Debug\POS.application
 D:\Program Files\GitHub\POS\POS\obj\Debug\POS.exe
 D:\Program Files\GitHub\POS\POS\obj\Debug\POS.pdb
+D:\Program Files\GitHub\POS\POS\obj\Debug\POS.Forms.FormKwitansi.resources
 D:\Program Files\GitHub\POS\POS\obj\Debug\POS.csprojResolveAssemblyReference.cache

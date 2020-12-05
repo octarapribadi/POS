@@ -159,14 +159,14 @@
             // pENJUALANToolStripMenuItem1
             // 
             this.pENJUALANToolStripMenuItem1.Name = "pENJUALANToolStripMenuItem1";
-            this.pENJUALANToolStripMenuItem1.Size = new System.Drawing.Size(153, 22);
+            this.pENJUALANToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.pENJUALANToolStripMenuItem1.Text = "&PENJUALAN";
             // 
             // sTOKBARANGToolStripMenuItem
             // 
             this.sTOKBARANGToolStripMenuItem.Name = "sTOKBARANGToolStripMenuItem";
-            this.sTOKBARANGToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            this.sTOKBARANGToolStripMenuItem.Text = "&STOK BARANG";
+            this.sTOKBARANGToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.sTOKBARANGToolStripMenuItem.Text = "&RE-STOK";
             // 
             // pENGATURANToolStripMenuItem
             // 

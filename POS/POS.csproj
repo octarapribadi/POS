@@ -110,6 +110,12 @@
     <Compile Include="Forms\FormKategori.Designer.cs">
       <DependentUpon>FormKategori.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormKwitansi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormKwitansi.Designer.cs">
+      <DependentUpon>FormKwitansi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormPenjualan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormKategori.resx">
       <DependentUpon>FormKategori.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormKwitansi.resx">
+      <DependentUpon>FormKwitansi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormPenjualan.resx">
       <DependentUpon>FormPenjualan.cs</DependentUpon>

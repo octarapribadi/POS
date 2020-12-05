@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -39,18 +43,18 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.datasetPOS = new POS.DatasetPOS();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.numTotalBayar = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtSubtotal = new System.Windows.Forms.TextBox();
-            this.txtPotongan = new System.Windows.Forms.TextBox();
-            this.txtTotalBayar = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtKembalian = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.lblFaktur = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtKeterangan = new System.Windows.Forms.TextBox();
+            this.numPotongan = new System.Windows.Forms.NumericUpDown();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.pbGambar = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
@@ -61,6 +65,8 @@
             this.adapterBarang = new POS.DatasetPOSTableAdapters.tbl_barangTableAdapter();
             this.adapterPenjualan = new POS.DatasetPOSTableAdapters.tbl_penjualanTableAdapter();
             this.adapterListPenjualanBarang = new POS.DatasetPOSTableAdapters.tbl_listpenjualan_barangTableAdapter();
+            this.adapterHarga = new POS.DatasetPOSTableAdapters.tbl_hargaTableAdapter();
+            this.adapterLstPenjualan = new POS.DatasetPOSTableAdapters.tbl_lstpenjualanTableAdapter();
             this.lstpenjualanidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.penjualanidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.barangidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,8 +75,6 @@
             this.hargajualDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.diskonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.keteranganDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adapterHarga = new POS.DatasetPOSTableAdapters.tbl_hargaTableAdapter();
-            this.adapterLstPenjualan = new POS.DatasetPOSTableAdapters.tbl_lstpenjualanTableAdapter();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -80,6 +84,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datasetPOS)).BeginInit();
             this.tableLayoutPanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numTotalBayar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPotongan)).BeginInit();
             this.tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbGambar)).BeginInit();
             this.tableLayoutPanel7.SuspendLayout();
@@ -196,6 +202,8 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -215,6 +223,8 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(669, 325);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellVluaeChanged);
+            this.dataGridView1.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGridView1_UserDeletedRow);
             // 
             // datasetPOS
             // 
@@ -228,18 +238,18 @@
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel6.Controls.Add(this.numTotalBayar, 2, 2);
             this.tableLayoutPanel6.Controls.Add(this.label1, 0, 2);
             this.tableLayoutPanel6.Controls.Add(this.label3, 1, 1);
             this.tableLayoutPanel6.Controls.Add(this.label2, 1, 0);
             this.tableLayoutPanel6.Controls.Add(this.txtSubtotal, 2, 0);
-            this.tableLayoutPanel6.Controls.Add(this.txtPotongan, 2, 1);
-            this.tableLayoutPanel6.Controls.Add(this.txtTotalBayar, 2, 2);
             this.tableLayoutPanel6.Controls.Add(this.label4, 1, 2);
             this.tableLayoutPanel6.Controls.Add(this.label6, 1, 3);
             this.tableLayoutPanel6.Controls.Add(this.txtKembalian, 2, 3);
             this.tableLayoutPanel6.Controls.Add(this.label5, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.lblFaktur, 0, 1);
-            this.tableLayoutPanel6.Controls.Add(this.textBox1, 0, 3);
+            this.tableLayoutPanel6.Controls.Add(this.txtKeterangan, 0, 3);
+            this.tableLayoutPanel6.Controls.Add(this.numPotongan, 2, 1);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 334);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
@@ -250,6 +260,23 @@
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(669, 136);
             this.tableLayoutPanel6.TabIndex = 1;
+            // 
+            // numTotalBayar
+            // 
+            this.numTotalBayar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.numTotalBayar.Location = new System.Drawing.Point(404, 71);
+            this.numTotalBayar.Maximum = new decimal(new int[] {
+            1410065407,
+            2,
+            0,
+            0});
+            this.numTotalBayar.Name = "numTotalBayar";
+            this.numTotalBayar.Size = new System.Drawing.Size(262, 26);
+            this.numTotalBayar.TabIndex = 6;
+            this.numTotalBayar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numTotalBayar.ThousandsSeparator = true;
+            this.numTotalBayar.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
+            this.numTotalBayar.ValueChanged += new System.EventHandler(this.numTotalBayar_ValueChanged);
             // 
             // label1
             // 
@@ -289,22 +316,6 @@
             this.txtSubtotal.Name = "txtSubtotal";
             this.txtSubtotal.Size = new System.Drawing.Size(262, 26);
             this.txtSubtotal.TabIndex = 4;
-            // 
-            // txtPotongan
-            // 
-            this.txtPotongan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtPotongan.Location = new System.Drawing.Point(404, 37);
-            this.txtPotongan.Name = "txtPotongan";
-            this.txtPotongan.Size = new System.Drawing.Size(262, 26);
-            this.txtPotongan.TabIndex = 5;
-            // 
-            // txtTotalBayar
-            // 
-            this.txtTotalBayar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtTotalBayar.Location = new System.Drawing.Point(404, 71);
-            this.txtTotalBayar.Name = "txtTotalBayar";
-            this.txtTotalBayar.Size = new System.Drawing.Size(262, 26);
-            this.txtTotalBayar.TabIndex = 6;
             // 
             // label4
             // 
@@ -352,17 +363,33 @@
             this.lblFaktur.AutoSize = true;
             this.lblFaktur.Location = new System.Drawing.Point(3, 34);
             this.lblFaktur.Name = "lblFaktur";
-            this.lblFaktur.Size = new System.Drawing.Size(108, 18);
+            this.lblFaktur.Size = new System.Drawing.Size(0, 18);
             this.lblFaktur.TabIndex = 10;
-            this.lblFaktur.Text = "xxFakturxx";
             // 
-            // textBox1
+            // txtKeterangan
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(3, 105);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(228, 26);
-            this.textBox1.TabIndex = 12;
+            this.txtKeterangan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtKeterangan.Location = new System.Drawing.Point(3, 105);
+            this.txtKeterangan.Name = "txtKeterangan";
+            this.txtKeterangan.Size = new System.Drawing.Size(228, 26);
+            this.txtKeterangan.TabIndex = 12;
+            // 
+            // numPotongan
+            // 
+            this.numPotongan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.numPotongan.Location = new System.Drawing.Point(404, 37);
+            this.numPotongan.Maximum = new decimal(new int[] {
+            1410065407,
+            2,
+            0,
+            0});
+            this.numPotongan.Name = "numPotongan";
+            this.numPotongan.Size = new System.Drawing.Size(262, 26);
+            this.numPotongan.TabIndex = 5;
+            this.numPotongan.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numPotongan.ThousandsSeparator = true;
+            this.numPotongan.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
+            this.numPotongan.ValueChanged += new System.EventHandler(this.numPotongan_ValueChanged);
             // 
             // tableLayoutPanel5
             // 
@@ -440,6 +467,7 @@
             this.btnSimpan.TabIndex = 2;
             this.btnSimpan.Text = "Simpan (F5)";
             this.btnSimpan.UseVisualStyleBackColor = true;
+            this.btnSimpan.Click += new System.EventHandler(this.btnSimpan_Click);
             // 
             // btnCetak
             // 
@@ -450,6 +478,7 @@
             this.btnCetak.TabIndex = 3;
             this.btnCetak.Text = "Cetak (F6)";
             this.btnCetak.UseVisualStyleBackColor = true;
+            this.btnCetak.Click += new System.EventHandler(this.btnCetak_Click);
             // 
             // adapterBarang
             // 
@@ -462,6 +491,14 @@
             // adapterListPenjualanBarang
             // 
             this.adapterListPenjualanBarang.ClearBeforeFill = true;
+            // 
+            // adapterHarga
+            // 
+            this.adapterHarga.ClearBeforeFill = true;
+            // 
+            // adapterLstPenjualan
+            // 
+            this.adapterLstPenjualan.ClearBeforeFill = true;
             // 
             // lstpenjualanidDataGridViewTextBoxColumn
             // 
@@ -485,6 +522,7 @@
             this.barangidDataGridViewTextBoxColumn.DataPropertyName = "barang_id";
             this.barangidDataGridViewTextBoxColumn.HeaderText = "ID BARANG";
             this.barangidDataGridViewTextBoxColumn.Name = "barangidDataGridViewTextBoxColumn";
+            this.barangidDataGridViewTextBoxColumn.ReadOnly = true;
             this.barangidDataGridViewTextBoxColumn.Visible = false;
             this.barangidDataGridViewTextBoxColumn.Width = 123;
             // 
@@ -493,11 +531,14 @@
             this.namabarangDataGridViewTextBoxColumn.DataPropertyName = "nama_barang";
             this.namabarangDataGridViewTextBoxColumn.HeaderText = "NAMA BARANG";
             this.namabarangDataGridViewTextBoxColumn.Name = "namabarangDataGridViewTextBoxColumn";
+            this.namabarangDataGridViewTextBoxColumn.ReadOnly = true;
             this.namabarangDataGridViewTextBoxColumn.Width = 131;
             // 
             // quantityDataGridViewTextBoxColumn
             // 
             this.quantityDataGridViewTextBoxColumn.DataPropertyName = "quantity";
+            dataGridViewCellStyle2.NullValue = "0";
+            this.quantityDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.quantityDataGridViewTextBoxColumn.HeaderText = "QTY";
             this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
             this.quantityDataGridViewTextBoxColumn.Width = 63;
@@ -505,13 +546,19 @@
             // hargajualDataGridViewTextBoxColumn
             // 
             this.hargajualDataGridViewTextBoxColumn.DataPropertyName = "harga_jual";
-            this.hargajualDataGridViewTextBoxColumn.HeaderText = "HARGA";
+            dataGridViewCellStyle3.Format = "C0";
+            dataGridViewCellStyle3.NullValue = "0";
+            this.hargajualDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.hargajualDataGridViewTextBoxColumn.HeaderText = "HARGA SATUAN";
             this.hargajualDataGridViewTextBoxColumn.Name = "hargajualDataGridViewTextBoxColumn";
-            this.hargajualDataGridViewTextBoxColumn.Width = 83;
+            this.hargajualDataGridViewTextBoxColumn.Width = 140;
             // 
             // diskonDataGridViewTextBoxColumn
             // 
             this.diskonDataGridViewTextBoxColumn.DataPropertyName = "diskon";
+            dataGridViewCellStyle4.Format = "C0";
+            dataGridViewCellStyle4.NullValue = "0";
+            this.diskonDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.diskonDataGridViewTextBoxColumn.HeaderText = "DISKON";
             this.diskonDataGridViewTextBoxColumn.Name = "diskonDataGridViewTextBoxColumn";
             this.diskonDataGridViewTextBoxColumn.Width = 93;
@@ -522,14 +569,6 @@
             this.keteranganDataGridViewTextBoxColumn.HeaderText = "KETERANGAN";
             this.keteranganDataGridViewTextBoxColumn.Name = "keteranganDataGridViewTextBoxColumn";
             this.keteranganDataGridViewTextBoxColumn.Width = 133;
-            // 
-            // adapterHarga
-            // 
-            this.adapterHarga.ClearBeforeFill = true;
-            // 
-            // adapterLstPenjualan
-            // 
-            this.adapterLstPenjualan.ClearBeforeFill = true;
             // 
             // FormPenjualan
             // 
@@ -557,6 +596,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.datasetPOS)).EndInit();
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numTotalBayar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPotongan)).EndInit();
             this.tableLayoutPanel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbGambar)).EndInit();
             this.tableLayoutPanel7.ResumeLayout(false);
@@ -584,8 +625,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtSubtotal;
-        private System.Windows.Forms.TextBox txtPotongan;
-        private System.Windows.Forms.TextBox txtTotalBayar;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.Button btnFakturBaru;
         private System.Windows.Forms.Button btnHapusFaktur;
@@ -596,9 +635,13 @@
         private System.Windows.Forms.Label lblFaktur;
         private DatasetPOS datasetPOS;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtKeterangan;
         private DatasetPOSTableAdapters.tbl_penjualanTableAdapter adapterPenjualan;
         private DatasetPOSTableAdapters.tbl_listpenjualan_barangTableAdapter adapterListPenjualanBarang;
+        private DatasetPOSTableAdapters.tbl_hargaTableAdapter adapterHarga;
+        private DatasetPOSTableAdapters.tbl_lstpenjualanTableAdapter adapterLstPenjualan;
+        private System.Windows.Forms.NumericUpDown numTotalBayar;
+        private System.Windows.Forms.NumericUpDown numPotongan;
         private System.Windows.Forms.DataGridViewTextBoxColumn lstpenjualanidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn penjualanidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn barangidDataGridViewTextBoxColumn;
@@ -607,7 +650,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn hargajualDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn diskonDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn keteranganDataGridViewTextBoxColumn;
-        private DatasetPOSTableAdapters.tbl_hargaTableAdapter adapterHarga;
-        private DatasetPOSTableAdapters.tbl_lstpenjualanTableAdapter adapterLstPenjualan;
     }
 }

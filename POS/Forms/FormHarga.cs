@@ -106,8 +106,24 @@ namespace POS.Forms
                         rowHargaBarangSupplier["harga_id"] = hargaID;
                         rowHargaBarangSupplier["barang_id"] = cmbBarang.SelectedValue;
                         rowHargaBarangSupplier["nama_barang"] = cmbBarang.Text;
-                        rowHargaBarangSupplier["supplier_id"] = cmbSupplier.SelectedValue;
-                        rowHargaBarangSupplier["nama_supplier"] = cmbSupplier.Text;
+                        //cek apakah supplier ada atau tidak
+                        if(cmbSupplier.SelectedValue == null)
+                        {
+                            Int32 supplierID = incrementLastIDFromTable(datasetPOS.tbl_supplier, "supplier_id")+1;
+                            DataRow row = datasetPOS.tbl_supplier.NewRow();
+                            row["supplier_id"] = supplierID;
+                            row["nama_supplier"] = cmbSupplier.Text;
+                            rowHargaBarangSupplier["supplier_id"] = supplierID;
+                            rowHargaBarangSupplier["nama_supplier"] = cmbSupplier.Text;
+                            datasetPOS.tbl_supplier.Rows.Add(row);
+                            adapterSupplier.Insert(supplierID, row["nama_supplier"].ToString(), "", "", "", true, "");
+                        }
+                        else
+                        {
+                            rowHargaBarangSupplier["supplier_id"] = cmbSupplier.SelectedValue;
+                            rowHargaBarangSupplier["nama_supplier"] = cmbSupplier.Text;
+                        }
+
                         rowHargaBarangSupplier["harga_model"] = numHargaModal.Value;
                         rowHargaBarangSupplier["harga_jual"] = numHargaJual.Value;
                         rowHargaBarangSupplier["aktif"] = chkAktif.Checked;
@@ -122,7 +138,7 @@ namespace POS.Forms
                             }
                         }
                         adapterHarga.Update_Default_ByBarangID(Convert.ToInt32(rowHargaBarangSupplier["barang_id"]));
-                        adapterHarga.Insert(hargaID, Convert.ToInt32(cmbBarang.SelectedValue), Convert.ToInt32(cmbSupplier.SelectedValue), numHargaModal.Value, numHargaJual.Value, chkAktif.Checked, chkDefault.Checked, txtKeterangan.Text);
+                        adapterHarga.Insert(hargaID, Convert.ToInt32(cmbBarang.SelectedValue), Convert.ToInt32(rowHargaBarangSupplier["supplier_id"]), numHargaModal.Value, numHargaJual.Value, chkAktif.Checked, chkDefault.Checked, txtKeterangan.Text);
 
                         datasetPOS.tbl_harga_barang_supplier.Rows.Add(rowHargaBarangSupplier);
 
@@ -179,6 +195,7 @@ namespace POS.Forms
 
         private void tsbCari_Click(object sender, EventArgs e)
         {
+            /*
             try
             {
                 bsHargaBarangSupplier.Filter = tstCari.Text;
@@ -187,6 +204,17 @@ namespace POS.Forms
             {
                 konfigurasi.showError(ex);
             }
+            */
+            try
+            {
+                if(cmbSupplier.SelectedValue == null)
+                    MessageBox.Show("null");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         private void chkDefault_CheckedChanged(object sender, EventArgs e)
