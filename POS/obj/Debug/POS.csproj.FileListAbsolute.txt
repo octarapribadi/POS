@@ -50,3 +50,10 @@ D:\Program Files\GitHub\POS\POS\obj\Debug\POS.exe
 D:\Program Files\GitHub\POS\POS\obj\Debug\POS.pdb
 D:\Program Files\GitHub\POS\POS\obj\Debug\POS.Forms.FormKwitansi.resources
 D:\Program Files\GitHub\POS\POS\obj\Debug\POS.csprojResolveAssemblyReference.cache
+D:\belajar\github\POS\POS\bin\Debug\DatasetPOS.cs
+D:\belajar\github\POS\POS\bin\Debug\DatasetPOS.xsc
+D:\belajar\github\POS\POS\bin\Debug\DatasetPOS.xsd
+D:\belajar\github\POS\POS\bin\Debug\DatasetPOS.xss
+D:\belajar\github\POS\POS\obj\Debug\POS.Forms.FormKwitansi.resources
+D:\belajar\github\POS\POS\obj\Debug\POS.Forms.FormPenjualan.resources
+D:\belajar\github\POS\POS\obj\Debug\POS.Forms.FormRestok.resources

@@ -26,7 +26,6 @@ namespace POS.Forms
                 adapterRestokBarangSupplier.Fill(datasetPOS.tbl_restok_barang_supplier);
                 adapterBarang.Fill(datasetPOS.tbl_barang);
                 adapterSupplier.Fill(datasetPOS.tbl_supplier);
-
                 tsbReset_Click(sender, e);
             }
             catch(Exception ex)
@@ -86,6 +85,13 @@ namespace POS.Forms
                         //datasetPOS.tbl_restok_barang_supplier.Rows.Add(row);
                         datasetPOS.tbl_restok_barang_supplier.Rows.InsertAt(row, 0);
                         adapterRestok.Insert(restokID, dtpTanggalRestok.Value, Convert.ToInt32(cmbNamaBarang.SelectedValue), Convert.ToInt32(cmbSupplier.SelectedValue), Convert.ToInt32(numQty.Value), txtKeterangan.Text);
+                        //update stok
+                        adapterStok.FillByBarangID(datasetPOS.tbl_stok, Convert.ToInt32(row["barang_id"]));
+                        Int32 stok = Convert.ToInt32(datasetPOS.tbl_stok.Rows[0]["stok"]);
+                        Int32 barangID = Convert.ToInt32(datasetPOS.tbl_stok.Rows[0]["barang_id"]);
+                        stok += Convert.ToInt32(row["qty"]);
+                        adapterStok.UpdateQueryByBarangID(stok, barangID);
+                        //--update stok---
                         bsRestokBarangSupplier.Position = 0;
                     }
                     else
@@ -105,6 +111,15 @@ namespace POS.Forms
                     rowView.Row["qty"] = numQty.Value;
                     rowView.Row["keterangan"] = txtKeterangan.Text;
                     adapterRestok.UpdateQueryByRestokID(dtpTanggalRestok.Value, Convert.ToInt32(cmbNamaBarang.SelectedValue), Convert.ToInt32(cmbSupplier.SelectedValue), Convert.ToInt32(numQty.Value), txtKeterangan.Text, restokID);
+                    //update stok
+                    adapterStok.FillByBarangID(datasetPOS.tbl_stok, Convert.ToInt32(rowView["barang_id"]));
+                    Int32 barangID = Convert.ToInt32(datasetPOS.tbl_stok.Rows[0]["barang_id"]);
+                    Int32 stokLama = Convert.ToInt32(datasetPOS.tbl_stok.Rows[0]["stok"]);
+                    Int32 stokBaru = Convert.ToInt32(numQty.Value);
+                    Int32 stok = stokBaru - stokLama;
+                    stok += stokLama;
+                    adapterStok.UpdateQueryByBarangID(stok, barangID);
+                    //--update stok---
                 }
             }
             catch (Exception ex)
@@ -204,6 +219,13 @@ namespace POS.Forms
                     if (result == DialogResult.Yes)
                     {
                         adapterRestok.DeleteQueryByRestokID(Convert.ToInt64(restokID));
+                        //update stok
+                        adapterStok.FillByBarangID(datasetPOS.tbl_stok, Convert.ToInt32(cmbNamaBarang.SelectedValue));
+                        Int32 barangID = Convert.ToInt32(datasetPOS.tbl_stok.Rows[0]["barang_id"]);
+                        Int32 stok = Convert.ToInt32(datasetPOS.tbl_stok.Rows[0]["stok"]);
+                        stok -= Convert.ToInt32(numQty.Value);
+                        adapterStok.UpdateQueryByBarangID(stok, barangID);
+                        //--update stok---
                         bsRestokBarangSupplier.RemoveCurrent();
                     }
                 }

@@ -30,9 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRestok));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bsRestokBarangSupplier = new System.Windows.Forms.BindingSource(this.components);
+            this.datasetPOS = new POS.DatasetPOS();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -60,7 +62,6 @@
             this.txtRestokID = new System.Windows.Forms.TextBox();
             this.dtpTanggalRestok = new System.Windows.Forms.DateTimePicker();
             this.cmbNamaBarang = new System.Windows.Forms.ComboBox();
-            this.datasetPOS = new POS.DatasetPOS();
             this.cmbSupplier = new System.Windows.Forms.ComboBox();
             this.numQty = new System.Windows.Forms.NumericUpDown();
             this.txtKeterangan = new System.Windows.Forms.TextBox();
@@ -73,23 +74,23 @@
             this.barangidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.supplieridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.keteranganDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bsRestokBarangSupplier = new System.Windows.Forms.BindingSource(this.components);
             this.adapterRestokBarangSupplier = new POS.DatasetPOSTableAdapters.tbl_restok_barang_supplierTableAdapter();
             this.adapterBarang = new POS.DatasetPOSTableAdapters.tbl_barangTableAdapter();
             this.adapterSupplier = new POS.DatasetPOSTableAdapters.tbl_supplierTableAdapter();
             this.adapterHargaBarangSupplier = new POS.DatasetPOSTableAdapters.tbl_harga_barang_supplierTableAdapter();
             this.adapterRestok = new POS.DatasetPOSTableAdapters.tbl_restokTableAdapter();
+            this.adapterStok = new POS.DatasetPOSTableAdapters.tbl_stokTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsRestokBarangSupplier)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datasetPOS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.datasetPOS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numQty)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsRestokBarangSupplier)).BeginInit();
             this.SuspendLayout();
             // 
             // bindingNavigator1
@@ -127,6 +128,17 @@
             this.bindingNavigator1.Size = new System.Drawing.Size(1050, 25);
             this.bindingNavigator1.TabIndex = 3;
             this.bindingNavigator1.Text = "bindingNavigator2";
+            // 
+            // bsRestokBarangSupplier
+            // 
+            this.bsRestokBarangSupplier.DataMember = "tbl_restok_barang_supplier";
+            this.bsRestokBarangSupplier.DataSource = this.datasetPOS;
+            // 
+            // datasetPOS
+            // 
+            this.datasetPOS.DataSetName = "DatasetPOS";
+            this.datasetPOS.Locale = new System.Globalization.CultureInfo("en-US");
+            this.datasetPOS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // toolStripLabel1
             // 
@@ -388,12 +400,6 @@
             this.cmbNamaBarang.DropDownClosed += new System.EventHandler(this.cmbNamaBarang_DropDownClosed);
             this.cmbNamaBarang.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbNamaBarang_KeyDown);
             // 
-            // datasetPOS
-            // 
-            this.datasetPOS.DataSetName = "DatasetPOS";
-            this.datasetPOS.Locale = new System.Globalization.CultureInfo("en-US");
-            this.datasetPOS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // cmbSupplier
             // 
             this.cmbSupplier.DataSource = this.datasetPOS;
@@ -441,8 +447,8 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Silver;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -477,9 +483,9 @@
             // tanggalrestokDataGridViewTextBoxColumn
             // 
             this.tanggalrestokDataGridViewTextBoxColumn.DataPropertyName = "tanggal_restok";
-            dataGridViewCellStyle4.Format = "F";
-            dataGridViewCellStyle4.NullValue = null;
-            this.tanggalrestokDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Format = "F";
+            dataGridViewCellStyle2.NullValue = null;
+            this.tanggalrestokDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.tanggalrestokDataGridViewTextBoxColumn.HeaderText = "tanggal_restok";
             this.tanggalrestokDataGridViewTextBoxColumn.Name = "tanggalrestokDataGridViewTextBoxColumn";
             this.tanggalrestokDataGridViewTextBoxColumn.ReadOnly = true;
@@ -533,11 +539,6 @@
             this.keteranganDataGridViewTextBoxColumn.ReadOnly = true;
             this.keteranganDataGridViewTextBoxColumn.Width = 133;
             // 
-            // bsRestokBarangSupplier
-            // 
-            this.bsRestokBarangSupplier.DataMember = "tbl_restok_barang_supplier";
-            this.bsRestokBarangSupplier.DataSource = this.datasetPOS;
-            // 
             // adapterRestokBarangSupplier
             // 
             this.adapterRestokBarangSupplier.ClearBeforeFill = true;
@@ -558,6 +559,10 @@
             // 
             this.adapterRestok.ClearBeforeFill = true;
             // 
+            // adapterStok
+            // 
+            this.adapterStok.ClearBeforeFill = true;
+            // 
             // FormRestok
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
@@ -574,16 +579,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsRestokBarangSupplier)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datasetPOS)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.datasetPOS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numQty)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsRestokBarangSupplier)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -638,5 +643,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn barangidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn supplieridDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn keteranganDataGridViewTextBoxColumn;
+        private DatasetPOSTableAdapters.tbl_stokTableAdapter adapterStok;
     }
 }
