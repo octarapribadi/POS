@@ -37,7 +37,11 @@
             this.txtFilter = new System.Windows.Forms.TextBox();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.btnTampilkan = new System.Windows.Forms.Button();
+            this.adapterLaporanPenjualan = new POS.DatasetPOSTableAdapters.tbl_laporan_penjualanTableAdapter();
+            this.datasetPOS = new POS.DatasetPOS();
+            this.reportPenjualan1 = new POS.Report.ReportPenjualan();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.datasetPOS)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -140,6 +144,16 @@
             this.btnTampilkan.UseVisualStyleBackColor = true;
             this.btnTampilkan.Click += new System.EventHandler(this.btnTampilkan_Click);
             // 
+            // adapterLaporanPenjualan
+            // 
+            this.adapterLaporanPenjualan.ClearBeforeFill = true;
+            // 
+            // datasetPOS
+            // 
+            this.datasetPOS.DataSetName = "DatasetPOS";
+            this.datasetPOS.Locale = new System.Globalization.CultureInfo("en-US");
+            this.datasetPOS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // FormLaporanPenjualan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
@@ -153,6 +167,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.datasetPOS)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -168,5 +183,8 @@
         private System.Windows.Forms.TextBox txtFilter;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
         private System.Windows.Forms.Button btnTampilkan;
+        private DatasetPOSTableAdapters.tbl_laporan_penjualanTableAdapter adapterLaporanPenjualan;
+        private DatasetPOS datasetPOS;
+        private Report.ReportPenjualan reportPenjualan1;
     }
 }

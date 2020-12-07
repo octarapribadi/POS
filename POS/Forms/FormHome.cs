@@ -95,5 +95,13 @@ namespace POS.Forms
             frmLaporanPenjualan.MdiParent = this;
             frmLaporanPenjualan.Show();
         }
+
+        private void bARANGKELUARToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormKeluarBarang frmKeluarBarang = null;
+            frmKeluarBarang = new FormKeluarBarang();
+            frmKeluarBarang.MdiParent = this;
+            frmKeluarBarang.Show();
+        }
     }
 }

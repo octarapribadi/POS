@@ -13,7 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\octara\Desktop\New folder %282%29\</PublishUrl>
+    <PublishUrl>D:\Program\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -117,6 +117,12 @@
     <Compile Include="Forms\FormKategori.Designer.cs">
       <DependentUpon>FormKategori.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormKeluarBarang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormKeluarBarang.Designer.cs">
+      <DependentUpon>FormKeluarBarang.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormKwitansi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormKategori.resx">
       <DependentUpon>FormKategori.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormKeluarBarang.resx">
+      <DependentUpon>FormKeluarBarang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormKwitansi.resx">
       <DependentUpon>FormKwitansi.cs</DependentUpon>

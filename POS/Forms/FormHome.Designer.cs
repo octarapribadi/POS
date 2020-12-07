@@ -51,6 +51,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsUsername = new System.Windows.Forms.ToolStripStatusLabel();
+            this.bARANGKELUARToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -128,7 +129,8 @@
             // 
             this.tRANSAKSIToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pENJUALANToolStripMenuItem,
-            this.bARANGMASUKToolStripMenuItem});
+            this.bARANGMASUKToolStripMenuItem,
+            this.bARANGKELUARToolStripMenuItem});
             this.tRANSAKSIToolStripMenuItem.Name = "tRANSAKSIToolStripMenuItem";
             this.tRANSAKSIToolStripMenuItem.Size = new System.Drawing.Size(80, 19);
             this.tRANSAKSIToolStripMenuItem.Text = "&TRANSAKSI";
@@ -159,14 +161,14 @@
             // pENJUALANToolStripMenuItem1
             // 
             this.pENJUALANToolStripMenuItem1.Name = "pENJUALANToolStripMenuItem1";
-            this.pENJUALANToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.pENJUALANToolStripMenuItem1.Size = new System.Drawing.Size(139, 22);
             this.pENJUALANToolStripMenuItem1.Text = "&PENJUALAN";
             this.pENJUALANToolStripMenuItem1.Click += new System.EventHandler(this.pENJUALANToolStripMenuItem1_Click);
             // 
             // sTOKBARANGToolStripMenuItem
             // 
             this.sTOKBARANGToolStripMenuItem.Name = "sTOKBARANGToolStripMenuItem";
-            this.sTOKBARANGToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.sTOKBARANGToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.sTOKBARANGToolStripMenuItem.Text = "&RE-STOK";
             // 
             // pENGATURANToolStripMenuItem
@@ -233,6 +235,13 @@
             this.tsUsername.Name = "tsUsername";
             this.tsUsername.Size = new System.Drawing.Size(0, 17);
             // 
+            // bARANGKELUARToolStripMenuItem
+            // 
+            this.bARANGKELUARToolStripMenuItem.Name = "bARANGKELUARToolStripMenuItem";
+            this.bARANGKELUARToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.bARANGKELUARToolStripMenuItem.Text = "&BARANG KELUAR";
+            this.bARANGKELUARToolStripMenuItem.Click += new System.EventHandler(this.bARANGKELUARToolStripMenuItem_Click);
+            // 
             // FormHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
@@ -283,5 +292,6 @@
         private System.Windows.Forms.ToolStripMenuItem bARCODEToolStripMenuItem;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel tsUsername;
+        private System.Windows.Forms.ToolStripMenuItem bARANGKELUARToolStripMenuItem;
     }
 }
