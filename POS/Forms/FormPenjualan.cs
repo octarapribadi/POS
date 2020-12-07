@@ -301,6 +301,9 @@ namespace POS.Forms
                             diskon = 0;
                         keterangan = row["keterangan"].ToString();
                         adapterLstPenjualan.Insert(penjualanID, barangID, quantity, hargaJual, diskon, keterangan);
+                        Int32 stk=0;
+                        stk = Convert.ToInt32(adapterStok.getStokFromBarangID(barangID));
+                        adapterStok.UpdateQueryByBarangID(stk - quantity, barangID);
                     }
                     //hapus faktur------------
                     btnHapusFaktur_Click(sender, e);

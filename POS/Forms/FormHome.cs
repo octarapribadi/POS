@@ -87,5 +87,13 @@ namespace POS.Forms
             frmPenjualan.MdiParent = this;
             frmPenjualan.Show();
         }
+
+        private void pENJUALANToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormLaporanPenjualan frmLaporanPenjualan = null;
+            frmLaporanPenjualan = new FormLaporanPenjualan();
+            frmLaporanPenjualan.MdiParent = this;
+            frmLaporanPenjualan.Show();
+        }
     }
 }

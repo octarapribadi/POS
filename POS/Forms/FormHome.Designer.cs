@@ -161,6 +161,7 @@
             this.pENJUALANToolStripMenuItem1.Name = "pENJUALANToolStripMenuItem1";
             this.pENJUALANToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.pENJUALANToolStripMenuItem1.Text = "&PENJUALAN";
+            this.pENJUALANToolStripMenuItem1.Click += new System.EventHandler(this.pENJUALANToolStripMenuItem1_Click);
             // 
             // sTOKBARANGToolStripMenuItem
             // 

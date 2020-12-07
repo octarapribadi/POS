@@ -41,6 +41,14 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lstpenjualanidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.penjualanidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.barangidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namabarangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hargajualDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.diskonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.keteranganDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datasetPOS = new POS.DatasetPOS();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.numTotalBayar = new System.Windows.Forms.NumericUpDown();
@@ -67,14 +75,7 @@
             this.adapterListPenjualanBarang = new POS.DatasetPOSTableAdapters.tbl_listpenjualan_barangTableAdapter();
             this.adapterHarga = new POS.DatasetPOSTableAdapters.tbl_hargaTableAdapter();
             this.adapterLstPenjualan = new POS.DatasetPOSTableAdapters.tbl_lstpenjualanTableAdapter();
-            this.lstpenjualanidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.penjualanidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.barangidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.namabarangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hargajualDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.diskonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.keteranganDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adapterStok = new POS.DatasetPOSTableAdapters.tbl_stokTableAdapter();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -225,6 +226,76 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellVluaeChanged);
             this.dataGridView1.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGridView1_UserDeletedRow);
+            // 
+            // lstpenjualanidDataGridViewTextBoxColumn
+            // 
+            this.lstpenjualanidDataGridViewTextBoxColumn.DataPropertyName = "lstpenjualan_id";
+            this.lstpenjualanidDataGridViewTextBoxColumn.HeaderText = "ID LIST ITEM";
+            this.lstpenjualanidDataGridViewTextBoxColumn.Name = "lstpenjualanidDataGridViewTextBoxColumn";
+            this.lstpenjualanidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lstpenjualanidDataGridViewTextBoxColumn.Visible = false;
+            this.lstpenjualanidDataGridViewTextBoxColumn.Width = 153;
+            // 
+            // penjualanidDataGridViewTextBoxColumn
+            // 
+            this.penjualanidDataGridViewTextBoxColumn.DataPropertyName = "penjualan_id";
+            this.penjualanidDataGridViewTextBoxColumn.HeaderText = "ID PENJUALAN";
+            this.penjualanidDataGridViewTextBoxColumn.Name = "penjualanidDataGridViewTextBoxColumn";
+            this.penjualanidDataGridViewTextBoxColumn.Visible = false;
+            this.penjualanidDataGridViewTextBoxColumn.Width = 153;
+            // 
+            // barangidDataGridViewTextBoxColumn
+            // 
+            this.barangidDataGridViewTextBoxColumn.DataPropertyName = "barang_id";
+            this.barangidDataGridViewTextBoxColumn.HeaderText = "ID BARANG";
+            this.barangidDataGridViewTextBoxColumn.Name = "barangidDataGridViewTextBoxColumn";
+            this.barangidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.barangidDataGridViewTextBoxColumn.Visible = false;
+            this.barangidDataGridViewTextBoxColumn.Width = 123;
+            // 
+            // namabarangDataGridViewTextBoxColumn
+            // 
+            this.namabarangDataGridViewTextBoxColumn.DataPropertyName = "nama_barang";
+            this.namabarangDataGridViewTextBoxColumn.HeaderText = "NAMA BARANG";
+            this.namabarangDataGridViewTextBoxColumn.Name = "namabarangDataGridViewTextBoxColumn";
+            this.namabarangDataGridViewTextBoxColumn.ReadOnly = true;
+            this.namabarangDataGridViewTextBoxColumn.Width = 131;
+            // 
+            // quantityDataGridViewTextBoxColumn
+            // 
+            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "quantity";
+            dataGridViewCellStyle2.NullValue = "0";
+            this.quantityDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.quantityDataGridViewTextBoxColumn.HeaderText = "QTY";
+            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+            this.quantityDataGridViewTextBoxColumn.Width = 63;
+            // 
+            // hargajualDataGridViewTextBoxColumn
+            // 
+            this.hargajualDataGridViewTextBoxColumn.DataPropertyName = "harga_jual";
+            dataGridViewCellStyle3.Format = "C0";
+            dataGridViewCellStyle3.NullValue = "0";
+            this.hargajualDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.hargajualDataGridViewTextBoxColumn.HeaderText = "HARGA SATUAN";
+            this.hargajualDataGridViewTextBoxColumn.Name = "hargajualDataGridViewTextBoxColumn";
+            this.hargajualDataGridViewTextBoxColumn.Width = 140;
+            // 
+            // diskonDataGridViewTextBoxColumn
+            // 
+            this.diskonDataGridViewTextBoxColumn.DataPropertyName = "diskon";
+            dataGridViewCellStyle4.Format = "C0";
+            dataGridViewCellStyle4.NullValue = "0";
+            this.diskonDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.diskonDataGridViewTextBoxColumn.HeaderText = "DISKON";
+            this.diskonDataGridViewTextBoxColumn.Name = "diskonDataGridViewTextBoxColumn";
+            this.diskonDataGridViewTextBoxColumn.Width = 93;
+            // 
+            // keteranganDataGridViewTextBoxColumn
+            // 
+            this.keteranganDataGridViewTextBoxColumn.DataPropertyName = "keterangan";
+            this.keteranganDataGridViewTextBoxColumn.HeaderText = "KETERANGAN";
+            this.keteranganDataGridViewTextBoxColumn.Name = "keteranganDataGridViewTextBoxColumn";
+            this.keteranganDataGridViewTextBoxColumn.Width = 133;
             // 
             // datasetPOS
             // 
@@ -500,75 +571,9 @@
             // 
             this.adapterLstPenjualan.ClearBeforeFill = true;
             // 
-            // lstpenjualanidDataGridViewTextBoxColumn
+            // adapterStok
             // 
-            this.lstpenjualanidDataGridViewTextBoxColumn.DataPropertyName = "lstpenjualan_id";
-            this.lstpenjualanidDataGridViewTextBoxColumn.HeaderText = "ID LIST ITEM";
-            this.lstpenjualanidDataGridViewTextBoxColumn.Name = "lstpenjualanidDataGridViewTextBoxColumn";
-            this.lstpenjualanidDataGridViewTextBoxColumn.ReadOnly = true;
-            this.lstpenjualanidDataGridViewTextBoxColumn.Visible = false;
-            this.lstpenjualanidDataGridViewTextBoxColumn.Width = 153;
-            // 
-            // penjualanidDataGridViewTextBoxColumn
-            // 
-            this.penjualanidDataGridViewTextBoxColumn.DataPropertyName = "penjualan_id";
-            this.penjualanidDataGridViewTextBoxColumn.HeaderText = "ID PENJUALAN";
-            this.penjualanidDataGridViewTextBoxColumn.Name = "penjualanidDataGridViewTextBoxColumn";
-            this.penjualanidDataGridViewTextBoxColumn.Visible = false;
-            this.penjualanidDataGridViewTextBoxColumn.Width = 153;
-            // 
-            // barangidDataGridViewTextBoxColumn
-            // 
-            this.barangidDataGridViewTextBoxColumn.DataPropertyName = "barang_id";
-            this.barangidDataGridViewTextBoxColumn.HeaderText = "ID BARANG";
-            this.barangidDataGridViewTextBoxColumn.Name = "barangidDataGridViewTextBoxColumn";
-            this.barangidDataGridViewTextBoxColumn.ReadOnly = true;
-            this.barangidDataGridViewTextBoxColumn.Visible = false;
-            this.barangidDataGridViewTextBoxColumn.Width = 123;
-            // 
-            // namabarangDataGridViewTextBoxColumn
-            // 
-            this.namabarangDataGridViewTextBoxColumn.DataPropertyName = "nama_barang";
-            this.namabarangDataGridViewTextBoxColumn.HeaderText = "NAMA BARANG";
-            this.namabarangDataGridViewTextBoxColumn.Name = "namabarangDataGridViewTextBoxColumn";
-            this.namabarangDataGridViewTextBoxColumn.ReadOnly = true;
-            this.namabarangDataGridViewTextBoxColumn.Width = 131;
-            // 
-            // quantityDataGridViewTextBoxColumn
-            // 
-            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "quantity";
-            dataGridViewCellStyle2.NullValue = "0";
-            this.quantityDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.quantityDataGridViewTextBoxColumn.HeaderText = "QTY";
-            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
-            this.quantityDataGridViewTextBoxColumn.Width = 63;
-            // 
-            // hargajualDataGridViewTextBoxColumn
-            // 
-            this.hargajualDataGridViewTextBoxColumn.DataPropertyName = "harga_jual";
-            dataGridViewCellStyle3.Format = "C0";
-            dataGridViewCellStyle3.NullValue = "0";
-            this.hargajualDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.hargajualDataGridViewTextBoxColumn.HeaderText = "HARGA SATUAN";
-            this.hargajualDataGridViewTextBoxColumn.Name = "hargajualDataGridViewTextBoxColumn";
-            this.hargajualDataGridViewTextBoxColumn.Width = 140;
-            // 
-            // diskonDataGridViewTextBoxColumn
-            // 
-            this.diskonDataGridViewTextBoxColumn.DataPropertyName = "diskon";
-            dataGridViewCellStyle4.Format = "C0";
-            dataGridViewCellStyle4.NullValue = "0";
-            this.diskonDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.diskonDataGridViewTextBoxColumn.HeaderText = "DISKON";
-            this.diskonDataGridViewTextBoxColumn.Name = "diskonDataGridViewTextBoxColumn";
-            this.diskonDataGridViewTextBoxColumn.Width = 93;
-            // 
-            // keteranganDataGridViewTextBoxColumn
-            // 
-            this.keteranganDataGridViewTextBoxColumn.DataPropertyName = "keterangan";
-            this.keteranganDataGridViewTextBoxColumn.HeaderText = "KETERANGAN";
-            this.keteranganDataGridViewTextBoxColumn.Name = "keteranganDataGridViewTextBoxColumn";
-            this.keteranganDataGridViewTextBoxColumn.Width = 133;
+            this.adapterStok.ClearBeforeFill = true;
             // 
             // FormPenjualan
             // 
@@ -650,5 +655,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn hargajualDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn diskonDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn keteranganDataGridViewTextBoxColumn;
+        private DatasetPOSTableAdapters.tbl_stokTableAdapter adapterStok;
     }
 }
