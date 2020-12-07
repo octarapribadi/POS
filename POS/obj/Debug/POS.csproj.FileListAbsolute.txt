@@ -103,3 +103,4 @@ D:\Program\POS\POS\obj\Debug\POS.application
 D:\Program\POS\POS\obj\Debug\POS.exe
 D:\Program\POS\POS\obj\Debug\POS.pdb
 D:\Program\POS\POS\obj\Debug\POS.Forms.FormKeluarBarang.resources
+D:\Program\POS\POS\obj\Debug\POS.csprojResolveAssemblyReference.cache
