@@ -384,6 +384,8 @@
             // 
             // cmbNamaSupplier
             // 
+            this.cmbNamaSupplier.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbNamaSupplier.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbNamaSupplier.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.cmbNamaSupplier.DataSource = this.bsSupplier;
             this.cmbNamaSupplier.DisplayMember = "nama_supplier";

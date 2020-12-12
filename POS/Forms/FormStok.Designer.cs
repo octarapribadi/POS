@@ -51,13 +51,6 @@
             this.tstCari = new System.Windows.Forms.ToolStripTextBox();
             this.tsbCari = new System.Windows.Forms.ToolStripButton();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.stokidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.barangidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.namabarangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stokDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.keteranganDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adapterStokBarang = new POS.DatasetPOSTableAdapters.tbl_stok_barangTableAdapter();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -67,6 +60,13 @@
             this.cmbNamaBarang = new System.Windows.Forms.ComboBox();
             this.numStok = new System.Windows.Forms.NumericUpDown();
             this.txtKeterangan = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.stokidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.barangidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.namabarangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stokDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.keteranganDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adapterStokBarang = new POS.DatasetPOSTableAdapters.tbl_stok_barangTableAdapter();
             this.adapterBarang = new POS.DatasetPOSTableAdapters.tbl_barangTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
@@ -76,9 +76,9 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numStok)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // bindingNavigator1
@@ -267,77 +267,6 @@
             this.splitContainer1.TabIndex = 4;
             this.splitContainer1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.splitContainer1_MouseDoubleClick);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.stokidDataGridViewTextBoxColumn,
-            this.barangidDataGridViewTextBoxColumn,
-            this.namabarangDataGridViewTextBoxColumn,
-            this.stokDataGridViewTextBoxColumn,
-            this.keteranganDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.bsStok;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(10, 10);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(613, 492);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // stokidDataGridViewTextBoxColumn
-            // 
-            this.stokidDataGridViewTextBoxColumn.DataPropertyName = "stok_id";
-            this.stokidDataGridViewTextBoxColumn.HeaderText = "stok_id";
-            this.stokidDataGridViewTextBoxColumn.Name = "stokidDataGridViewTextBoxColumn";
-            this.stokidDataGridViewTextBoxColumn.ReadOnly = true;
-            this.stokidDataGridViewTextBoxColumn.Width = 103;
-            // 
-            // barangidDataGridViewTextBoxColumn
-            // 
-            this.barangidDataGridViewTextBoxColumn.DataPropertyName = "barang_id";
-            this.barangidDataGridViewTextBoxColumn.HeaderText = "barang_id";
-            this.barangidDataGridViewTextBoxColumn.Name = "barangidDataGridViewTextBoxColumn";
-            this.barangidDataGridViewTextBoxColumn.ReadOnly = true;
-            this.barangidDataGridViewTextBoxColumn.Width = 123;
-            // 
-            // namabarangDataGridViewTextBoxColumn
-            // 
-            this.namabarangDataGridViewTextBoxColumn.DataPropertyName = "nama_barang";
-            this.namabarangDataGridViewTextBoxColumn.HeaderText = "nama_barang";
-            this.namabarangDataGridViewTextBoxColumn.Name = "namabarangDataGridViewTextBoxColumn";
-            this.namabarangDataGridViewTextBoxColumn.ReadOnly = true;
-            this.namabarangDataGridViewTextBoxColumn.Width = 143;
-            // 
-            // stokDataGridViewTextBoxColumn
-            // 
-            this.stokDataGridViewTextBoxColumn.DataPropertyName = "stok";
-            this.stokDataGridViewTextBoxColumn.HeaderText = "stok";
-            this.stokDataGridViewTextBoxColumn.Name = "stokDataGridViewTextBoxColumn";
-            this.stokDataGridViewTextBoxColumn.ReadOnly = true;
-            this.stokDataGridViewTextBoxColumn.Width = 73;
-            // 
-            // keteranganDataGridViewTextBoxColumn
-            // 
-            this.keteranganDataGridViewTextBoxColumn.DataPropertyName = "keterangan";
-            this.keteranganDataGridViewTextBoxColumn.HeaderText = "keterangan";
-            this.keteranganDataGridViewTextBoxColumn.Name = "keteranganDataGridViewTextBoxColumn";
-            this.keteranganDataGridViewTextBoxColumn.ReadOnly = true;
-            this.keteranganDataGridViewTextBoxColumn.Width = 133;
-            // 
-            // adapterStokBarang
-            // 
-            this.adapterStokBarang.ClearBeforeFill = true;
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.AutoScroll = true;
@@ -413,17 +342,15 @@
             // 
             this.cmbNamaBarang.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cmbNamaBarang.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbNamaBarang.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsStok, "nama_barang", true));
-            this.cmbNamaBarang.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bsStok, "barang_id", true));
-            this.cmbNamaBarang.DataSource = this.datasetPOS;
-            this.cmbNamaBarang.DisplayMember = "tbl_barang.nama_barang";
+            this.cmbNamaBarang.DataSource = this.bsStok;
+            this.cmbNamaBarang.DisplayMember = "nama_barang";
             this.cmbNamaBarang.Dock = System.Windows.Forms.DockStyle.Top;
             this.cmbNamaBarang.FormattingEnabled = true;
             this.cmbNamaBarang.Location = new System.Drawing.Point(149, 35);
             this.cmbNamaBarang.Name = "cmbNamaBarang";
             this.cmbNamaBarang.Size = new System.Drawing.Size(215, 26);
             this.cmbNamaBarang.TabIndex = 5;
-            this.cmbNamaBarang.ValueMember = "tbl_barang.barang_id";
+            this.cmbNamaBarang.ValueMember = "barang_id";
             // 
             // numStok
             // 
@@ -457,6 +384,77 @@
             this.txtKeterangan.Size = new System.Drawing.Size(215, 116);
             this.txtKeterangan.TabIndex = 7;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.stokidDataGridViewTextBoxColumn,
+            this.barangidDataGridViewTextBoxColumn,
+            this.namabarangDataGridViewTextBoxColumn,
+            this.stokDataGridViewTextBoxColumn,
+            this.keteranganDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.bsStok;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(10, 10);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(613, 492);
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // stokidDataGridViewTextBoxColumn
+            // 
+            this.stokidDataGridViewTextBoxColumn.DataPropertyName = "stok_id";
+            this.stokidDataGridViewTextBoxColumn.HeaderText = "stok_id";
+            this.stokidDataGridViewTextBoxColumn.Name = "stokidDataGridViewTextBoxColumn";
+            this.stokidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.stokidDataGridViewTextBoxColumn.Width = 103;
+            // 
+            // barangidDataGridViewTextBoxColumn
+            // 
+            this.barangidDataGridViewTextBoxColumn.DataPropertyName = "barang_id";
+            this.barangidDataGridViewTextBoxColumn.HeaderText = "barang_id";
+            this.barangidDataGridViewTextBoxColumn.Name = "barangidDataGridViewTextBoxColumn";
+            this.barangidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.barangidDataGridViewTextBoxColumn.Width = 123;
+            // 
+            // namabarangDataGridViewTextBoxColumn
+            // 
+            this.namabarangDataGridViewTextBoxColumn.DataPropertyName = "nama_barang";
+            this.namabarangDataGridViewTextBoxColumn.HeaderText = "nama_barang";
+            this.namabarangDataGridViewTextBoxColumn.Name = "namabarangDataGridViewTextBoxColumn";
+            this.namabarangDataGridViewTextBoxColumn.ReadOnly = true;
+            this.namabarangDataGridViewTextBoxColumn.Width = 143;
+            // 
+            // stokDataGridViewTextBoxColumn
+            // 
+            this.stokDataGridViewTextBoxColumn.DataPropertyName = "stok";
+            this.stokDataGridViewTextBoxColumn.HeaderText = "stok";
+            this.stokDataGridViewTextBoxColumn.Name = "stokDataGridViewTextBoxColumn";
+            this.stokDataGridViewTextBoxColumn.ReadOnly = true;
+            this.stokDataGridViewTextBoxColumn.Width = 73;
+            // 
+            // keteranganDataGridViewTextBoxColumn
+            // 
+            this.keteranganDataGridViewTextBoxColumn.DataPropertyName = "keterangan";
+            this.keteranganDataGridViewTextBoxColumn.HeaderText = "keterangan";
+            this.keteranganDataGridViewTextBoxColumn.Name = "keteranganDataGridViewTextBoxColumn";
+            this.keteranganDataGridViewTextBoxColumn.ReadOnly = true;
+            this.keteranganDataGridViewTextBoxColumn.Width = 133;
+            // 
+            // adapterStokBarang
+            // 
+            this.adapterStokBarang.ClearBeforeFill = true;
+            // 
             // adapterBarang
             // 
             this.adapterBarang.ClearBeforeFill = true;
@@ -483,10 +481,10 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numStok)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

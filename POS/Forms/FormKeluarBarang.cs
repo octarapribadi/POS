@@ -59,10 +59,12 @@ namespace POS.Forms
                     //rowView["barang_keluar_id"] = barangKeluarID;
 
                     //stok
-                    Int32 stokLama = Convert.ToInt32(adapterStok.getStokFromBarangID(Convert.ToInt32(cmbNamaBarang.SelectedValue)));
+                    //Int32 stokLama = Convert.ToInt32(adapterStok.getStokFromBarangID(Convert.ToInt32(cmbNamaBarang.SelectedValue)));
+                    Int32 stokLama = Convert.ToInt32(rowView.Row["qty"]);
                     Int32 stokBaru = Convert.ToInt32(numQty.Value);
-                    Int32 stok = stokBaru - stokLama;
-                    stok += stokLama;
+                    Int32 stok = Convert.ToInt32(adapterStok.getStokFromBarangID(Convert.ToInt32(cmbNamaBarang.SelectedValue)));
+                    Int32 tempStok = stokBaru - stokLama;
+                    stok -= tempStok;
                     adapterStok.UpdateQueryByBarangID(stok, Convert.ToInt32(cmbNamaBarang.SelectedValue));
 
                     rowView.Row["tanggal_keluar"] = dtpTanggalKeluar.Value;

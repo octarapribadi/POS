@@ -336,6 +336,8 @@
             // 
             // cmbKategori
             // 
+            this.cmbKategori.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbKategori.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbKategori.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.cmbKategori.DataSource = this.bsKategori;
             this.cmbKategori.DisplayMember = "kategori";

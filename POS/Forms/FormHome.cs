@@ -12,8 +12,7 @@ namespace POS.Forms
 {
     public partial class FormHome : Form
     {
-        
-        
+        public Boolean val=false;
         public FormHome()
         {
             InitializeComponent();
@@ -66,10 +65,16 @@ namespace POS.Forms
 
         private void sTOKToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormStok frmStok = null;
-            frmStok = new FormStok();
+            /*
+            FormStok frmStok = new FormStok();
             frmStok.MdiParent = this;
             frmStok.Show();
+            */
+            FormDialog frmDialog = new Forms.FormDialog();
+            frmDialog.MdiParent = this;
+            frmDialog.form = "stok";
+            frmDialog.parent = this;
+            frmDialog.Show();
         }
 
         private void bARANGMASUKToolStripMenuItem_Click(object sender, EventArgs e)
@@ -90,10 +95,11 @@ namespace POS.Forms
 
         private void pENJUALANToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            FormLaporanPenjualan frmLaporanPenjualan = null;
-            frmLaporanPenjualan = new FormLaporanPenjualan();
-            frmLaporanPenjualan.MdiParent = this;
-            frmLaporanPenjualan.Show();
+            FormDialog frmDialog = new FormDialog();
+            frmDialog.MdiParent = this;
+            frmDialog.form = "penjualan";
+            frmDialog.parent = this;
+            frmDialog.Show();
         }
 
         private void bARANGKELUARToolStripMenuItem_Click(object sender, EventArgs e)
@@ -102,6 +108,19 @@ namespace POS.Forms
             frmKeluarBarang = new FormKeluarBarang();
             frmKeluarBarang.MdiParent = this;
             frmKeluarBarang.Show();
+        }
+
+        private void lAPORANToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void sTOKBARANGToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormLaporanRestok frmLaporanRestok = null;
+            frmLaporanRestok = new FormLaporanRestok();
+            frmLaporanRestok.MdiParent = this;
+            frmLaporanRestok.Show();
         }
     }
 }

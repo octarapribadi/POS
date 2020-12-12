@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormKeluarBarang));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bsBarangKeluar = new System.Windows.Forms.BindingSource(this.components);
+            this.datasetPOS = new POS.DatasetPOS();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -58,7 +60,6 @@
             this.txtBarangKeluarID = new System.Windows.Forms.TextBox();
             this.dtpTanggalKeluar = new System.Windows.Forms.DateTimePicker();
             this.cmbNamaBarang = new System.Windows.Forms.ComboBox();
-            this.datasetPOS = new POS.DatasetPOS();
             this.numQty = new System.Windows.Forms.NumericUpDown();
             this.txtKeterangan = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -68,22 +69,21 @@
             this.barangidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qtyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.keteranganDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bsBarangKeluar = new System.Windows.Forms.BindingSource(this.components);
             this.adapterBarangKeluar = new POS.DatasetPOSTableAdapters.tbl_barang_keluarTableAdapter();
             this.adapterBarang = new POS.DatasetPOSTableAdapters.tbl_barangTableAdapter();
             this.adapterBarangKeluarBarang = new POS.DatasetPOSTableAdapters.tbl_barang_keluar_barangTableAdapter();
             this.adapterStok = new POS.DatasetPOSTableAdapters.tbl_stokTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsBarangKeluar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datasetPOS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.datasetPOS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numQty)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsBarangKeluar)).BeginInit();
             this.SuspendLayout();
             // 
             // bindingNavigator1
@@ -120,6 +120,17 @@
             this.bindingNavigator1.Size = new System.Drawing.Size(777, 25);
             this.bindingNavigator1.TabIndex = 3;
             this.bindingNavigator1.Text = "bindingNavigator2";
+            // 
+            // bsBarangKeluar
+            // 
+            this.bsBarangKeluar.DataMember = "tbl_barang_keluar_barang";
+            this.bsBarangKeluar.DataSource = this.datasetPOS;
+            // 
+            // datasetPOS
+            // 
+            this.datasetPOS.DataSetName = "DatasetPOS";
+            this.datasetPOS.Locale = new System.Globalization.CultureInfo("en-US");
+            this.datasetPOS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // toolStripLabel1
             // 
@@ -248,7 +259,7 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.splitContainer1.Panel1.Controls.Add(this.tableLayoutPanel1);
             this.splitContainer1.Panel1.Padding = new System.Windows.Forms.Padding(5);
             // 
@@ -368,12 +379,6 @@
             this.cmbNamaBarang.TabIndex = 7;
             this.cmbNamaBarang.ValueMember = "tbl_barang.barang_id";
             // 
-            // datasetPOS
-            // 
-            this.datasetPOS.DataSetName = "DatasetPOS";
-            this.datasetPOS.Locale = new System.Globalization.CultureInfo("en-US");
-            this.datasetPOS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // numQty
             // 
             this.numQty.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -479,11 +484,6 @@
             this.keteranganDataGridViewTextBoxColumn.ReadOnly = true;
             this.keteranganDataGridViewTextBoxColumn.Width = 133;
             // 
-            // bsBarangKeluar
-            // 
-            this.bsBarangKeluar.DataMember = "tbl_barang_keluar_barang";
-            this.bsBarangKeluar.DataSource = this.datasetPOS;
-            // 
             // adapterBarangKeluar
             // 
             this.adapterBarangKeluar.ClearBeforeFill = true;
@@ -504,7 +504,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(777, 398);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.bindingNavigator1);
@@ -516,16 +516,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsBarangKeluar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datasetPOS)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.datasetPOS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numQty)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsBarangKeluar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

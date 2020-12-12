@@ -1,6 +1,6 @@
 ﻿namespace POS.Forms
 {
-    partial class FormLaporanPenjualan
+    partial class FormLaporanRestok
     {
         /// <summary>
         /// Required designer variable.
@@ -37,11 +37,9 @@
             this.txtFilter = new System.Windows.Forms.TextBox();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.btnTampilkan = new System.Windows.Forms.Button();
-            this.adapterLaporanPenjualan = new POS.DatasetPOSTableAdapters.tbl_laporan_penjualanTableAdapter();
             this.datasetPOS = new POS.DatasetPOS();
-            this.reportPenjualan1 = new POS.Report.ReportPenjualan();
-            this.adapterBarang = new POS.DatasetPOSTableAdapters.tbl_barangTableAdapter();
-            this.adapterLstPenjualan = new POS.DatasetPOSTableAdapters.tbl_lstpenjualanTableAdapter();
+            this.adapterLaporanRestok = new POS.DatasetPOSTableAdapters.tbl_laporan_restokTableAdapter();
+            this.reportReStok = new POS.Report.ReportReStok();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datasetPOS)).BeginInit();
             this.SuspendLayout();
@@ -49,8 +47,8 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.16918F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55.74018F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
@@ -68,8 +66,8 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(721, 472);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(662, 494);
+            this.tableLayoutPanel1.TabIndex = 1;
             // 
             // label1
             // 
@@ -103,9 +101,9 @@
             this.dtpTanggalAwal.CustomFormat = "dd MMMM yyyy HH:mm tt";
             this.dtpTanggalAwal.Dock = System.Windows.Forms.DockStyle.Top;
             this.dtpTanggalAwal.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpTanggalAwal.Location = new System.Drawing.Point(147, 3);
+            this.dtpTanggalAwal.Location = new System.Drawing.Point(163, 3);
             this.dtpTanggalAwal.Name = "dtpTanggalAwal";
-            this.dtpTanggalAwal.Size = new System.Drawing.Size(426, 26);
+            this.dtpTanggalAwal.Size = new System.Drawing.Size(363, 26);
             this.dtpTanggalAwal.TabIndex = 3;
             // 
             // dtpTanggalAkhir
@@ -113,17 +111,17 @@
             this.dtpTanggalAkhir.CustomFormat = "dd MMMM yyyy HH:mm tt";
             this.dtpTanggalAkhir.Dock = System.Windows.Forms.DockStyle.Top;
             this.dtpTanggalAkhir.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpTanggalAkhir.Location = new System.Drawing.Point(147, 35);
+            this.dtpTanggalAkhir.Location = new System.Drawing.Point(163, 35);
             this.dtpTanggalAkhir.Name = "dtpTanggalAkhir";
-            this.dtpTanggalAkhir.Size = new System.Drawing.Size(426, 26);
+            this.dtpTanggalAkhir.Size = new System.Drawing.Size(363, 26);
             this.dtpTanggalAkhir.TabIndex = 4;
             // 
             // txtFilter
             // 
             this.txtFilter.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtFilter.Location = new System.Drawing.Point(147, 67);
+            this.txtFilter.Location = new System.Drawing.Point(163, 67);
             this.txtFilter.Name = "txtFilter";
-            this.txtFilter.Size = new System.Drawing.Size(426, 26);
+            this.txtFilter.Size = new System.Drawing.Size(363, 26);
             this.txtFilter.TabIndex = 5;
             // 
             // crystalReportViewer1
@@ -135,24 +133,20 @@
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(3, 99);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(715, 370);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(656, 392);
             this.crystalReportViewer1.TabIndex = 6;
             // 
             // btnTampilkan
             // 
             this.btnTampilkan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnTampilkan.Location = new System.Drawing.Point(579, 3);
+            this.btnTampilkan.Location = new System.Drawing.Point(532, 3);
             this.btnTampilkan.Name = "btnTampilkan";
             this.tableLayoutPanel1.SetRowSpan(this.btnTampilkan, 3);
-            this.btnTampilkan.Size = new System.Drawing.Size(139, 90);
+            this.btnTampilkan.Size = new System.Drawing.Size(127, 90);
             this.btnTampilkan.TabIndex = 7;
             this.btnTampilkan.Text = "Tampilkan";
             this.btnTampilkan.UseVisualStyleBackColor = true;
             this.btnTampilkan.Click += new System.EventHandler(this.btnTampilkan_Click);
-            // 
-            // adapterLaporanPenjualan
-            // 
-            this.adapterLaporanPenjualan.ClearBeforeFill = true;
             // 
             // datasetPOS
             // 
@@ -160,26 +154,20 @@
             this.datasetPOS.Locale = new System.Globalization.CultureInfo("en-US");
             this.datasetPOS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // adapterBarang
+            // adapterLaporanRestok
             // 
-            this.adapterBarang.ClearBeforeFill = true;
+            this.adapterLaporanRestok.ClearBeforeFill = true;
             // 
-            // adapterLstPenjualan
-            // 
-            this.adapterLstPenjualan.ClearBeforeFill = true;
-            // 
-            // FormLaporanPenjualan
+            // FormLaporanRestok
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(721, 472);
+            this.ClientSize = new System.Drawing.Size(662, 494);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.Name = "FormLaporanPenjualan";
-            this.Text = "FormLaporanPenjualan";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FormLaporanPenjualan_Load);
+            this.Name = "FormLaporanRestok";
+            this.Text = "FormLaporanRestok";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datasetPOS)).EndInit();
@@ -198,10 +186,8 @@
         private System.Windows.Forms.TextBox txtFilter;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
         private System.Windows.Forms.Button btnTampilkan;
-        private DatasetPOSTableAdapters.tbl_laporan_penjualanTableAdapter adapterLaporanPenjualan;
         private DatasetPOS datasetPOS;
-        private Report.ReportPenjualan reportPenjualan1;
-        private DatasetPOSTableAdapters.tbl_barangTableAdapter adapterBarang;
-        private DatasetPOSTableAdapters.tbl_lstpenjualanTableAdapter adapterLstPenjualan;
+        private DatasetPOSTableAdapters.tbl_laporan_restokTableAdapter adapterLaporanRestok;
+        private Report.ReportReStok reportReStok;
     }
 }

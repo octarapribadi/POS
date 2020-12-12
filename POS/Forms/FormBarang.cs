@@ -359,6 +359,7 @@ namespace POS.Forms
 
         private void cmbNamaBarang_KeyDown(object sender, KeyEventArgs e)
         {
+            /*
             try
             {
                 if (e.KeyCode == Keys.Enter)
@@ -370,6 +371,7 @@ namespace POS.Forms
             {
                 konfigurasi.showError(ex);
             }
+            */
         }
 
         private void cmbKategori_KeyDown(object sender, KeyEventArgs e)

@@ -16,14 +16,14 @@ namespace POS.Report {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class ReportPenjualan : ReportClass {
+    public class ReportReStok : ReportClass {
         
-        public ReportPenjualan() {
+        public ReportReStok() {
         }
         
         public override string ResourceName {
             get {
-                return "ReportPenjualan.rpt";
+                return "ReportReStok.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace POS.Report {
         
         public override string FullResourceName {
             get {
-                return "POS.Report.ReportPenjualan.rpt";
+                return "POS.Report.ReportReStok.rpt";
             }
             set {
                 // Do nothing
@@ -66,7 +66,7 @@ namespace POS.Report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -74,7 +74,7 @@ namespace POS.Report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,25 +82,9 @@ namespace POS.Report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
-            get {
-                return this.ReportDefinition.Sections[4];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
-            get {
-                return this.ReportDefinition.Sections[5];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public CrystalDecisions.CrystalReports.Engine.Section Section5 {
             get {
-                return this.ReportDefinition.Sections[6];
+                return this.ReportDefinition.Sections[4];
             }
         }
         
@@ -122,9 +106,9 @@ namespace POS.Report {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedReportPenjualan : Component, ICachedReport {
+    public class CachedReportReStok : Component, ICachedReport {
         
-        public CachedReportPenjualan() {
+        public CachedReportReStok() {
         }
         
         [Browsable(false)]
@@ -161,7 +145,7 @@ namespace POS.Report {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            ReportPenjualan rpt = new ReportPenjualan();
+            ReportReStok rpt = new ReportReStok();
             rpt.Site = this.Site;
             return rpt;
         }
