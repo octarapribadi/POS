@@ -136,6 +136,16 @@ namespace POS {
         
         private global::System.Data.DataRelation relationFK_tbl_barang_tbl_supplier3;
         
+        private global::System.Data.DataRelation relationFK_tbl_harga_tbl_barang7;
+        
+        private global::System.Data.DataRelation relationFK_tbl_stok_tbl_barang7;
+        
+        private global::System.Data.DataRelation relationFK_tbl_restok_tbl_barang6;
+        
+        private global::System.Data.DataRelation relationFK_tbl_lstpenjualan_tbl_barang3;
+        
+        private global::System.Data.DataRelation relationFK_tbl_barang_keluar_tbl_barang3;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -716,6 +726,11 @@ namespace POS {
             this.relationFK_tbl_lstpenjualan_tbl_barang2 = this.Relations["FK_tbl_lstpenjualan_tbl_barang2"];
             this.relationFK_tbl_barang_keluar_tbl_barang2 = this.Relations["FK_tbl_barang_keluar_tbl_barang2"];
             this.relationFK_tbl_barang_tbl_supplier3 = this.Relations["FK_tbl_barang_tbl_supplier3"];
+            this.relationFK_tbl_harga_tbl_barang7 = this.Relations["FK_tbl_harga_tbl_barang7"];
+            this.relationFK_tbl_stok_tbl_barang7 = this.Relations["FK_tbl_stok_tbl_barang7"];
+            this.relationFK_tbl_restok_tbl_barang6 = this.Relations["FK_tbl_restok_tbl_barang6"];
+            this.relationFK_tbl_lstpenjualan_tbl_barang3 = this.Relations["FK_tbl_lstpenjualan_tbl_barang3"];
+            this.relationFK_tbl_barang_keluar_tbl_barang3 = this.Relations["FK_tbl_barang_keluar_tbl_barang3"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -915,6 +930,26 @@ namespace POS {
                         this.tabletbl_supplier.supplier_idColumn}, new global::System.Data.DataColumn[] {
                         this.tabletbl_laporan_restok.supplier_idColumn}, false);
             this.Relations.Add(this.relationFK_tbl_barang_tbl_supplier3);
+            this.relationFK_tbl_harga_tbl_barang7 = new global::System.Data.DataRelation("FK_tbl_harga_tbl_barang7", new global::System.Data.DataColumn[] {
+                        this.tabletbl_laporan_penjualan.barang_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tabletbl_harga.barang_idColumn}, false);
+            this.Relations.Add(this.relationFK_tbl_harga_tbl_barang7);
+            this.relationFK_tbl_stok_tbl_barang7 = new global::System.Data.DataRelation("FK_tbl_stok_tbl_barang7", new global::System.Data.DataColumn[] {
+                        this.tabletbl_laporan_penjualan.barang_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tabletbl_stok.barang_idColumn}, false);
+            this.Relations.Add(this.relationFK_tbl_stok_tbl_barang7);
+            this.relationFK_tbl_restok_tbl_barang6 = new global::System.Data.DataRelation("FK_tbl_restok_tbl_barang6", new global::System.Data.DataColumn[] {
+                        this.tabletbl_laporan_penjualan.barang_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tabletbl_restok.barang_idColumn}, false);
+            this.Relations.Add(this.relationFK_tbl_restok_tbl_barang6);
+            this.relationFK_tbl_lstpenjualan_tbl_barang3 = new global::System.Data.DataRelation("FK_tbl_lstpenjualan_tbl_barang3", new global::System.Data.DataColumn[] {
+                        this.tabletbl_laporan_penjualan.barang_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tabletbl_lstpenjualan.barang_idColumn}, false);
+            this.Relations.Add(this.relationFK_tbl_lstpenjualan_tbl_barang3);
+            this.relationFK_tbl_barang_keluar_tbl_barang3 = new global::System.Data.DataRelation("FK_tbl_barang_keluar_tbl_barang3", new global::System.Data.DataColumn[] {
+                        this.tabletbl_laporan_penjualan.barang_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tabletbl_barang_keluar.barang_idColumn}, false);
+            this.Relations.Add(this.relationFK_tbl_barang_keluar_tbl_barang3);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6051,6 +6086,8 @@ namespace POS {
             
             private global::System.Data.DataColumn columnbarang_id;
             
+            private global::System.Data.DataColumn columndiskon_lst;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public tbl_laporan_penjualanDataTable() {
@@ -6182,6 +6219,14 @@ namespace POS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn diskon_lstColumn {
+                get {
+                    return this.columndiskon_lst;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -6217,7 +6262,7 @@ namespace POS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public tbl_laporan_penjualanRow Addtbl_laporan_penjualanRow(tbl_penjualanRow parenttbl_penjualanRowBytbl_penjualan_tbl_laporan_penjualan, System.DateTime tanggal_penjualan, decimal total_belanja, decimal jumlah_pembayaran, decimal kembalian, decimal diskon, string keterangan, int quantity, decimal harga_jual, string nama_barang, tbl_barangRow parenttbl_barangRowBytbl_barang_tbl_laporan_penjualan) {
+            public tbl_laporan_penjualanRow Addtbl_laporan_penjualanRow(tbl_penjualanRow parenttbl_penjualanRowBytbl_penjualan_tbl_laporan_penjualan, System.DateTime tanggal_penjualan, decimal total_belanja, decimal jumlah_pembayaran, decimal kembalian, decimal diskon, string keterangan, int quantity, decimal harga_jual, string nama_barang, tbl_barangRow parenttbl_barangRowBytbl_barang_tbl_laporan_penjualan, decimal diskon_lst) {
                 tbl_laporan_penjualanRow rowtbl_laporan_penjualanRow = ((tbl_laporan_penjualanRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -6231,7 +6276,8 @@ namespace POS {
                         harga_jual,
                         nama_barang,
                         null,
-                        null};
+                        null,
+                        diskon_lst};
                 if ((parenttbl_penjualanRowBytbl_penjualan_tbl_laporan_penjualan != null)) {
                     columnValuesArray[0] = parenttbl_penjualanRowBytbl_penjualan_tbl_laporan_penjualan[0];
                 }
@@ -6279,6 +6325,7 @@ namespace POS {
                 this.columnnama_barang = base.Columns["nama_barang"];
                 this.columnlstpenjualan_id = base.Columns["lstpenjualan_id"];
                 this.columnbarang_id = base.Columns["barang_id"];
+                this.columndiskon_lst = base.Columns["diskon_lst"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6308,6 +6355,8 @@ namespace POS {
                 base.Columns.Add(this.columnlstpenjualan_id);
                 this.columnbarang_id = new global::System.Data.DataColumn("barang_id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnbarang_id);
+                this.columndiskon_lst = new global::System.Data.DataColumn("diskon_lst", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndiskon_lst);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnpenjualan_id}, true));
                 this.columnpenjualan_id.AllowDBNull = false;
@@ -8046,6 +8095,17 @@ namespace POS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbl_laporan_penjualanRow tbl_laporan_penjualanRow {
+                get {
+                    return ((tbl_laporan_penjualanRow)(this.GetParentRow(this.Table.ParentRelations["FK_tbl_harga_tbl_barang7"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_tbl_harga_tbl_barang7"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Isbarang_idNull() {
                 return this.IsNull(this.tabletbl_harga.barang_idColumn);
             }
@@ -8513,6 +8573,17 @@ namespace POS {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_tbl_stok_tbl_barang6"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbl_laporan_penjualanRow tbl_laporan_penjualanRow {
+                get {
+                    return ((tbl_laporan_penjualanRow)(this.GetParentRow(this.Table.ParentRelations["FK_tbl_stok_tbl_barang7"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_tbl_stok_tbl_barang7"]);
                 }
             }
             
@@ -9308,6 +9379,17 @@ namespace POS {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_tbl_restok_tbl_barang5"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbl_laporan_penjualanRow tbl_laporan_penjualanRow {
+                get {
+                    return ((tbl_laporan_penjualanRow)(this.GetParentRow(this.Table.ParentRelations["FK_tbl_restok_tbl_barang6"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_tbl_restok_tbl_barang6"]);
                 }
             }
             
@@ -10293,6 +10375,17 @@ namespace POS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbl_laporan_penjualanRow tbl_laporan_penjualanRow {
+                get {
+                    return ((tbl_laporan_penjualanRow)(this.GetParentRow(this.Table.ParentRelations["FK_tbl_lstpenjualan_tbl_barang3"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_tbl_lstpenjualan_tbl_barang3"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Ispenjualan_idNull() {
                 return this.IsNull(this.tabletbl_lstpenjualan.penjualan_idColumn);
             }
@@ -11054,6 +11147,22 @@ namespace POS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal diskon_lst {
+                get {
+                    try {
+                        return ((decimal)(this[this.tabletbl_laporan_penjualan.diskon_lstColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'diskon_lst\' in table \'tbl_laporan_penjualan\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletbl_laporan_penjualan.diskon_lstColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public tbl_barangRow tbl_barangRow {
                 get {
                     return ((tbl_barangRow)(this.GetParentRow(this.Table.ParentRelations["tbl_barang_tbl_laporan_penjualan"])));
@@ -11192,6 +11301,73 @@ namespace POS {
             public void Setnama_barangNull() {
                 this[this.tabletbl_laporan_penjualan.nama_barangColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isdiskon_lstNull() {
+                return this.IsNull(this.tabletbl_laporan_penjualan.diskon_lstColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setdiskon_lstNull() {
+                this[this.tabletbl_laporan_penjualan.diskon_lstColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbl_hargaRow[] Gettbl_hargaRows() {
+                if ((this.Table.ChildRelations["FK_tbl_harga_tbl_barang7"] == null)) {
+                    return new tbl_hargaRow[0];
+                }
+                else {
+                    return ((tbl_hargaRow[])(base.GetChildRows(this.Table.ChildRelations["FK_tbl_harga_tbl_barang7"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbl_stokRow[] Gettbl_stokRows() {
+                if ((this.Table.ChildRelations["FK_tbl_stok_tbl_barang7"] == null)) {
+                    return new tbl_stokRow[0];
+                }
+                else {
+                    return ((tbl_stokRow[])(base.GetChildRows(this.Table.ChildRelations["FK_tbl_stok_tbl_barang7"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbl_restokRow[] Gettbl_restokRows() {
+                if ((this.Table.ChildRelations["FK_tbl_restok_tbl_barang6"] == null)) {
+                    return new tbl_restokRow[0];
+                }
+                else {
+                    return ((tbl_restokRow[])(base.GetChildRows(this.Table.ChildRelations["FK_tbl_restok_tbl_barang6"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbl_lstpenjualanRow[] Gettbl_lstpenjualanRows() {
+                if ((this.Table.ChildRelations["FK_tbl_lstpenjualan_tbl_barang3"] == null)) {
+                    return new tbl_lstpenjualanRow[0];
+                }
+                else {
+                    return ((tbl_lstpenjualanRow[])(base.GetChildRows(this.Table.ChildRelations["FK_tbl_lstpenjualan_tbl_barang3"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbl_barang_keluarRow[] Gettbl_barang_keluarRows() {
+                if ((this.Table.ChildRelations["FK_tbl_barang_keluar_tbl_barang3"] == null)) {
+                    return new tbl_barang_keluarRow[0];
+                }
+                else {
+                    return ((tbl_barang_keluarRow[])(base.GetChildRows(this.Table.ChildRelations["FK_tbl_barang_keluar_tbl_barang3"])));
+                }
+            }
         }
         
         /// <summary>
@@ -11302,6 +11478,17 @@ namespace POS {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_tbl_barang_keluar_tbl_barang2"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public tbl_laporan_penjualanRow tbl_laporan_penjualanRow {
+                get {
+                    return ((tbl_laporan_penjualanRow)(this.GetParentRow(this.Table.ParentRelations["FK_tbl_barang_keluar_tbl_barang3"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_tbl_barang_keluar_tbl_barang3"]);
                 }
             }
             
@@ -18730,6 +18917,7 @@ FROM            tbl_barang INNER JOIN
             tableMapping.ColumnMappings.Add("nama_barang", "nama_barang");
             tableMapping.ColumnMappings.Add("lstpenjualan_id", "lstpenjualan_id");
             tableMapping.ColumnMappings.Add("barang_id", "barang_id");
+            tableMapping.ColumnMappings.Add("diskon_lst", "diskon_lst");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -18746,18 +18934,16 @@ FROM            tbl_barang INNER JOIN
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        tbl_penjualan.penjualan_id, tbl_penjualan.tanggal_penjualan, tbl_penjualan.total_belanja, tbl_penjualan.jumlah_pembayaran, tbl_penjualan.kembalian, 
-                         tbl_penjualan.diskon, tbl_penjualan.keterangan, tbl_lstpenjualan.quantity, tbl_lstpenjualan.harga_jual, tbl_barang.nama_barang, tbl_lstpenjualan.lstpenjualan_id, 
-                         tbl_barang.barang_id
+            this._commandCollection[0].CommandText = @"SELECT        tbl_penjualan.penjualan_id, tbl_penjualan.tanggal_penjualan, tbl_penjualan.total_belanja, tbl_penjualan.jumlah_pembayaran, tbl_penjualan.kembalian, tbl_penjualan.diskon, tbl_penjualan.keterangan, tbl_lstpenjualan.quantity, 
+                         tbl_lstpenjualan.harga_jual, tbl_barang.nama_barang, tbl_lstpenjualan.lstpenjualan_id, tbl_barang.barang_id, tbl_lstpenjualan.diskon AS diskon_lst
 FROM            tbl_penjualan INNER JOIN
                          tbl_lstpenjualan ON tbl_penjualan.penjualan_id = tbl_lstpenjualan.penjualan_id INNER JOIN
                          tbl_barang ON tbl_lstpenjualan.barang_id = tbl_barang.barang_id";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT        tbl_penjualan.penjualan_id, tbl_penjualan.tanggal_penjualan, tbl_penjualan.total_belanja, tbl_penjualan.jumlah_pembayaran, tbl_penjualan.kembalian, 
-                         tbl_penjualan.diskon, tbl_penjualan.keterangan, tbl_lstpenjualan.quantity, tbl_lstpenjualan.harga_jual, tbl_barang.nama_barang, tbl_lstpenjualan.lstpenjualan_id, 
-                         tbl_barang.barang_id
+            this._commandCollection[1].CommandText = @"SELECT        tbl_penjualan.penjualan_id, tbl_penjualan.tanggal_penjualan, tbl_penjualan.total_belanja, tbl_penjualan.jumlah_pembayaran, tbl_penjualan.kembalian, tbl_penjualan.diskon, tbl_penjualan.keterangan, tbl_lstpenjualan.quantity, 
+                         tbl_lstpenjualan.harga_jual, tbl_barang.nama_barang, tbl_lstpenjualan.lstpenjualan_id, tbl_barang.barang_id, tbl_lstpenjualan.diskon AS diskon_lst
 FROM            tbl_penjualan INNER JOIN
                          tbl_lstpenjualan ON tbl_penjualan.penjualan_id = tbl_lstpenjualan.penjualan_id INNER JOIN
                          tbl_barang ON tbl_lstpenjualan.barang_id = tbl_barang.barang_id

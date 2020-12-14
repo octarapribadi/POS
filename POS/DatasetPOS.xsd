@@ -1202,9 +1202,8 @@ FROM            tbl_barang INNER JOIN
               <DbSource ConnectionRef="DB_POSConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="false" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        tbl_penjualan.penjualan_id, tbl_penjualan.tanggal_penjualan, tbl_penjualan.total_belanja, tbl_penjualan.jumlah_pembayaran, tbl_penjualan.kembalian, 
-                         tbl_penjualan.diskon, tbl_penjualan.keterangan, tbl_lstpenjualan.quantity, tbl_lstpenjualan.harga_jual, tbl_barang.nama_barang, tbl_lstpenjualan.lstpenjualan_id, 
-                         tbl_barang.barang_id
+                    <CommandText>SELECT        tbl_penjualan.penjualan_id, tbl_penjualan.tanggal_penjualan, tbl_penjualan.total_belanja, tbl_penjualan.jumlah_pembayaran, tbl_penjualan.kembalian, tbl_penjualan.diskon, tbl_penjualan.keterangan, tbl_lstpenjualan.quantity, 
+                         tbl_lstpenjualan.harga_jual, tbl_barang.nama_barang, tbl_lstpenjualan.lstpenjualan_id, tbl_barang.barang_id, tbl_lstpenjualan.diskon AS diskon_lst
 FROM            tbl_penjualan INNER JOIN
                          tbl_lstpenjualan ON tbl_penjualan.penjualan_id = tbl_lstpenjualan.penjualan_id INNER JOIN
                          tbl_barang ON tbl_lstpenjualan.barang_id = tbl_barang.barang_id</CommandText>
@@ -1226,14 +1225,14 @@ FROM            tbl_penjualan INNER JOIN
               <Mapping SourceColumn="nama_barang" DataSetColumn="nama_barang" />
               <Mapping SourceColumn="lstpenjualan_id" DataSetColumn="lstpenjualan_id" />
               <Mapping SourceColumn="barang_id" DataSetColumn="barang_id" />
+              <Mapping SourceColumn="diskon_lst" DataSetColumn="diskon_lst" />
             </Mappings>
             <Sources>
               <DbSource ConnectionRef="DB_POSConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByTanggal" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillByTanggal" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByTanggal">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        tbl_penjualan.penjualan_id, tbl_penjualan.tanggal_penjualan, tbl_penjualan.total_belanja, tbl_penjualan.jumlah_pembayaran, tbl_penjualan.kembalian, 
-                         tbl_penjualan.diskon, tbl_penjualan.keterangan, tbl_lstpenjualan.quantity, tbl_lstpenjualan.harga_jual, tbl_barang.nama_barang, tbl_lstpenjualan.lstpenjualan_id, 
-                         tbl_barang.barang_id
+                    <CommandText>SELECT        tbl_penjualan.penjualan_id, tbl_penjualan.tanggal_penjualan, tbl_penjualan.total_belanja, tbl_penjualan.jumlah_pembayaran, tbl_penjualan.kembalian, tbl_penjualan.diskon, tbl_penjualan.keterangan, tbl_lstpenjualan.quantity, 
+                         tbl_lstpenjualan.harga_jual, tbl_barang.nama_barang, tbl_lstpenjualan.lstpenjualan_id, tbl_barang.barang_id, tbl_lstpenjualan.diskon AS diskon_lst
 FROM            tbl_penjualan INNER JOIN
                          tbl_lstpenjualan ON tbl_penjualan.penjualan_id = tbl_lstpenjualan.penjualan_id INNER JOIN
                          tbl_barang ON tbl_lstpenjualan.barang_id = tbl_barang.barang_id
@@ -1825,6 +1824,7 @@ WHERE tbl_restok.tanggal_restok between @tanggal_awal AND @tanggal_akhir</Comman
               </xs:element>
               <xs:element name="lstpenjualan_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnlstpenjualan_id" msprop:Generator_ColumnPropNameInRow="lstpenjualan_id" msprop:Generator_ColumnPropNameInTable="lstpenjualan_idColumn" msprop:Generator_UserColumnName="lstpenjualan_id" type="xs:long" />
               <xs:element name="barang_id" msprop:Generator_ColumnVarNameInTable="columnbarang_id" msprop:Generator_ColumnPropNameInRow="barang_id" msprop:Generator_ColumnPropNameInTable="barang_idColumn" msprop:Generator_UserColumnName="barang_id" type="xs:int" />
+              <xs:element name="diskon_lst" msprop:Generator_ColumnVarNameInTable="columndiskon_lst" msprop:Generator_ColumnPropNameInRow="diskon_lst" msprop:Generator_ColumnPropNameInTable="diskon_lstColumn" msprop:Generator_UserColumnName="diskon_lst" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -2016,6 +2016,11 @@ WHERE tbl_restok.tanggal_restok between @tanggal_awal AND @tanggal_akhir</Comman
       <msdata:Relationship name="FK_tbl_lstpenjualan_tbl_barang2" msdata:parent="tbl_laporan_restok" msdata:child="tbl_lstpenjualan" msdata:parentkey="barang_id" msdata:childkey="barang_id" msprop:Generator_UserChildTable="tbl_lstpenjualan" msprop:Generator_ChildPropName="Gettbl_lstpenjualanRows" msprop:Generator_UserRelationName="FK_tbl_lstpenjualan_tbl_barang2" msprop:Generator_RelationVarName="relationFK_tbl_lstpenjualan_tbl_barang2" msprop:Generator_UserParentTable="tbl_laporan_restok" msprop:Generator_ParentPropName="tbl_laporan_restokRow" />
       <msdata:Relationship name="FK_tbl_barang_keluar_tbl_barang2" msdata:parent="tbl_laporan_restok" msdata:child="tbl_barang_keluar" msdata:parentkey="barang_id" msdata:childkey="barang_id" msprop:Generator_UserChildTable="tbl_barang_keluar" msprop:Generator_ChildPropName="Gettbl_barang_keluarRows" msprop:Generator_UserRelationName="FK_tbl_barang_keluar_tbl_barang2" msprop:Generator_RelationVarName="relationFK_tbl_barang_keluar_tbl_barang2" msprop:Generator_UserParentTable="tbl_laporan_restok" msprop:Generator_ParentPropName="tbl_laporan_restokRow" />
       <msdata:Relationship name="FK_tbl_barang_tbl_supplier3" msdata:parent="tbl_supplier" msdata:child="tbl_laporan_restok" msdata:parentkey="supplier_id" msdata:childkey="supplier_id" msprop:Generator_UserChildTable="tbl_laporan_restok" msprop:Generator_ChildPropName="Gettbl_laporan_restokRows" msprop:Generator_UserRelationName="FK_tbl_barang_tbl_supplier3" msprop:Generator_ParentPropName="tbl_supplierRow" msprop:Generator_RelationVarName="relationFK_tbl_barang_tbl_supplier3" msprop:Generator_UserParentTable="tbl_supplier" />
+      <msdata:Relationship name="FK_tbl_harga_tbl_barang7" msdata:parent="tbl_laporan_penjualan" msdata:child="tbl_harga" msdata:parentkey="barang_id" msdata:childkey="barang_id" msprop:Generator_UserChildTable="tbl_harga" msprop:Generator_ChildPropName="Gettbl_hargaRows" msprop:Generator_UserRelationName="FK_tbl_harga_tbl_barang7" msprop:Generator_RelationVarName="relationFK_tbl_harga_tbl_barang7" msprop:Generator_UserParentTable="tbl_laporan_penjualan" msprop:Generator_ParentPropName="tbl_laporan_penjualanRow" />
+      <msdata:Relationship name="FK_tbl_stok_tbl_barang7" msdata:parent="tbl_laporan_penjualan" msdata:child="tbl_stok" msdata:parentkey="barang_id" msdata:childkey="barang_id" msprop:Generator_UserChildTable="tbl_stok" msprop:Generator_ChildPropName="Gettbl_stokRows" msprop:Generator_UserRelationName="FK_tbl_stok_tbl_barang7" msprop:Generator_RelationVarName="relationFK_tbl_stok_tbl_barang7" msprop:Generator_UserParentTable="tbl_laporan_penjualan" msprop:Generator_ParentPropName="tbl_laporan_penjualanRow" />
+      <msdata:Relationship name="FK_tbl_restok_tbl_barang6" msdata:parent="tbl_laporan_penjualan" msdata:child="tbl_restok" msdata:parentkey="barang_id" msdata:childkey="barang_id" msprop:Generator_UserChildTable="tbl_restok" msprop:Generator_ChildPropName="Gettbl_restokRows" msprop:Generator_UserRelationName="FK_tbl_restok_tbl_barang6" msprop:Generator_RelationVarName="relationFK_tbl_restok_tbl_barang6" msprop:Generator_UserParentTable="tbl_laporan_penjualan" msprop:Generator_ParentPropName="tbl_laporan_penjualanRow" />
+      <msdata:Relationship name="FK_tbl_lstpenjualan_tbl_barang3" msdata:parent="tbl_laporan_penjualan" msdata:child="tbl_lstpenjualan" msdata:parentkey="barang_id" msdata:childkey="barang_id" msprop:Generator_UserChildTable="tbl_lstpenjualan" msprop:Generator_ChildPropName="Gettbl_lstpenjualanRows" msprop:Generator_UserRelationName="FK_tbl_lstpenjualan_tbl_barang3" msprop:Generator_RelationVarName="relationFK_tbl_lstpenjualan_tbl_barang3" msprop:Generator_UserParentTable="tbl_laporan_penjualan" msprop:Generator_ParentPropName="tbl_laporan_penjualanRow" />
+      <msdata:Relationship name="FK_tbl_barang_keluar_tbl_barang3" msdata:parent="tbl_laporan_penjualan" msdata:child="tbl_barang_keluar" msdata:parentkey="barang_id" msdata:childkey="barang_id" msprop:Generator_UserChildTable="tbl_barang_keluar" msprop:Generator_ChildPropName="Gettbl_barang_keluarRows" msprop:Generator_UserRelationName="FK_tbl_barang_keluar_tbl_barang3" msprop:Generator_ParentPropName="tbl_laporan_penjualanRow" msprop:Generator_RelationVarName="relationFK_tbl_barang_keluar_tbl_barang3" msprop:Generator_UserParentTable="tbl_laporan_penjualan" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
