@@ -41,6 +41,14 @@ namespace POS.Forms
                     frmStok.Show();
                     this.Close();
                 }
+                if(form == "log_stok")
+                {
+                    FormLogStok frmLogStok = null;
+                    frmLogStok = new FormLogStok();
+                    frmLogStok.MdiParent = parent;
+                    frmLogStok.Show();
+                    this.Close();
+                }
             }
             else
             {

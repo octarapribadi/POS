@@ -39,6 +39,9 @@ namespace POS.Forms
         {
             labelList.Text = data;
             labelTotal.Text = total;
+            lblTanggalKwitansi.Text = "tgl: ";
+            lblTanggalKwitansi.Text += DateTime.Now.Date.ToString("dd MMMM yyyy");
+            lblTanggalKwitansi.Text += "\n";
             Margins margin = new Margins(0, 0, 0, 0);
             
             printDocument1.DefaultPageSettings.PaperSize = new System.Drawing.Printing.PaperSize("pos", 188, 1000);

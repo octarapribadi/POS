@@ -377,36 +377,42 @@ namespace POS.Forms
         {
             try
             {
-                
-                FormKwitansi frmKwitansi = new FormKwitansi();
-                //generate data
-                String data = "";
-                String total = "";
-                foreach(DataRow row in datasetPOS.tbl_listpenjualan_barang)
+                if (totalBayar >= totalBelanja)
                 {
-                    data = String.Concat(data, row["nama_barang"].ToString(),"\n ",row["quantity"].ToString()," x @",String.Format("{0:N0}",row["harga_jual"]));
+                    FormKwitansi frmKwitansi = new FormKwitansi();
+                    //generate data
+                    String data = "";
+                    String total = "";
+                    foreach (DataRow row in datasetPOS.tbl_listpenjualan_barang)
+                    {
+                        data = String.Concat(data, row["nama_barang"].ToString(), "\n ", row["quantity"].ToString(), " x @", String.Format("{0:N0}", row["harga_jual"]));
 
-                    if (row["diskon"] == DBNull.Value)
-                    {
-                        Decimal totalSatuan = 0;
-                        totalSatuan = Convert.ToDecimal(row["harga_jual"]) * Convert.ToDecimal(row["quantity"]);
-                        data = String.Concat(data, " : ", String.Format("{0:N0}", totalSatuan), "\n");
+                        if (row["diskon"] == DBNull.Value)
+                        {
+                            Decimal totalSatuan = 0;
+                            totalSatuan = Convert.ToDecimal(row["harga_jual"]) * Convert.ToDecimal(row["quantity"]);
+                            data = String.Concat(data, " : ", String.Format("{0:N0}", totalSatuan), "\n");
+                        }
+                        else
+                        {
+                            Decimal totalSatuan = 0;
+                            totalSatuan = (Convert.ToDecimal(row["harga_jual"]) * Convert.ToDecimal(row["quantity"]) - Convert.ToDecimal(row["diskon"]));
+                            data = String.Concat(data, "\n disc ", String.Format("{0:N0}", row["diskon"]));
+                            data = String.Concat(data, " : ", String.Format("{0:N0}", totalSatuan), "\n");
+                        }
                     }
-                    else
-                    {
-                        Decimal totalSatuan = 0;
-                        totalSatuan = (Convert.ToDecimal(row["harga_jual"]) * Convert.ToDecimal(row["quantity"]) - Convert.ToDecimal(row["diskon"]));
-                        data = String.Concat(data, "\n disc ", String.Format("{0:N0}", row["diskon"]));
-                        data = String.Concat(data, " : ", String.Format("{0:N0}", totalSatuan), "\n");
-                    }
+
+                    total = String.Concat(total, "SubTotal : ", String.Format("{0:C0}", subTotalBelanja), "\n");
+                    total = String.Concat(total, "Potongan : ", String.Format("{0:C0}", numPotongan.Value), "\n");
+                    total = String.Concat(total, "Tunai : ", String.Format("{0:C0}", numTotalBayar.Value), "\n");
+                    total = String.Concat(total, "Kembalian : ", String.Format("{0:C0}", totalKembalian), "\n");
+
+                    frmKwitansi.print(data, total);
                 }
-                
-                total = String.Concat(total, "SubTotal : ", String.Format("{0:C0}",subTotalBelanja),"\n");
-                total = String.Concat(total, "Potongan : ", String.Format("{0:C0}",numPotongan.Value), "\n");
-                total = String.Concat(total, "Tunai : ", String.Format("{0:C0}", numTotalBayar.Value), "\n");
-                total = String.Concat(total, "Kembalian : ", String.Format("{0:C0}", totalKembalian), "\n");
-
-                frmKwitansi.print(data, total);
+                    else
+                {
+                        MessageBox.Show("Jumlah Pembayaran kurang dari total belanja", "Perhatian", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
             }catch(Exception ex)
             {
                 konfigurasi.showError(ex);

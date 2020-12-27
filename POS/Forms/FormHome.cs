@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace POS.Forms
 {
     public partial class FormHome : Form
     {
+        Konfigurasi konfigurasi = new Konfigurasi();
         public Boolean val=false;
         public FormHome()
         {
@@ -121,6 +123,45 @@ namespace POS.Forms
             frmLaporanRestok = new FormLaporanRestok();
             frmLaporanRestok.MdiParent = this;
             frmLaporanRestok.Show();
+        }
+
+        private void stokToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                String cmdStr = "select TABLE_NAME from DB_POS.INFORMATION_SCHEMA.TABLES where TABLE_NAME = 'tbl_log_stok'";
+                String constr = konfigurasi.getConnectionString();
+                SqlConnection conn = new SqlConnection(constr);
+                SqlCommand cmd = new SqlCommand(cmdStr, conn);
+                conn.Open();
+                Object obj = cmd.ExecuteScalar();
+                conn.Close();
+                
+                if(obj == null)
+                {
+                    String createTableQry = "create table tbl_log_stok(" + 
+                                            "id bigint primary key identity(1, 1)," +
+                                            "tanggal_waktu datetime," +
+                                            "keterangan varchar(255)," +
+                                            ");";
+                    SqlCommand cmd2 = new SqlCommand(createTableQry, conn);
+                    conn.Open();
+                    cmd2.ExecuteNonQuery();
+                    MessageBox.Show("Berhasil menambahkan tabel tbl_log_stok");
+                    conn.Close();
+                }
+                
+            }
+            catch(Exception ex)
+            {
+                konfigurasi.showError(ex);
+            }
+
+            FormDialog frmDialog = new FormDialog();
+            frmDialog.MdiParent = this;
+            frmDialog.form = "log_stok";
+            frmDialog.parent = this;
+            frmDialog.Show();
         }
     }
 }

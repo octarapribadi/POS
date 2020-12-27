@@ -13,10 +13,12 @@ namespace POS.Forms
     public partial class FormRestok : Form
     {
         Konfigurasi konfigurasi;
+        POSLog log;
         public FormRestok()
         {
             InitializeComponent();
             konfigurasi = new Konfigurasi();
+            log = new POSLog();
         }
 
         private void FormRestok_Load(object sender, EventArgs e)
@@ -74,6 +76,13 @@ namespace POS.Forms
                     {
                         Int64 restokID = incrementLastIDFromTable(datasetPOS.tbl_restok_barang_supplier, "restok_id");
                         DataRow row = datasetPOS.tbl_restok_barang_supplier.NewRow();
+
+                        //log
+                        log.setLogStok(String.Format("[insert] tbl_restok, item: {0} ({1} -> {2}) -=[{3}]=-",
+                            cmbNamaBarang.Text, row["qty"], numQty.Value,
+                            "Penambahan Stok"));
+                        //----
+
                         row["restok_id"] = restokID;
                         row["tanggal_restok"] = dtpTanggalRestok.Value;
                         row["barang_id"] = cmbNamaBarang.SelectedValue;
@@ -102,6 +111,13 @@ namespace POS.Forms
                 else
                 {
                     DataRowView rowView = (DataRowView)bsRestokBarangSupplier.Current;
+
+                    //log
+                    log.setLogStok(String.Format("[update] tbl_restok, item: {0} ({1} -> {2}) -=[{3}]=-",
+                        cmbNamaBarang.Text, rowView["qty"], numQty.Value,
+                        numQty.Value - Convert.ToDecimal(rowView["qty"]) > 0 ? "Penambahan Stok" : "Pengurangan Stok"));
+                    //----
+
                     Int64 restokID = (Int64)rowView["restok_id"];
                     rowView.Row["tanggal_restok"] = dtpTanggalRestok.Value;
                     rowView.Row["barang_id"] = cmbNamaBarang.SelectedValue;
@@ -218,6 +234,13 @@ namespace POS.Forms
                     var result = MessageBox.Show("Peringatan: Data yang dihapus tidak dapat dikembalikan lagi!\nApakah yakin akan menghapus data?", "Hapus Data", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (result == DialogResult.Yes)
                     {
+
+                        //log
+                        log.setLogStok(String.Format("[delete] tbl_restok, item: {0} ({1} -> {2}) -=[{3}]=-",
+                            cmbNamaBarang.Text, numQty.Value, "~",
+                            "Pengurangan Stok"));
+                        //----
+
                         adapterRestok.DeleteQueryByRestokID(Convert.ToInt64(restokID));
                         //update stok
                         adapterStok.FillByBarangID(datasetPOS.tbl_stok, Convert.ToInt32(cmbNamaBarang.SelectedValue));

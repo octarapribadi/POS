@@ -52,6 +52,8 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsUsername = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lOGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stokToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -62,6 +64,7 @@
             this.mASTERToolStripMenuItem,
             this.tRANSAKSIToolStripMenuItem,
             this.lAPORANToolStripMenuItem,
+            this.lOGToolStripMenuItem,
             this.pENGATURANToolStripMenuItem,
             this.bARCODEToolStripMenuItem,
             this.kELUARToolStripMenuItem});
@@ -169,14 +172,14 @@
             // pENJUALANToolStripMenuItem1
             // 
             this.pENJUALANToolStripMenuItem1.Name = "pENJUALANToolStripMenuItem1";
-            this.pENJUALANToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.pENJUALANToolStripMenuItem1.Size = new System.Drawing.Size(139, 22);
             this.pENJUALANToolStripMenuItem1.Text = "&PENJUALAN";
             this.pENJUALANToolStripMenuItem1.Click += new System.EventHandler(this.pENJUALANToolStripMenuItem1_Click);
             // 
             // sTOKBARANGToolStripMenuItem
             // 
             this.sTOKBARANGToolStripMenuItem.Name = "sTOKBARANGToolStripMenuItem";
-            this.sTOKBARANGToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.sTOKBARANGToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.sTOKBARANGToolStripMenuItem.Text = "&RE-STOK";
             this.sTOKBARANGToolStripMenuItem.Click += new System.EventHandler(this.sTOKBARANGToolStripMenuItem_Click);
             // 
@@ -244,6 +247,21 @@
             this.tsUsername.Name = "tsUsername";
             this.tsUsername.Size = new System.Drawing.Size(0, 17);
             // 
+            // lOGToolStripMenuItem
+            // 
+            this.lOGToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stokToolStripMenuItem1});
+            this.lOGToolStripMenuItem.Name = "lOGToolStripMenuItem";
+            this.lOGToolStripMenuItem.Size = new System.Drawing.Size(42, 19);
+            this.lOGToolStripMenuItem.Text = "L&OG";
+            // 
+            // stokToolStripMenuItem1
+            // 
+            this.stokToolStripMenuItem1.Name = "stokToolStripMenuItem1";
+            this.stokToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.stokToolStripMenuItem1.Text = "&STOK";
+            this.stokToolStripMenuItem1.Click += new System.EventHandler(this.stokToolStripMenuItem1_Click);
+            // 
             // FormHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
@@ -295,5 +313,7 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel tsUsername;
         private System.Windows.Forms.ToolStripMenuItem bARANGKELUARToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lOGToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stokToolStripMenuItem1;
     }
 }

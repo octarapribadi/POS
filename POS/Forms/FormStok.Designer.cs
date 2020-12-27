@@ -238,6 +238,7 @@
             // 
             this.tstCari.Name = "tstCari";
             this.tstCari.Size = new System.Drawing.Size(250, 25);
+            this.tstCari.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tstCari_KeyDown);
             // 
             // tsbCari
             // 
@@ -246,6 +247,7 @@
             this.tsbCari.Name = "tsbCari";
             this.tsbCari.Size = new System.Drawing.Size(88, 22);
             this.tsbCari.Text = "FILTER";
+            this.tsbCari.Click += new System.EventHandler(this.tsbCari_Click);
             // 
             // splitContainer1
             // 

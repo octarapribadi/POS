@@ -13,10 +13,12 @@ namespace POS.Forms
     public partial class FormKeluarBarang : Form
     {
         Konfigurasi konfigurasi;
+        POSLog log;
         public FormKeluarBarang()
         {
             InitializeComponent();
             konfigurasi = new Konfigurasi();
+            log = new POSLog();
         }
 
         private void FormKeluarBarang_Load(object sender, EventArgs e)
@@ -40,6 +42,13 @@ namespace POS.Forms
                 {
                     Int32 barangKeluarID = incrementLastIDFromTable(datasetPOS.tbl_barang_keluar_barang, "barang_keluar_id");
                     DataRow row = datasetPOS.tbl_barang_keluar_barang.NewRow();
+
+                    //log
+                    log.setLogStok(String.Format("[insert] tbl_barang_keluar, item: {0} ({1} -> {2}) -=[{3}]=-",
+                        cmbNamaBarang.Text, row["qty"], numQty.Value,
+                        "Pengurangan Stok"));
+                    //----
+
                     row["barang_keluar_id"] = barangKeluarID;
                     row["tanggal_keluar"] = dtpTanggalKeluar.Value;
                     row["barang_id"] = cmbNamaBarang.SelectedValue;
@@ -57,6 +66,12 @@ namespace POS.Forms
                     Int32 barangKeluarID = Convert.ToInt32(txtBarangKeluarID.Text);
                     DataRowView rowView = (DataRowView)bsBarangKeluar.Current;
                     //rowView["barang_keluar_id"] = barangKeluarID;
+
+                    //log
+                    log.setLogStok(String.Format("[update] tbl_barang_keluar, item: {0} ({1} -> {2}) -=[{3}]=-",
+                        cmbNamaBarang.Text, rowView["qty"], numQty.Value,
+                        numQty.Value - Convert.ToDecimal(rowView["qty"]) > 0?"Pengurangan Stok":"Penambahan Stok"));
+                    //----
 
                     //stok
                     //Int32 stokLama = Convert.ToInt32(adapterStok.getStokFromBarangID(Convert.ToInt32(cmbNamaBarang.SelectedValue)));
@@ -129,10 +144,14 @@ namespace POS.Forms
                     var result = MessageBox.Show("Peringatan: Data yang dihapus tidak dapat dikembalikan lagi!\nApakah yakin akan menghapus data?", "Hapus Data", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (result == DialogResult.Yes)
                     {
+                        //log
+                        log.setLogStok(String.Format("[delete] tbl_barang_keluar, item: {0} ({1} -> {2}) -=[{3}]=-",
+                            cmbNamaBarang.Text, numQty.Value, "~",
+                            "Penambahan Stok"));
+                        //----
                         Int32 stok = Convert.ToInt32(adapterStok.getStokFromBarangID(Convert.ToInt32(cmbNamaBarang.SelectedValue)));
                         stok += Convert.ToInt32(numQty.Value);
                         adapterStok.UpdateQueryByBarangID(stok, Convert.ToInt32(cmbNamaBarang.SelectedValue));
-
                         adapterBarangKeluar.DeleteQueryByBarangKeluarID(Convert.ToInt32(barangKeluarID));
                         bsBarangKeluar.RemoveCurrent();
                     }

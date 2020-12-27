@@ -13,10 +13,12 @@ namespace POS.Forms
     public partial class FormStok : Form
     {
         Konfigurasi konfigurasi;
+        POSLog log;
         public FormStok()
         {
             InitializeComponent();
             konfigurasi = new Konfigurasi();
+            log = new POSLog();
         }
 
         private void splitContainer1_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -58,6 +60,13 @@ namespace POS.Forms
             {
                 Int32 stokID;
                 DataRowView rowView = (DataRowView)bsStok.Current;
+
+                //log
+                log.setLogStok(String.Format("[update] tbl_stok, item: {0} ({1} -> {2}) -=[{3}]=-",
+                    cmbNamaBarang.Text,rowView["stok"], numStok.Value, 
+                    numStok.Value-Convert.ToDecimal(rowView["stok"])>0? "Penambahan Stok" : "Pengurangan Stok"));
+                //----
+
                 stokID = Convert.ToInt32(rowView["stok_id"]);
                 rowView.Row["stok"] = numStok.Value;
                 rowView.Row["keterangan"] = txtKeterangan.Text;
@@ -66,6 +75,26 @@ namespace POS.Forms
             catch(Exception ex)
             {
                 konfigurasi.showError(ex);
+            }
+        }
+
+        private void tsbCari_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                bsStok.Filter = tstCari.Text;
+            }
+            catch(Exception ex)
+            {
+                konfigurasi.showError(ex);
+            }
+        }
+
+        private void tstCari_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                tsbCari_Click(sender, e);
             }
         }
     }
