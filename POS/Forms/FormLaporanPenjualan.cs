@@ -38,6 +38,10 @@ namespace POS.Forms
 
         private void FormLaporanPenjualan_Load(object sender, EventArgs e)
         {
+            this.Font = konfigurasi.getFont();
+            this.ForeColor = konfigurasi.getFontColor();
+            this.BackColor = konfigurasi.getBackColor();
+
             datasetPOS.EnforceConstraints = false;
             //adapterBarang.Fill(datasetPOS.tbl_barang);
             //adapterLstPenjualan.Fill(datasetPOS.tbl_lstpenjualan);

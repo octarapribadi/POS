@@ -14,9 +14,11 @@ namespace POS.Forms
     {
         public String form;
         public Form parent;
+        Konfigurasi konfigurasi;
         public FormDialog()
         {
             InitializeComponent();
+            konfigurasi = new Konfigurasi();
         }
 
         private void btnProses_Click(object sender, EventArgs e)
@@ -55,6 +57,20 @@ namespace POS.Forms
                 MessageBox.Show("Password Salah", "Perhatian", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
             
+        }
+
+        private void FormDialog_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Font = konfigurasi.getFont();
+                this.ForeColor = konfigurasi.getFontColor();
+                this.BackColor = konfigurasi.getBackColor();
+            }
+            catch(Exception ex)
+            {
+                konfigurasi.showError(ex);   
+            }
         }
     }
 }

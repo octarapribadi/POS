@@ -64,5 +64,19 @@ namespace POS.Forms
             if(txtFilter.Text == "Tekan 'Enter' setelah memasukan filter")
                 txtFilter.Text = "";
         }
+
+        private void FormLogStok_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Font = konfigurasi.getFont();
+                this.ForeColor = konfigurasi.getFontColor();
+                this.BackColor = konfigurasi.getBackColor();
+            }
+            catch(Exception ex)
+            {
+                konfigurasi.showError(ex);
+            }
+        }
     }
 }

@@ -43,6 +43,8 @@
             this.lAPORANToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pENJUALANToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.sTOKBARANGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lOGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stokToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pENGATURANToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pRINTERToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tAMPILANToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,8 +54,6 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsUsername = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lOGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.stokToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -183,6 +183,21 @@
             this.sTOKBARANGToolStripMenuItem.Text = "&RE-STOK";
             this.sTOKBARANGToolStripMenuItem.Click += new System.EventHandler(this.sTOKBARANGToolStripMenuItem_Click);
             // 
+            // lOGToolStripMenuItem
+            // 
+            this.lOGToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stokToolStripMenuItem1});
+            this.lOGToolStripMenuItem.Name = "lOGToolStripMenuItem";
+            this.lOGToolStripMenuItem.Size = new System.Drawing.Size(42, 19);
+            this.lOGToolStripMenuItem.Text = "L&OG";
+            // 
+            // stokToolStripMenuItem1
+            // 
+            this.stokToolStripMenuItem1.Name = "stokToolStripMenuItem1";
+            this.stokToolStripMenuItem1.Size = new System.Drawing.Size(101, 22);
+            this.stokToolStripMenuItem1.Text = "&STOK";
+            this.stokToolStripMenuItem1.Click += new System.EventHandler(this.stokToolStripMenuItem1_Click);
+            // 
             // pENGATURANToolStripMenuItem
             // 
             this.pENGATURANToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -204,6 +219,7 @@
             this.tAMPILANToolStripMenuItem.Name = "tAMPILANToolStripMenuItem";
             this.tAMPILANToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.tAMPILANToolStripMenuItem.Text = "&TAMPILAN";
+            this.tAMPILANToolStripMenuItem.Click += new System.EventHandler(this.tAMPILANToolStripMenuItem_Click);
             // 
             // dATAToolStripMenuItem
             // 
@@ -247,21 +263,6 @@
             this.tsUsername.Name = "tsUsername";
             this.tsUsername.Size = new System.Drawing.Size(0, 17);
             // 
-            // lOGToolStripMenuItem
-            // 
-            this.lOGToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.stokToolStripMenuItem1});
-            this.lOGToolStripMenuItem.Name = "lOGToolStripMenuItem";
-            this.lOGToolStripMenuItem.Size = new System.Drawing.Size(42, 19);
-            this.lOGToolStripMenuItem.Text = "L&OG";
-            // 
-            // stokToolStripMenuItem1
-            // 
-            this.stokToolStripMenuItem1.Name = "stokToolStripMenuItem1";
-            this.stokToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.stokToolStripMenuItem1.Text = "&STOK";
-            this.stokToolStripMenuItem1.Click += new System.EventHandler(this.stokToolStripMenuItem1_Click);
-            // 
             // FormHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
@@ -273,7 +274,7 @@
             this.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormHome";
             this.Text = "FormHome";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

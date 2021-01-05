@@ -23,6 +23,10 @@ namespace POS.Forms
         {
             try
             {
+                this.Font = konfigurasi.getFont();
+                this.ForeColor = konfigurasi.getFontColor();
+                this.BackColor = konfigurasi.getBackColor();
+
                 adapterKategori.Fill(datasetPOS1.tbl_kategori);
             }
             catch(Exception ex)

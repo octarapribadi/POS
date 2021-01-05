@@ -24,6 +24,11 @@ namespace POS.Forms
         {
             try
             {
+                this.Font = konfigurasi.getFont();
+                this.ForeColor = konfigurasi.getFontColor();
+                this.BackColor = konfigurasi.getBackColor();
+
+
                 adapterBarangView.FillByDefaultHarga(datasetPOS1.tbl_barang_view);
                 adapterKategori.Fill(datasetPOS1.tbl_kategori);
                 adapterSatuan.Fill(datasetPOS1.tbl_satuan);

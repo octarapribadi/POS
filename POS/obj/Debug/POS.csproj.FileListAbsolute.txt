@@ -128,4 +128,4 @@ D:\belajar\github\POS\POS\obj\Debug\POS.exe
 D:\belajar\github\POS\POS\obj\Debug\POS.pdb
 D:\belajar\github\POS\POS\obj\Debug\POS.Forms.FormLaporanRestok.resources
 D:\belajar\github\POS\POS\obj\Debug\POS.Forms.FormLogStok.resources
-D:\belajar\github\POS\POS\obj\Debug\POS.csprojResolveAssemblyReference.cache
+D:\belajar\github\POS\POS\obj\Debug\POS.Forms.FormTampilan.resources

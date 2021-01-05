@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,12 +40,12 @@
             this.txtFilter = new System.Windows.Forms.TextBox();
             this.btnTampilkan = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.bsLog = new System.Windows.Forms.BindingSource(this.components);
-            this.adapterLogStok = new POS.DatasetPOSTableAdapters.tbl_log_stokTableAdapter();
-            this.datasetPOS = new POS.DatasetPOS();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tanggalwaktuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.keteranganDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsLog = new System.Windows.Forms.BindingSource(this.components);
+            this.datasetPOS = new POS.DatasetPOS();
+            this.adapterLogStok = new POS.DatasetPOSTableAdapters.tbl_log_stokTableAdapter();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsLog)).BeginInit();
@@ -153,8 +153,8 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Silver;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -172,21 +172,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(714, 384);
             this.dataGridView1.TabIndex = 8;
             // 
-            // bsLog
-            // 
-            this.bsLog.DataMember = "tbl_log_stok";
-            this.bsLog.DataSource = this.datasetPOS;
-            // 
-            // adapterLogStok
-            // 
-            this.adapterLogStok.ClearBeforeFill = true;
-            // 
-            // datasetPOS
-            // 
-            this.datasetPOS.DataSetName = "DatasetPOS";
-            this.datasetPOS.Locale = new System.Globalization.CultureInfo("en-US");
-            this.datasetPOS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
@@ -198,9 +183,9 @@
             // tanggalwaktuDataGridViewTextBoxColumn
             // 
             this.tanggalwaktuDataGridViewTextBoxColumn.DataPropertyName = "tanggal_waktu";
-            dataGridViewCellStyle4.Format = "F";
-            dataGridViewCellStyle4.NullValue = null;
-            this.tanggalwaktuDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Format = "F";
+            dataGridViewCellStyle2.NullValue = null;
+            this.tanggalwaktuDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.tanggalwaktuDataGridViewTextBoxColumn.HeaderText = "tanggal_waktu";
             this.tanggalwaktuDataGridViewTextBoxColumn.Name = "tanggalwaktuDataGridViewTextBoxColumn";
             this.tanggalwaktuDataGridViewTextBoxColumn.Width = 163;
@@ -211,6 +196,21 @@
             this.keteranganDataGridViewTextBoxColumn.HeaderText = "keterangan";
             this.keteranganDataGridViewTextBoxColumn.Name = "keteranganDataGridViewTextBoxColumn";
             this.keteranganDataGridViewTextBoxColumn.Width = 133;
+            // 
+            // bsLog
+            // 
+            this.bsLog.DataMember = "tbl_log_stok";
+            this.bsLog.DataSource = this.datasetPOS;
+            // 
+            // datasetPOS
+            // 
+            this.datasetPOS.DataSetName = "DatasetPOS";
+            this.datasetPOS.Locale = new System.Globalization.CultureInfo("en-US");
+            this.datasetPOS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // adapterLogStok
+            // 
+            this.adapterLogStok.ClearBeforeFill = true;
             // 
             // FormLogStok
             // 
@@ -223,6 +223,7 @@
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "FormLogStok";
             this.Text = "FormLogStok";
+            this.Load += new System.EventHandler(this.FormLogStok_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

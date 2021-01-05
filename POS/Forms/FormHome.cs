@@ -27,13 +27,10 @@ namespace POS.Forms
 
         private void kATEGORIToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             FormKategori frmKategori;
             frmKategori = new FormKategori();
             frmKategori.MdiParent = this;
             frmKategori.Show();
-            
-
         }
 
         private void dATABARANGToolStripMenuItem_Click(object sender, EventArgs e)
@@ -54,7 +51,22 @@ namespace POS.Forms
 
         private void FormHome_Load(object sender, EventArgs e)
         {
-            this.Icon = POS.Properties.Resources.icon;
+            try
+            {
+                this.Icon = POS.Properties.Resources.icon;
+                konfigurasi.createRegistryBaseDir();
+                //this.Font = new Font(konfigurasi.getRegistryValue("fontFamily").ToString(), Convert.ToSingle(konfigurasi.getRegistryValue("fontSize")), FontStyle.Regular);
+                this.Font = new Font("arial", 8);
+                //MessageBox.Show("tes");
+                menuStrip1.Font = konfigurasi.getFont();
+                menuStrip1.ForeColor = konfigurasi.getFontColor();
+                menuStrip1.BackColor = konfigurasi.getBackColor();
+            }
+            catch(Exception ex)
+            {
+                konfigurasi.showError(ex);
+            }
+            
         }
 
         private void hARGAToolStripMenuItem_Click(object sender, EventArgs e)
@@ -163,5 +175,21 @@ namespace POS.Forms
             frmDialog.parent = this;
             frmDialog.Show();
         }
+
+        private void tAMPILANToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormTampilan frmTampilan = null;
+            frmTampilan = new FormTampilan();
+            frmTampilan.MdiParent = this;
+            frmTampilan.Show();
+        }
+
+        public void setTampilanCallBack()
+        {
+            menuStrip1.Font = konfigurasi.getFont();
+            menuStrip1.ForeColor = konfigurasi.getFontColor();
+            menuStrip1.BackColor = konfigurasi.getBackColor();
+        }
+
     }
 }

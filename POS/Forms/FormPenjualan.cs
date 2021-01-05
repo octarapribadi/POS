@@ -114,6 +114,9 @@ namespace POS.Forms
                 adapterBarang.Fill(datasetPOS.tbl_barang);
                 cmbBarang.Enabled = false;
                 KeyPreview = true;
+                this.Font = konfigurasi.getFont();
+                this.ForeColor = konfigurasi.getFontColor();
+                this.BackColor = konfigurasi.getBackColor();
             }   
             catch(Exception ex)
             {
