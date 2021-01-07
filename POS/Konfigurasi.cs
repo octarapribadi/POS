@@ -73,6 +73,7 @@ namespace POS
             registryTables.Add(new POS.Konfigurasi.RegistryTable("userID", RegistryValueKind.String, ""));
             registryTables.Add(new POS.Konfigurasi.RegistryTable("fontColor", RegistryValueKind.String, "Black"));
             registryTables.Add(new POS.Konfigurasi.RegistryTable("backColor", RegistryValueKind.String, "White"));
+            registryTables.Add(new POS.Konfigurasi.RegistryTable("kwitansiFontSize", RegistryValueKind.DWord, 8.0));
         }
 
         public void createRegistryBaseDir()
@@ -81,6 +82,7 @@ namespace POS
             if (reg == null)
             {
                 Registry.CurrentUser.CreateSubKey(@"Software\POS");
+                reg = Registry.CurrentUser.OpenSubKey(@"Software\POS", true);
                 //MessageBox.Show("tes");
             }
 

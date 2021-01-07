@@ -265,7 +265,7 @@ namespace POS.Forms
                     {
                         diskon = Convert.ToDecimal(r["diskon"]);
                     }
-                    totalPenjualan += (Convert.ToDecimal(r["harga_jual"]) * Convert.ToInt32(r["quantity"])) - diskon;
+                    totalPenjualan += (Convert.ToDecimal(r["harga_jual"]) * Convert.ToInt32(r["quantity"])) - diskon * Convert.ToInt32(r["quantity"]);
                 }
                 return totalPenjualan;
             }
@@ -388,8 +388,10 @@ namespace POS.Forms
                     String total = "";
                     foreach (DataRow row in datasetPOS.tbl_listpenjualan_barang)
                     {
-                        data = String.Concat(data, row["nama_barang"].ToString(), "\n ", row["quantity"].ToString(), " x @", String.Format("{0:N0}", row["harga_jual"]));
-
+                        //data = String.Concat(data, row["nama_barang"].ToString(), "\n ", row["quantity"].ToString(), " x @", String.Format("{0:N0}", row["harga_jual"]));
+                        data = String.Concat(data, row["nama_barang"].ToString(), "\n ", row["quantity"].ToString(), " x @", String.Format("{0:N0}", Convert.ToDecimal(row["harga_jual"])- (row["diskon"] == DBNull.Value? 0 : Convert.ToDecimal(row["diskon"]))));
+                        data = String.Concat(data, "\n");
+                        /*
                         if (row["diskon"] == DBNull.Value)
                         {
                             Decimal totalSatuan = 0;
@@ -403,6 +405,7 @@ namespace POS.Forms
                             data = String.Concat(data, "\n disc ", String.Format("{0:N0}", row["diskon"]));
                             data = String.Concat(data, " : ", String.Format("{0:N0}", totalSatuan), "\n");
                         }
+                        */
                     }
 
                     total = String.Concat(total, "SubTotal : ", String.Format("{0:C0}", subTotalBelanja), "\n");

@@ -59,6 +59,7 @@ namespace POS.Forms
                 cmbWarnaForm.AutoCompleteSource = AutoCompleteSource.ListItems;
 
                 numUkuranTulisan.Value = Convert.ToDecimal(konfigurasi.getRegistryValue("fontSize"));
+                numKwitansiFontSize.Value = Convert.ToDecimal(konfigurasi.getRegistryValue("kwitansiFontSize"));
 
             }
             catch(Exception ex)
@@ -73,9 +74,10 @@ namespace POS.Forms
             {
                 RegistryKey reg = Registry.CurrentUser.OpenSubKey(@"Software\POS",true);
                 reg.SetValue("fontFamily",cmbJenisTulisan.Text);
-                reg.SetValue("fontSize", numUkuranTulisan.Value);
+                reg.SetValue("fontSize", Convert.ToInt32(numUkuranTulisan.Value));
                 reg.SetValue("fontColor", cmbWarnaTulisan.Text);
                 reg.SetValue("backColor", cmbWarnaForm.Text);
+                reg.SetValue("kwitansiFontSize", Convert.ToInt32(numKwitansiFontSize.Value));
                 MessageBox.Show("Tampilan berhasil disimpan");
                 this.Font = konfigurasi.getFont();
                 this.ForeColor = konfigurasi.getFontColor();

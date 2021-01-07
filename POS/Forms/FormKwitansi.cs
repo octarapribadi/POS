@@ -12,9 +12,11 @@ namespace POS.Forms
 {
     public partial class FormKwitansi : Form
     {
+        Konfigurasi konfigurasi;
         public FormKwitansi()
         {
             InitializeComponent();
+            konfigurasi = new Konfigurasi();
         }
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
@@ -38,9 +40,11 @@ namespace POS.Forms
         public void print(String data, String total)
         {
             labelList.Text = data;
+            labelList.Font = new Font("Courier New", Convert.ToSingle(konfigurasi.getRegistryValue("kwitansiFontSize")));
             labelTotal.Text = total;
+            labelTotal.Font = new Font("Courier New", Convert.ToSingle(konfigurasi.getRegistryValue("kwitansiFontSize")));
             lblTanggalKwitansi.Text = "tgl: ";
-            lblTanggalKwitansi.Text += DateTime.Now.Date.ToString("dd MMMM yyyy");
+            lblTanggalKwitansi.Text += DateTime.Now.Date.ToString("dd MMMM yyyy") + "\n";
             lblTanggalKwitansi.Text += "\n";
             Margins margin = new Margins(0, 0, 0, 0);
             

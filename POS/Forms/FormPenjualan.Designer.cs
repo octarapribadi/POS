@@ -222,6 +222,7 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(669, 325);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellVluaeChanged);
@@ -286,9 +287,9 @@
             dataGridViewCellStyle4.Format = "C0";
             dataGridViewCellStyle4.NullValue = "0";
             this.diskonDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.diskonDataGridViewTextBoxColumn.HeaderText = "DISKON";
+            this.diskonDataGridViewTextBoxColumn.HeaderText = "DISKON PER QTY";
             this.diskonDataGridViewTextBoxColumn.Name = "diskonDataGridViewTextBoxColumn";
-            this.diskonDataGridViewTextBoxColumn.Width = 93;
+            this.diskonDataGridViewTextBoxColumn.Width = 131;
             // 
             // keteranganDataGridViewTextBoxColumn
             // 
@@ -647,6 +648,7 @@
         private DatasetPOSTableAdapters.tbl_lstpenjualanTableAdapter adapterLstPenjualan;
         private System.Windows.Forms.NumericUpDown numTotalBayar;
         private System.Windows.Forms.NumericUpDown numPotongan;
+        private DatasetPOSTableAdapters.tbl_stokTableAdapter adapterStok;
         private System.Windows.Forms.DataGridViewTextBoxColumn lstpenjualanidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn penjualanidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn barangidDataGridViewTextBoxColumn;
@@ -655,6 +657,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn hargajualDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn diskonDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn keteranganDataGridViewTextBoxColumn;
-        private DatasetPOSTableAdapters.tbl_stokTableAdapter adapterStok;
     }
 }
