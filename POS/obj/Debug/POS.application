@@ -7,14 +7,14 @@
     <framework targetVersion="4.5.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="POS.exe.manifest" size="18073">
+    <dependentAssembly dependencyType="install" codebase="POS.exe.manifest" size="18456">
       <assemblyIdentity name="POS.exe" version="1.0.0.13" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>QYSI2dx/YvR321UsgLXQ1GPWQrcqvVD923m0eO/nz6A=</dsig:DigestValue>
+        <dsig:DigestValue>or0/a0J5sCi0OHTk3np2K5CcOIdmlpSNN9y59avWjJM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
