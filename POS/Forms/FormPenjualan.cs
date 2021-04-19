@@ -111,12 +111,23 @@ namespace POS.Forms
         {
          try
             {
+                adapterBarang.Connection = konfigurasi.getKoneksi();
+                adapterPenjualan.Connection = konfigurasi.getKoneksi();
+                adapterListPenjualanBarang.Connection = konfigurasi.getKoneksi();
+                adapterHarga.Connection = konfigurasi.getKoneksi();
+                adapterLstPenjualan.Connection = konfigurasi.getKoneksi();
+                adapterStok.Connection = konfigurasi.getKoneksi();
+
+
                 adapterBarang.Fill(datasetPOS.tbl_barang);
                 cmbBarang.Enabled = false;
                 KeyPreview = true;
                 this.Font = konfigurasi.getFont();
                 this.ForeColor = konfigurasi.getFontColor();
                 this.BackColor = konfigurasi.getBackColor();
+
+
+
             }   
             catch(Exception ex)
             {

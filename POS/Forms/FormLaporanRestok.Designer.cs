@@ -168,6 +168,7 @@
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "FormLaporanRestok";
             this.Text = "FormLaporanRestok";
+            this.Load += new System.EventHandler(this.FormLaporanRestok_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datasetPOS)).EndInit();

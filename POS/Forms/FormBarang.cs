@@ -13,6 +13,7 @@ namespace POS.Forms
     public partial class FormBarang : Form
     {
         Konfigurasi konfigurasi = new Konfigurasi();
+        
         int bsBarangViewPosition = -1;
         public FormBarang()
         {
@@ -28,6 +29,13 @@ namespace POS.Forms
                 this.ForeColor = konfigurasi.getFontColor();
                 this.BackColor = konfigurasi.getBackColor();
 
+                adapterSatuan.Connection = konfigurasi.getKoneksi();
+                adapterHarga.Connection = konfigurasi.getKoneksi();
+                adapterStok.Connection = konfigurasi.getKoneksi();
+                adapterKategori.Connection = konfigurasi.getKoneksi();
+                adapterBarangView.Connection = konfigurasi.getKoneksi();
+                adapterBarang.Connection = konfigurasi.getKoneksi();
+                adapterSupplier.Connection = konfigurasi.getKoneksi();
 
                 adapterBarangView.FillByDefaultHarga(datasetPOS1.tbl_barang_view);
                 adapterKategori.Fill(datasetPOS1.tbl_kategori);

@@ -206,3 +206,4 @@ F:\Program Files\Github\POS\POS\obj\Debug\POS.Properties.Resources.resources
 F:\Program Files\Github\POS\POS\obj\Debug\POS.csproj.GenerateResource.Cache
 F:\Program Files\Github\POS\POS\obj\Debug\POS.exe.manifest
 F:\Program Files\Github\POS\POS\obj\Debug\POS.application
+D:\belajar\github\POS\POS\obj\Debug\POS.Forms.FormDatabase.resources

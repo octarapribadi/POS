@@ -36,5 +36,14 @@ namespace POS.Forms
                 konfigurasi.showError(ex);
             }
         }
+
+        private void FormLaporanRestok_Load(object sender, EventArgs e)
+        {
+            this.Font = konfigurasi.getFont();
+            this.ForeColor = konfigurasi.getFontColor();
+            this.BackColor = konfigurasi.getBackColor();
+
+            adapterLaporanRestok.Connection = konfigurasi.getKoneksi();
+        }
     }
 }

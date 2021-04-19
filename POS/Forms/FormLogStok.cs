@@ -72,6 +72,8 @@ namespace POS.Forms
                 this.Font = konfigurasi.getFont();
                 this.ForeColor = konfigurasi.getFontColor();
                 this.BackColor = konfigurasi.getBackColor();
+
+                adapterLogStok.Connection = konfigurasi.getKoneksi();
             }
             catch(Exception ex)
             {

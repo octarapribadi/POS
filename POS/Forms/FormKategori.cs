@@ -27,6 +27,7 @@ namespace POS.Forms
                 this.ForeColor = konfigurasi.getFontColor();
                 this.BackColor = konfigurasi.getBackColor();
 
+                adapterKategori.Connection = konfigurasi.getKoneksi();
                 adapterKategori.Fill(datasetPOS1.tbl_kategori);
             }
             catch(Exception ex)

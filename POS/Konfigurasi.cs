@@ -6,11 +6,34 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Win32;
 using System.Drawing;
+using System.Data.SqlClient;
 
 namespace POS
 {
     class Konfigurasi
     {
+        private String connectionString = POS.Properties.Settings.Default.DB_POSConnectionString;
+        private String user = "admin";
+        private Orientation splitContainerOrientation = Orientation.Vertical;
+        public int splitterDistance = 400;
+        List<RegistryTable> registryTables;
+        String server, instance, username, password, database;
+
+        public SqlConnection getKoneksi()
+        {
+            RegistryKey reg = Registry.CurrentUser.OpenSubKey(@"Software\POS", true);
+            server = (String)reg.GetValue("server");
+            instance = (String)reg.GetValue("instance");
+            username = (String)reg.GetValue("userID");
+            password = (String)reg.GetValue("password");
+            database = (String)reg.GetValue("database");
+
+            String conStr = String.Format("Server={0};Database={1};User Id={2};Password={3};", server, database, username, password);
+
+            SqlConnection connection = new SqlConnection(conStr);
+            return connection;
+        }
+
 
         class RegistryTable
         {
@@ -38,12 +61,6 @@ namespace POS
 
         }
 
-        private String connectionString = POS.Properties.Settings.Default.DB_POSConnectionString;
-        private String user="admin";
-        private Orientation splitContainerOrientation = Orientation.Vertical;
-        public int splitterDistance = 400;
-        List<RegistryTable> registryTables;
-
         public Font getFont()
         {
             return new Font(getRegistryValue("fontFamily").ToString(), Convert.ToSingle(getRegistryValue("fontSize")));
@@ -61,9 +78,15 @@ namespace POS
 
         public Konfigurasi()
         {
+            
+        }
+
+        public void createRegistryBaseDir()
+        {
+
             //registry
             registryTables = new List<RegistryTable>();
-            registryTables.Add(new POS.Konfigurasi.RegistryTable("fontFamily",RegistryValueKind.String,"Courier New"));
+            registryTables.Add(new POS.Konfigurasi.RegistryTable("fontFamily", RegistryValueKind.String, "Courier New"));
             registryTables.Add(new POS.Konfigurasi.RegistryTable("fontSize", RegistryValueKind.DWord, 12.0));
             registryTables.Add(new POS.Konfigurasi.RegistryTable("printerName", RegistryValueKind.String, "Printer"));
             registryTables.Add(new POS.Konfigurasi.RegistryTable("server", RegistryValueKind.String, "localhost"));
@@ -74,10 +97,7 @@ namespace POS
             registryTables.Add(new POS.Konfigurasi.RegistryTable("fontColor", RegistryValueKind.String, "Black"));
             registryTables.Add(new POS.Konfigurasi.RegistryTable("backColor", RegistryValueKind.String, "White"));
             registryTables.Add(new POS.Konfigurasi.RegistryTable("kwitansiFontSize", RegistryValueKind.DWord, 8.0));
-        }
 
-        public void createRegistryBaseDir()
-        {
             RegistryKey reg = Registry.CurrentUser.OpenSubKey(@"Software\POS", true);
             if (reg == null)
             {

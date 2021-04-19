@@ -211,21 +211,22 @@
             // pRINTERToolStripMenuItem
             // 
             this.pRINTERToolStripMenuItem.Name = "pRINTERToolStripMenuItem";
-            this.pRINTERToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.pRINTERToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.pRINTERToolStripMenuItem.Text = "&PRINTER";
             // 
             // tAMPILANToolStripMenuItem
             // 
             this.tAMPILANToolStripMenuItem.Name = "tAMPILANToolStripMenuItem";
-            this.tAMPILANToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.tAMPILANToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.tAMPILANToolStripMenuItem.Text = "&TAMPILAN";
             this.tAMPILANToolStripMenuItem.Click += new System.EventHandler(this.tAMPILANToolStripMenuItem_Click);
             // 
             // dATAToolStripMenuItem
             // 
             this.dATAToolStripMenuItem.Name = "dATAToolStripMenuItem";
-            this.dATAToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
-            this.dATAToolStripMenuItem.Text = "&DATA";
+            this.dATAToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.dATAToolStripMenuItem.Text = "&DATABASE";
+            this.dATAToolStripMenuItem.Click += new System.EventHandler(this.dATAToolStripMenuItem_Click);
             // 
             // bARCODEToolStripMenuItem
             // 

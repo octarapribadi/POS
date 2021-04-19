@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -203,8 +203,8 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Silver;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -265,8 +265,8 @@
             // quantityDataGridViewTextBoxColumn
             // 
             this.quantityDataGridViewTextBoxColumn.DataPropertyName = "quantity";
-            dataGridViewCellStyle2.NullValue = "0";
-            this.quantityDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.NullValue = "0";
+            this.quantityDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
             this.quantityDataGridViewTextBoxColumn.HeaderText = "QTY";
             this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
             this.quantityDataGridViewTextBoxColumn.Width = 63;
@@ -274,9 +274,9 @@
             // hargajualDataGridViewTextBoxColumn
             // 
             this.hargajualDataGridViewTextBoxColumn.DataPropertyName = "harga_jual";
-            dataGridViewCellStyle3.Format = "C0";
-            dataGridViewCellStyle3.NullValue = "0";
-            this.hargajualDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Format = "C0";
+            dataGridViewCellStyle11.NullValue = "0";
+            this.hargajualDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle11;
             this.hargajualDataGridViewTextBoxColumn.HeaderText = "HARGA SATUAN";
             this.hargajualDataGridViewTextBoxColumn.Name = "hargajualDataGridViewTextBoxColumn";
             this.hargajualDataGridViewTextBoxColumn.Width = 140;
@@ -284,9 +284,9 @@
             // diskonDataGridViewTextBoxColumn
             // 
             this.diskonDataGridViewTextBoxColumn.DataPropertyName = "diskon";
-            dataGridViewCellStyle4.Format = "C0";
-            dataGridViewCellStyle4.NullValue = "0";
-            this.diskonDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.Format = "C0";
+            dataGridViewCellStyle12.NullValue = "0";
+            this.diskonDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle12;
             this.diskonDataGridViewTextBoxColumn.HeaderText = "DISKON PER QTY";
             this.diskonDataGridViewTextBoxColumn.Name = "diskonDataGridViewTextBoxColumn";
             this.diskonDataGridViewTextBoxColumn.Width = 131;

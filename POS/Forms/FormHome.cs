@@ -142,8 +142,7 @@ namespace POS.Forms
             try
             {
                 String cmdStr = "select TABLE_NAME from DB_POS.INFORMATION_SCHEMA.TABLES where TABLE_NAME = 'tbl_log_stok'";
-                String constr = konfigurasi.getConnectionString();
-                SqlConnection conn = new SqlConnection(constr);
+                SqlConnection conn = konfigurasi.getKoneksi();
                 SqlCommand cmd = new SqlCommand(cmdStr, conn);
                 conn.Open();
                 Object obj = cmd.ExecuteScalar();
@@ -191,5 +190,12 @@ namespace POS.Forms
             menuStrip1.BackColor = konfigurasi.getBackColor();
         }
 
+        private void dATAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormDatabase frmDatabase = null;
+            frmDatabase = new FormDatabase();
+            frmDatabase.MdiParent = this;
+            frmDatabase.Show();
+        }
     }
 }

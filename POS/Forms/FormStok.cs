@@ -44,6 +44,9 @@ namespace POS.Forms
                 this.ForeColor = konfigurasi.getFontColor();
                 this.BackColor = konfigurasi.getBackColor();
 
+                adapterBarang.Connection = konfigurasi.getKoneksi();
+                adapterStokBarang.Connection = konfigurasi.getKoneksi();
+
                 adapterStokBarang.Fill(datasetPOS.tbl_stok_barang);
                 adapterBarang.Fill(datasetPOS.tbl_barang);
             }
