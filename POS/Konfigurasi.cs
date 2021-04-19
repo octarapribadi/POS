@@ -22,14 +22,16 @@ namespace POS
         public SqlConnection getKoneksi()
         {
             RegistryKey reg = Registry.CurrentUser.OpenSubKey(@"Software\POS", true);
+            String conStr;
             server = (String)reg.GetValue("server");
             instance = (String)reg.GetValue("instance");
             username = (String)reg.GetValue("userID");
             password = (String)reg.GetValue("password");
             database = (String)reg.GetValue("database");
-
-            String conStr = String.Format("Server={0};Database={1};User Id={2};Password={3};", server, database, username, password);
-
+            if (instance == null)
+                conStr = String.Format("Server={0};Database={1};User Id={2};Password={3};", server, database, username, password);
+            else
+                conStr = String.Format("Server={0}\\{4};Database={1};User Id={2};Password={3};", server, database, username, password,instance);
             SqlConnection connection = new SqlConnection(conStr);
             return connection;
         }

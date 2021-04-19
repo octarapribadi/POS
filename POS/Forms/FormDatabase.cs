@@ -19,11 +19,22 @@ namespace POS.Forms
 
         private void cmbDatabase_DropDown(object sender, EventArgs e)
         {
+            
             try
             {
+                String conStr;
+                server = txtServer.Text;
+                instance = txtInstance.Text;
+                username = txtUsername.Text;
+                password = txtPassword.Text;
+
+                if (instance == null)
+                    conStr = String.Format("Server={0};User Id={2};Password={3};", server, database, username, password);
+                else
+                    conStr = String.Format("Server={0}\\{4};User Id={2};Password={3};", server, database, username, password, instance);
+
                 cmbDatabase.Items.Clear();
-                String koneksi = String.Format("Server={0};Database={1};User Id={2};Password={3};", server, database, username, password);
-                SqlConnection conn = new SqlConnection(koneksi);
+                SqlConnection conn = new SqlConnection(conStr);
                 SqlCommand cmd = new SqlCommand("SELECT name FROM sys.databases; ", conn);
                 conn.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -32,6 +43,8 @@ namespace POS.Forms
                     cmbDatabase.Items.Add(reader["name"]);
                 }
                 conn.Close();
+                
+                //MessageBox.Show(konfigurasi.getKoneksi().ConnectionString);
             }
             catch(Exception ex)
             {
