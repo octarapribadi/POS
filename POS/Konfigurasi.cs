@@ -99,7 +99,13 @@ namespace POS
             registryTables.Add(new POS.Konfigurasi.RegistryTable("fontColor", RegistryValueKind.String, "Black"));
             registryTables.Add(new POS.Konfigurasi.RegistryTable("backColor", RegistryValueKind.String, "White"));
             registryTables.Add(new POS.Konfigurasi.RegistryTable("kwitansiFontSize", RegistryValueKind.DWord, 8.0));
-
+            registryTables.Add(new POS.Konfigurasi.RegistryTable("paperHeight", RegistryValueKind.DWord, 1000.0));
+            registryTables.Add(new POS.Konfigurasi.RegistryTable("paperWidth", RegistryValueKind.DWord, 305.0));
+            registryTables.Add(new POS.Konfigurasi.RegistryTable("printerMarginLeft", RegistryValueKind.DWord, 0));
+            registryTables.Add(new POS.Konfigurasi.RegistryTable("printerMarginRight", RegistryValueKind.DWord, 0));
+            registryTables.Add(new POS.Konfigurasi.RegistryTable("printerMarginTop", RegistryValueKind.DWord, 0));
+            registryTables.Add(new POS.Konfigurasi.RegistryTable("printerMarginBottom", RegistryValueKind.DWord, 0));
+            registryTables.Add(new POS.Konfigurasi.RegistryTable("printerName", RegistryValueKind.DWord, ""));
             RegistryKey reg = Registry.CurrentUser.OpenSubKey(@"Software\POS", true);
             if (reg == null)
             {

@@ -23,6 +23,7 @@ namespace POS.Forms
         {
             try
             {
+                adapterLaporanPenjualan.Connection = konfigurasi.getKoneksi();
                 adapterLaporanPenjualan.FillByTanggal(datasetPOS.tbl_laporan_penjualan, dtpTanggalAwal.Value, dtpTanggalAkhir.Value);
                 reportPenjualan1.SetDataSource(datasetPOS);
                 reportPenjualan1.SetParameterValue("tanggalAwal", dtpTanggalAwal.Value);

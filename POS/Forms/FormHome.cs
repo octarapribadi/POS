@@ -197,5 +197,13 @@ namespace POS.Forms
             frmDatabase.MdiParent = this;
             frmDatabase.Show();
         }
+
+        private void pRINTERToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPrinter frmPrinter = null;
+            frmPrinter = new FormPrinter();
+            frmPrinter.MdiParent = this;
+            frmPrinter.Show();
+        }
     }
 }

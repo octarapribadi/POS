@@ -213,6 +213,7 @@
             this.pRINTERToolStripMenuItem.Name = "pRINTERToolStripMenuItem";
             this.pRINTERToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.pRINTERToolStripMenuItem.Text = "&PRINTER";
+            this.pRINTERToolStripMenuItem.Click += new System.EventHandler(this.pRINTERToolStripMenuItem_Click);
             // 
             // tAMPILANToolStripMenuItem
             // 

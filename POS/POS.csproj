@@ -25,7 +25,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ProductName>POS</ProductName>
     <PublisherName>octara pribadi</PublisherName>
-    <ApplicationRevision>16</ApplicationRevision>
+    <ApplicationRevision>17</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -181,6 +181,12 @@
     <Compile Include="Forms\FormPenjualan.Designer.cs">
       <DependentUpon>FormPenjualan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormPrinter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormPrinter.Designer.cs">
+      <DependentUpon>FormPrinter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormRestok.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,6 +265,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormPenjualan.resx">
       <DependentUpon>FormPenjualan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormPrinter.resx">
+      <DependentUpon>FormPrinter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormRestok.resx">
       <DependentUpon>FormRestok.cs</DependentUpon>

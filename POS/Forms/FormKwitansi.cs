@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Printing;
+using Microsoft.Win32;
+
 namespace POS.Forms
 {
     public partial class FormKwitansi : Form
@@ -31,27 +33,76 @@ namespace POS.Forms
 
         private void FormKwitansi_Load(object sender, EventArgs e)
         {
-            Margins margin = new Margins(0, 0, 0, 0);
-            printDocument1.DefaultPageSettings.PaperSize = new System.Drawing.Printing.PaperSize("pos", 228, 1000);
-            printDocument1.DefaultPageSettings.Margins = margin;
-            printDocument1.OriginAtMargins = true;
-            printDocument1.Print();
+            /*
+            try
+            {
+                String printerName;
+                Int32 marginLeft, marginRight, marginTop, marginBottom, paperHeight, paperWidth;
+
+                RegistryKey reg = Registry.CurrentUser.OpenSubKey(@"Software\POS", true);
+                printerName = (String)reg.GetValue("printerName");
+                marginTop = (Int32)reg.GetValue("printerMarginTop");
+                marginBottom = (Int32)reg.GetValue("printerMarginBottom");
+                marginLeft = (Int32)reg.GetValue("printerMarginLeft");
+                marginRight = (Int32)reg.GetValue("printerMarginRight");
+                paperHeight = (Int32)reg.GetValue("paperHeight");
+                paperWidth = (Int32)reg.GetValue("paperWidth");
+
+                Margins margin = new Margins(marginLeft, marginRight, marginTop, marginBottom);
+                paperHeight = Convert.ToInt32(Math.Round(paperHeight * 0.0264583333, 0));
+                paperWidth = Convert.ToInt32(Math.Round(paperWidth * 0.0264583333, 0));
+
+
+                printDocument1.DefaultPageSettings.PaperSize = new System.Drawing.Printing.PaperSize(printerName, paperWidth, paperHeight);
+                printDocument1.DefaultPageSettings.Margins = margin;
+                printDocument1.OriginAtMargins = true;
+                printDocument1.Print();
+            }
+            catch(Exception ex)
+            {
+                konfigurasi.showError(ex);
+            }
+            */
         }
         public void print(String data, String total)
         {
-            labelList.Text = data;
-            labelList.Font = new Font("Courier New", Convert.ToSingle(konfigurasi.getRegistryValue("kwitansiFontSize")));
-            labelTotal.Text = total;
-            labelTotal.Font = new Font("Courier New", Convert.ToSingle(konfigurasi.getRegistryValue("kwitansiFontSize")));
-            lblTanggalKwitansi.Text = "tgl: ";
-            lblTanggalKwitansi.Text += DateTime.Now.Date.ToString("dd MMMM yyyy") + "\n";
-            lblTanggalKwitansi.Text += "\n";
-            Margins margin = new Margins(0, 0, 0, 0);
-            
-            printDocument1.DefaultPageSettings.PaperSize = new System.Drawing.Printing.PaperSize("pos", 188, 1000);
-            printDocument1.DefaultPageSettings.Margins = margin;
-            printDocument1.OriginAtMargins = true;
-            printDocument1.Print();
+            try
+            {
+                labelList.Text = data;
+                labelList.Font = new Font("Courier New", Convert.ToSingle(konfigurasi.getRegistryValue("kwitansiFontSize")));
+                labelTotal.Text = total;
+                labelTotal.Font = new Font("Courier New", Convert.ToSingle(konfigurasi.getRegistryValue("kwitansiFontSize")));
+                lblTanggalKwitansi.Text = "tgl: ";
+                lblTanggalKwitansi.Text += DateTime.Now.Date.ToString("dd MMMM yyyy") + "\n";
+                lblTanggalKwitansi.Text += "\n";
+
+                String printerName;
+                Int32 marginLeft, marginRight, marginTop, marginBottom, paperHeight, paperWidth;
+
+                RegistryKey reg = Registry.CurrentUser.OpenSubKey(@"Software\POS", true);
+                printerName = (String)reg.GetValue("printerName");
+                marginTop = (Int32)reg.GetValue("printerMarginTop");
+                marginBottom = (Int32)reg.GetValue("printerMarginBottom");
+                marginLeft = (Int32)reg.GetValue("printerMarginLeft");
+                marginRight = (Int32)reg.GetValue("printerMarginRight");
+                paperHeight = (Int32)reg.GetValue("paperHeight");
+                paperWidth = (Int32)reg.GetValue("paperWidth");
+
+                Margins margin = new Margins(marginLeft, marginRight, marginTop, marginBottom);
+                paperHeight = Convert.ToInt32(Math.Round(paperHeight / 0.0264583333,0));
+                paperWidth = Convert.ToInt32(Math.Round(paperWidth / 0.0264583333, 0));
+
+                printDocument1.PrinterSettings.PrinterName = printerName;
+                printDocument1.DefaultPageSettings.PaperSize = new PaperSize("custom", paperWidth, paperHeight);
+                //printDocument1.DefaultPageSettings.PaperSize = new PaperSize("custom", 1000, 1000);
+                printDocument1.DefaultPageSettings.Margins = margin;
+                printDocument1.OriginAtMargins = true;
+                printDocument1.Print();
+            }
+            catch(Exception ex)
+            {
+                konfigurasi.showError(ex);
+            }
         }
     }
 }

@@ -23,6 +23,7 @@ namespace POS.Forms
         {
             try
             {
+                adapterLaporanRestok.Connection = konfigurasi.getKoneksi();
                 adapterLaporanRestok.FillByTanggalRestok(datasetPOS.tbl_laporan_restok, dtpTanggalAwal.Value, dtpTanggalAkhir.Value);
                 reportReStok.SetDataSource((DataTable)datasetPOS.tbl_laporan_restok);
                 reportReStok.SetParameterValue("tanggalAwal", dtpTanggalAwal.Value);
@@ -43,7 +44,7 @@ namespace POS.Forms
             this.ForeColor = konfigurasi.getFontColor();
             this.BackColor = konfigurasi.getBackColor();
 
-            adapterLaporanRestok.Connection = konfigurasi.getKoneksi();
+            //adapterLaporanRestok.Connection = konfigurasi.getKoneksi();
         }
     }
 }

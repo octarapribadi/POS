@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBarang));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bsBarangView = new System.Windows.Forms.BindingSource(this.components);
             this.datasetPOS1 = new POS.DatasetPOS();
@@ -76,6 +76,7 @@
             this.txtKeterangan = new System.Windows.Forms.TextBox();
             this.numHargaModal = new System.Windows.Forms.NumericUpDown();
             this.numHargaJual = new System.Windows.Forms.NumericUpDown();
+            this.label12 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.barangidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -96,7 +97,6 @@
             this.adapterHarga = new POS.DatasetPOSTableAdapters.tbl_hargaTableAdapter();
             this.adapterBarangView = new POS.DatasetPOSTableAdapters.tbl_barang_viewTableAdapter();
             this.adapterStok = new POS.DatasetPOSTableAdapters.tbl_stokTableAdapter();
-            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsBarangView)).BeginInit();
@@ -152,6 +152,7 @@
             // 
             this.bsBarangView.DataMember = "tbl_barang_view";
             this.bsBarangView.DataSource = this.datasetPOS1;
+            this.bsBarangView.Sort = "nama_barang";
             this.bsBarangView.PositionChanged += new System.EventHandler(this.bsBarangView_PositionChanged);
             // 
             // datasetPOS1
@@ -593,6 +594,18 @@
             this.numHargaJual.ThousandsSeparator = true;
             this.numHargaJual.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.label12, 2);
+            this.label12.ForeColor = System.Drawing.Color.Red;
+            this.label12.Location = new System.Drawing.Point(8, 470);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(388, 56);
+            this.label12.TabIndex = 22;
+            this.label12.Text = "Catatan:\r\n*) Wajib Diisi\r\n**) Lakukan penyesuaian stok dari\r\n\"Form Restok\" dan \"F" +
+    "orm Barang Keluar\"";
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.dataGridView1);
@@ -608,8 +621,8 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Silver;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -679,9 +692,9 @@
             // hargamodelDataGridViewTextBoxColumn
             // 
             this.hargamodelDataGridViewTextBoxColumn.DataPropertyName = "harga_model";
-            dataGridViewCellStyle8.Format = "C0";
-            dataGridViewCellStyle8.NullValue = "0";
-            this.hargamodelDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Format = "C0";
+            dataGridViewCellStyle2.NullValue = "0";
+            this.hargamodelDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.hargamodelDataGridViewTextBoxColumn.HeaderText = "harga_modal";
             this.hargamodelDataGridViewTextBoxColumn.Name = "hargamodelDataGridViewTextBoxColumn";
             this.hargamodelDataGridViewTextBoxColumn.ReadOnly = true;
@@ -690,9 +703,9 @@
             // hargajualDataGridViewTextBoxColumn
             // 
             this.hargajualDataGridViewTextBoxColumn.DataPropertyName = "harga_jual";
-            dataGridViewCellStyle9.Format = "C0";
-            dataGridViewCellStyle9.NullValue = "0";
-            this.hargajualDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Format = "C0";
+            dataGridViewCellStyle3.NullValue = "0";
+            this.hargajualDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.hargajualDataGridViewTextBoxColumn.HeaderText = "harga_jual";
             this.hargajualDataGridViewTextBoxColumn.Name = "hargajualDataGridViewTextBoxColumn";
             this.hargajualDataGridViewTextBoxColumn.ReadOnly = true;
@@ -757,18 +770,6 @@
             // adapterStok
             // 
             this.adapterStok.ClearBeforeFill = true;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.tableLayoutPanel1.SetColumnSpan(this.label12, 2);
-            this.label12.ForeColor = System.Drawing.Color.Red;
-            this.label12.Location = new System.Drawing.Point(8, 470);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(388, 56);
-            this.label12.TabIndex = 22;
-            this.label12.Text = "Catatan:\r\n*) Wajib Diisi\r\n**) Lakukan penyesuaian stok dari\r\n\"Form Restok\" dan \"F" +
-    "orm Barang Keluar\"";
             // 
             // FormBarang
             // 
