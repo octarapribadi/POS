@@ -77,23 +77,29 @@ namespace POS.Forms
                 lblTanggalKwitansi.Text += "\n";
 
                 String printerName;
-                Int32 marginLeft, marginRight, marginTop, marginBottom, paperHeight, paperWidth;
+                Double marginLeft, marginRight, marginTop, marginBottom, paperHeight, paperWidth;
+                Int32 marginLeft_, marginRight_, marginTop_, marginBottom_, paperHeight_, paperWidth_;
 
                 RegistryKey reg = Registry.CurrentUser.OpenSubKey(@"Software\POS", true);
                 printerName = (String)reg.GetValue("printerName");
-                marginTop = (Int32)reg.GetValue("printerMarginTop");
-                marginBottom = (Int32)reg.GetValue("printerMarginBottom");
-                marginLeft = (Int32)reg.GetValue("printerMarginLeft");
-                marginRight = (Int32)reg.GetValue("printerMarginRight");
-                paperHeight = (Int32)reg.GetValue("paperHeight");
-                paperWidth = (Int32)reg.GetValue("paperWidth");
+                marginTop = Convert.ToDouble(reg.GetValue("printerMarginTop"));
+                marginBottom = Convert.ToDouble(reg.GetValue("printerMarginBottom"));
+                marginLeft = Convert.ToDouble(reg.GetValue("printerMarginLeft"));
+                marginRight = Convert.ToDouble(reg.GetValue("printerMarginRight"));
+                paperHeight = Convert.ToDouble(reg.GetValue("paperHeight"));
+                paperWidth = Convert.ToDouble(reg.GetValue("paperWidth"));
 
-                Margins margin = new Margins(marginLeft, marginRight, marginTop, marginBottom);
-                paperHeight = Convert.ToInt32(Math.Round(paperHeight / 0.0264583333,0));
-                paperWidth = Convert.ToInt32(Math.Round(paperWidth / 0.0264583333, 0));
+                marginLeft_ = Convert.ToInt32(Math.Round(marginLeft / 0.0264583333, 0));
+                marginRight_ = Convert.ToInt32(Math.Round(marginRight / 0.0264583333, 0));
+                marginTop_ = Convert.ToInt32(Math.Round(marginTop / 0.0264583333, 0));
+                marginBottom_ = Convert.ToInt32(Math.Round(marginBottom / 0.0264583333, 0));
+
+                Margins margin = new Margins(marginLeft_, marginRight_, marginTop_, marginBottom_);
+                paperHeight_ = Convert.ToInt32(Math.Round(paperHeight / 0.0264583333,0));
+                paperWidth_ = Convert.ToInt32(Math.Round(paperWidth / 0.0264583333, 0));
 
                 printDocument1.PrinterSettings.PrinterName = printerName;
-                printDocument1.DefaultPageSettings.PaperSize = new PaperSize("custom", paperWidth, paperHeight);
+                printDocument1.DefaultPageSettings.PaperSize = new PaperSize("custom", paperWidth_, paperHeight_);
                 //printDocument1.DefaultPageSettings.PaperSize = new PaperSize("custom", 1000, 1000);
                 printDocument1.DefaultPageSettings.Margins = margin;
                 printDocument1.OriginAtMargins = true;

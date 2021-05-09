@@ -94,6 +94,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DatabaseVerification.cs" />
     <Compile Include="DatasetPOS.cs">
       <DependentUpon>DatasetPOS.xsd</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -211,6 +212,7 @@
     <Compile Include="Forms\FormTampilan.Designer.cs">
       <DependentUpon>FormTampilan.cs</DependentUpon>
     </Compile>
+    <Compile Include="ID.cs" />
     <Compile Include="Konfigurasi.cs" />
     <Compile Include="POSLog.cs" />
     <Compile Include="Program.cs" />
@@ -400,6 +402,16 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
+    <PublishFile Include="database.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
     <PublishFile Include="log4net">
       <Visible>False</Visible>
       <Group>
@@ -413,6 +425,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Save_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="database.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

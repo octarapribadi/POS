@@ -16,19 +16,19 @@ namespace POS.Forms
     {
         Konfigurasi konfigurasi = new Konfigurasi();
         String printerName;
-        Int32 marginLeft, marginRight, marginTop, marginBottom, paperHeight, paperWidth;
+        Decimal marginLeft, marginRight, marginTop, marginBottom, paperHeight, paperWidth;
 
         private void btnSimpan_Click(object sender, EventArgs e)
         {
             try
             {
                 printerName = cmbPrinterName.Text;
-                marginTop = Convert.ToInt32(numMarginAtas.Value);
-                marginBottom = Convert.ToInt32(numMarginBawah.Value);
-                marginLeft = Convert.ToInt32(numMarginKiri.Value);
-                marginRight = Convert.ToInt32(numMarginKanan.Value);
-                paperHeight = Convert.ToInt32(numPaperHeight.Value);
-                paperWidth = Convert.ToInt32(numPaperWidth.Value);
+                marginTop = numMarginAtas.Value;
+                marginBottom = numMarginBawah.Value;
+                marginLeft = numMarginKiri.Value;
+                marginRight = numMarginKanan.Value;
+                paperHeight = numPaperHeight.Value;
+                paperWidth = numPaperWidth.Value;
 
                 RegistryKey reg = Registry.CurrentUser.OpenSubKey(@"Software\POS", true);
                 reg.SetValue("printerName", printerName);
@@ -65,12 +65,12 @@ namespace POS.Forms
 
                 RegistryKey reg = Registry.CurrentUser.OpenSubKey(@"Software\POS", true);
                 printerName = (String)reg.GetValue("printerName");
-                marginTop = (Int32)reg.GetValue("printerMarginTop");
-                marginBottom = (Int32)reg.GetValue("printerMarginBottom");
-                marginLeft = (Int32)reg.GetValue("printerMarginLeft");
-                marginRight = (Int32)reg.GetValue("printerMarginRight");
-                paperHeight = (Int32)reg.GetValue("paperHeight");
-                paperWidth = (Int32)reg.GetValue("paperWidth");
+                marginTop = Convert.ToDecimal(reg.GetValue("printerMarginTop"));
+                marginBottom = Convert.ToDecimal(reg.GetValue("printerMarginBottom"));
+                marginLeft = Convert.ToDecimal(reg.GetValue("printerMarginLeft"));
+                marginRight = Convert.ToDecimal(reg.GetValue("printerMarginRight"));
+                paperHeight = Convert.ToDecimal(reg.GetValue("paperHeight"));
+                paperWidth = Convert.ToDecimal(reg.GetValue("paperWidth"));
                 cmbPrinterName.Text = printerName;
                 numMarginAtas.Value = marginTop;
                 numMarginBawah.Value = marginBottom;

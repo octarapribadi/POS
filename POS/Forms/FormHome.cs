@@ -139,34 +139,6 @@ namespace POS.Forms
 
         private void stokToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                String cmdStr = "select TABLE_NAME from DB_POS.INFORMATION_SCHEMA.TABLES where TABLE_NAME = 'tbl_log_stok'";
-                SqlConnection conn = konfigurasi.getKoneksi();
-                SqlCommand cmd = new SqlCommand(cmdStr, conn);
-                conn.Open();
-                Object obj = cmd.ExecuteScalar();
-                conn.Close();
-                
-                if(obj == null)
-                {
-                    String createTableQry = "create table tbl_log_stok(" + 
-                                            "id bigint primary key identity(1, 1)," +
-                                            "tanggal_waktu datetime," +
-                                            "keterangan varchar(255)," +
-                                            ");";
-                    SqlCommand cmd2 = new SqlCommand(createTableQry, conn);
-                    conn.Open();
-                    cmd2.ExecuteNonQuery();
-                    MessageBox.Show("Berhasil menambahkan tabel tbl_log_stok");
-                    conn.Close();
-                }
-                
-            }
-            catch(Exception ex)
-            {
-                konfigurasi.showError(ex);
-            }
 
             FormDialog frmDialog = new FormDialog();
             frmDialog.MdiParent = this;
@@ -204,6 +176,15 @@ namespace POS.Forms
             frmPrinter = new FormPrinter();
             frmPrinter.MdiParent = this;
             frmPrinter.Show();
+        }
+
+        private void vERIFIKASIDATABASEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DatabaseVerification dv = new DatabaseVerification();
+            if (dv.verify())
+                MessageBox.Show("Database berhasil diverifikasi");
+            else
+                MessageBox.Show("Database gagal diverifikasi, hubungi administrator");
         }
     }
 }

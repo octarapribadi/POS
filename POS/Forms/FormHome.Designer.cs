@@ -54,6 +54,8 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsUsername = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.vERIFIKASIDATABASEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -203,7 +205,9 @@
             this.pENGATURANToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pRINTERToolStripMenuItem,
             this.tAMPILANToolStripMenuItem,
-            this.dATAToolStripMenuItem});
+            this.dATAToolStripMenuItem,
+            this.toolStripMenuItem2,
+            this.vERIFIKASIDATABASEToolStripMenuItem});
             this.pENGATURANToolStripMenuItem.Name = "pENGATURANToolStripMenuItem";
             this.pENGATURANToolStripMenuItem.Size = new System.Drawing.Size(94, 19);
             this.pENGATURANToolStripMenuItem.Text = "&PENGATURAN";
@@ -211,21 +215,21 @@
             // pRINTERToolStripMenuItem
             // 
             this.pRINTERToolStripMenuItem.Name = "pRINTERToolStripMenuItem";
-            this.pRINTERToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pRINTERToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.pRINTERToolStripMenuItem.Text = "&PRINTER";
             this.pRINTERToolStripMenuItem.Click += new System.EventHandler(this.pRINTERToolStripMenuItem_Click);
             // 
             // tAMPILANToolStripMenuItem
             // 
             this.tAMPILANToolStripMenuItem.Name = "tAMPILANToolStripMenuItem";
-            this.tAMPILANToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.tAMPILANToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.tAMPILANToolStripMenuItem.Text = "&TAMPILAN";
             this.tAMPILANToolStripMenuItem.Click += new System.EventHandler(this.tAMPILANToolStripMenuItem_Click);
             // 
             // dATAToolStripMenuItem
             // 
             this.dATAToolStripMenuItem.Name = "dATAToolStripMenuItem";
-            this.dATAToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.dATAToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.dATAToolStripMenuItem.Text = "&DATABASE";
             this.dATAToolStripMenuItem.Click += new System.EventHandler(this.dATAToolStripMenuItem_Click);
             // 
@@ -264,6 +268,18 @@
             // 
             this.tsUsername.Name = "tsUsername";
             this.tsUsername.Size = new System.Drawing.Size(0, 17);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(185, 6);
+            // 
+            // vERIFIKASIDATABASEToolStripMenuItem
+            // 
+            this.vERIFIKASIDATABASEToolStripMenuItem.Name = "vERIFIKASIDATABASEToolStripMenuItem";
+            this.vERIFIKASIDATABASEToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.vERIFIKASIDATABASEToolStripMenuItem.Text = "&VERIFIKASI DATABASE";
+            this.vERIFIKASIDATABASEToolStripMenuItem.Click += new System.EventHandler(this.vERIFIKASIDATABASEToolStripMenuItem_Click);
             // 
             // FormHome
             // 
@@ -318,5 +334,7 @@
         private System.Windows.Forms.ToolStripMenuItem bARANGKELUARToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lOGToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stokToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem vERIFIKASIDATABASEToolStripMenuItem;
     }
 }
