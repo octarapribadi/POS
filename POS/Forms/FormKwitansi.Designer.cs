@@ -63,7 +63,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(182, 316);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(248, 316);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // label2
@@ -74,7 +74,7 @@
             this.label2.Location = new System.Drawing.Point(0, 18);
             this.label2.Margin = new System.Windows.Forms.Padding(0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(182, 32);
+            this.label2.Size = new System.Drawing.Size(248, 32);
             this.label2.TabIndex = 1;
             this.label2.Text = "Pjk Batang Serangan\r\n---------------------";
             // 
@@ -86,7 +86,7 @@
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(182, 18);
+            this.label1.Size = new System.Drawing.Size(248, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Surya Elektronik";
             // 
@@ -154,7 +154,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(182, 316);
+            this.ClientSize = new System.Drawing.Size(248, 316);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);

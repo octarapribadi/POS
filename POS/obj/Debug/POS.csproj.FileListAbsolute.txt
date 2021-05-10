@@ -212,3 +212,4 @@ F:\Program Files\Github\POS\POS\obj\Debug\POS.Forms.FormPrinter.resources
 D:\belajar\github\POS\POS\obj\Debug\POS.csprojResolveAssemblyReference.cache
 D:\belajar\github\POS\POS\obj\Debug\POS.Forms.FormPrinter.resources
 D:\belajar\github\POS\POS\bin\Debug\database.xml
+F:\Program Files\Github\POS\POS\bin\Debug\database.xml

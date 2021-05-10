@@ -12,6 +12,7 @@ namespace POS.Forms
 {
     public partial class FormPenjualan : Form
     {
+        ID id;
         Konfigurasi konfigurasi;
         //barcode barang
         String mode = "barcode";
@@ -24,6 +25,7 @@ namespace POS.Forms
         {
             InitializeComponent();
             konfigurasi = new Konfigurasi();
+            id = new ID();
         }
 
         private void cmbBarang_KeyDown(object sender, KeyEventArgs e)
@@ -168,34 +170,48 @@ namespace POS.Forms
 
         private void btnFakturBaru_Click(object sender, EventArgs e)
         {
+            //MessageBox.Show(incrementID("tbl_idx_penjualan").ToString());
+            
             try
             {
+                
+                
                 cmbBarang.Enabled = true;
-                penjualanID = Convert.ToInt64(adapterPenjualan.getMaxPenjualanID())+1;
-                lblFaktur.Text = penjualanID.ToString("FK_0000000000");
-                if (mode == "barcode")
+                //penjualanID = Convert.ToInt64(adapterPenjualan.getMaxPenjualanID())+1;
+                penjualanID = incrementID("tbl_idx_penjualan");
+                if(penjualanID == -1)
                 {
-                    cmbBarang.DataSource = null;
-                    cmbBarang.Select(0, cmbBarang.Text.Length);
-                    cmbBarang.Text = "Masukan barcode";
-                    cmbBarang.Focus();
+                    MessageBox.Show("Nomor faktur bermasalah, hubungi administrator!");
                 }
                 else
                 {
-                    
-                    cmbBarang.DataSource = datasetPOS.tbl_barang;
-                    cmbBarang.DisplayMember = "nama_barang";
-                    cmbBarang.ValueMember = "barang_id";
-                    cmbBarang.Select(0, cmbBarang.Text.Length);
-                    cmbBarang.SelectedIndex = -1;
-                    cmbBarang.Text = "Masukan nama barang";
-                    cmbBarang.Focus();
+                    lblFaktur.Text = penjualanID.ToString("FK_0000000000");
+                    if (mode == "barcode")
+                    {
+                        cmbBarang.DataSource = null;
+                        cmbBarang.Select(0, cmbBarang.Text.Length);
+                        cmbBarang.Text = "Masukan barcode";
+                        cmbBarang.Focus();
+                    }
+                    else
+                    {
+
+                        cmbBarang.DataSource = datasetPOS.tbl_barang;
+                        cmbBarang.DisplayMember = "nama_barang";
+                        cmbBarang.ValueMember = "barang_id";
+                        cmbBarang.Select(0, cmbBarang.Text.Length);
+                        cmbBarang.SelectedIndex = -1;
+                        cmbBarang.Text = "Masukan nama barang";
+                        cmbBarang.Focus();
+                    }
                 }
+                
             }
             catch(Exception ex)
             {
                 konfigurasi.showError(ex);
             }
+            
         }
 
         private void btnHapusFaktur_Click(object sender, EventArgs e)
@@ -232,8 +248,18 @@ namespace POS.Forms
         }
 
 
-        private Int64 incrementLastIDFromTable(DataTable table, String ID)
+        private Int64 incrementID(String tableName)
         {
+            try
+            {
+                return id.getID(tableName);
+            }
+            catch(Exception ex)
+            {
+                konfigurasi.showError(ex);
+                return 0;
+            }
+            /*
             if (table.Rows.Count == 0)
                 return 1;
             else
@@ -246,6 +272,7 @@ namespace POS.Forms
                 }
                 return max + 1;
             }
+            */
         }
 
         private void dataGridView1_CellVluaeChanged(object sender, DataGridViewCellEventArgs e)
@@ -397,10 +424,17 @@ namespace POS.Forms
                     //generate data
                     String data = "";
                     String total = "";
+                    Decimal diskon = 0;
+                    Decimal hargaJual = 0;
+                    UInt32 qty = 0;
                     foreach (DataRow row in datasetPOS.tbl_listpenjualan_barang)
                     {
                         //data = String.Concat(data, row["nama_barang"].ToString(), "\n ", row["quantity"].ToString(), " x @", String.Format("{0:N0}", row["harga_jual"]));
-                        data = String.Concat(data, row["nama_barang"].ToString(), "\n ", row["quantity"].ToString(), " x @", String.Format("{0:N0}", Convert.ToDecimal(row["harga_jual"])- (row["diskon"] == DBNull.Value? 0 : Convert.ToDecimal(row["diskon"]))));
+
+                        qty = Convert.ToUInt32(row["quantity"]);
+                        hargaJual = Convert.ToDecimal(row["harga_jual"]);
+                        diskon = row["diskon"] == DBNull.Value ? 0 : Convert.ToDecimal(row["diskon"]);
+                        data = String.Concat(data, row["nama_barang"].ToString(), "\n ", qty.ToString(), " x @", String.Format("{0:N0}", hargaJual- diskon),"     : ",String.Format("{0:N0}",qty * (hargaJual - diskon)));
                         data = String.Concat(data, "\n");
                         /*
                         if (row["diskon"] == DBNull.Value)

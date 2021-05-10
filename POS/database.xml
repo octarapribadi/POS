@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <database name ="DB_POS">
   <tables>
-    <table name ="tbl_idx_penjualan" tblstring ="CREATE TABLE tbl_idx_penjualan(idx BIGINT PRIMARY KEY, tanggal TIMESTAMP);"/>
-    <table name ="tbl_idx_barang" tblstring="CREATE TABLE tbl_idx_barang(idx BIGINT PRIMARY KEY, tanggal TIMESTAMP);"/>
+    <table name ="tbl_idx_penjualan" tblstring ="CREATE TABLE tbl_idx_penjualan(idx BIGINT PRIMARY KEY, tanggal DATETIME);"/>
+    <table name ="tbl_idx_barang" tblstring="CREATE TABLE tbl_idx_barang(idx BIGINT PRIMARY KEY, tanggal DATETIME);"/>
   </tables>
 </database>
