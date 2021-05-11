@@ -233,7 +233,8 @@ namespace POS.Forms
                 numTotalBayar.Value = 0;
                 txtKeterangan.Text = "";
                 txtKembalian.Text = "";
-
+                if (!id.rollbackID("tbl_idx_penjualan", penjualanID))
+                    MessageBox.Show("Gagal mengembalikan nomor kwitansi, hubungi administrator");
                 btnFakturBaru.Focus();
             }
             catch (Exception ex)

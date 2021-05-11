@@ -22,7 +22,7 @@ namespace POS
                         "WAITFOR DELAY '00:00:05'" +
                         "COMMIT";
     */    
-    }
+        }
         public Int64 getID(String tableName)
         {
             Int64 idx = -1;
@@ -54,6 +54,34 @@ namespace POS
                 koneksi.Close();
             }
             return idx;
+        }
+        public Boolean rollbackID(String tableName, Int64 id)
+        {
+                reg = Registry.CurrentUser.OpenSubKey(@"Software\POS", true);
+                String database = reg.GetValue("database").ToString();
+                String cmdString = String.Format("BEGIN TRAN T " +
+                                                    "USE {0}; " +
+                                                    "UPDATE {1} SET idx = idx - 1 WHERE idx = {2} "+ 
+                                                 "COMMIT", database, tableName, id);
+                SqlConnection koneksi = konfigurasi.getKoneksi();
+            try {
+                koneksi.Open();
+                SqlCommand cmd = new SqlCommand(cmdString, koneksi);
+                Int32 x = cmd.ExecuteNonQuery();
+                if (x > 0)
+                    return true;
+                else
+                    return false;
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.StackTrace);
+            }
+            finally
+            {
+                koneksi.Close();
+            }
+            return false;
         }
     }
 }
