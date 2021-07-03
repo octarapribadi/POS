@@ -49,13 +49,15 @@
             this.pRINTERToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tAMPILANToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dATAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.vERIFIKASIDATABASEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bARCODEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kELUARToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsUsername = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
-            this.vERIFIKASIDATABASEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tssl_version = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -215,23 +217,35 @@
             // pRINTERToolStripMenuItem
             // 
             this.pRINTERToolStripMenuItem.Name = "pRINTERToolStripMenuItem";
-            this.pRINTERToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.pRINTERToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.pRINTERToolStripMenuItem.Text = "&PRINTER";
             this.pRINTERToolStripMenuItem.Click += new System.EventHandler(this.pRINTERToolStripMenuItem_Click);
             // 
             // tAMPILANToolStripMenuItem
             // 
             this.tAMPILANToolStripMenuItem.Name = "tAMPILANToolStripMenuItem";
-            this.tAMPILANToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.tAMPILANToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.tAMPILANToolStripMenuItem.Text = "&TAMPILAN";
             this.tAMPILANToolStripMenuItem.Click += new System.EventHandler(this.tAMPILANToolStripMenuItem_Click);
             // 
             // dATAToolStripMenuItem
             // 
             this.dATAToolStripMenuItem.Name = "dATAToolStripMenuItem";
-            this.dATAToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.dATAToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.dATAToolStripMenuItem.Text = "&DATABASE";
             this.dATAToolStripMenuItem.Click += new System.EventHandler(this.dATAToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(185, 6);
+            // 
+            // vERIFIKASIDATABASEToolStripMenuItem
+            // 
+            this.vERIFIKASIDATABASEToolStripMenuItem.Name = "vERIFIKASIDATABASEToolStripMenuItem";
+            this.vERIFIKASIDATABASEToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.vERIFIKASIDATABASEToolStripMenuItem.Text = "&VERIFIKASI DATABASE";
+            this.vERIFIKASIDATABASEToolStripMenuItem.Click += new System.EventHandler(this.vERIFIKASIDATABASEToolStripMenuItem_Click);
             // 
             // bARCODEToolStripMenuItem
             // 
@@ -250,7 +264,9 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
-            this.tsUsername});
+            this.tsUsername,
+            this.toolStripStatusLabel3,
+            this.tssl_version});
             this.statusStrip1.Location = new System.Drawing.Point(0, 514);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 23, 0);
@@ -261,25 +277,25 @@
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(95, 17);
-            this.toolStripStatusLabel1.Text = "Pengguna Aktif :";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(206, 17);
+            this.toolStripStatusLabel1.Text = "Pengguna Aktif : <sedang dibangun>";
             // 
             // tsUsername
             // 
             this.tsUsername.Name = "tsUsername";
             this.tsUsername.Size = new System.Drawing.Size(0, 17);
             // 
-            // toolStripMenuItem2
+            // tssl_version
             // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(185, 6);
+            this.tssl_version.Name = "tssl_version";
+            this.tssl_version.Size = new System.Drawing.Size(54, 17);
+            this.tssl_version.Text = "Version : ";
             // 
-            // vERIFIKASIDATABASEToolStripMenuItem
+            // toolStripStatusLabel3
             // 
-            this.vERIFIKASIDATABASEToolStripMenuItem.Name = "vERIFIKASIDATABASEToolStripMenuItem";
-            this.vERIFIKASIDATABASEToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.vERIFIKASIDATABASEToolStripMenuItem.Text = "&VERIFIKASI DATABASE";
-            this.vERIFIKASIDATABASEToolStripMenuItem.Click += new System.EventHandler(this.vERIFIKASIDATABASEToolStripMenuItem_Click);
+            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(10, 17);
+            this.toolStripStatusLabel3.Text = "|";
             // 
             // FormHome
             // 
@@ -336,5 +352,7 @@
         private System.Windows.Forms.ToolStripMenuItem stokToolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem vERIFIKASIDATABASEToolStripMenuItem;
+        private System.Windows.Forms.ToolStripStatusLabel tssl_version;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
     }
 }

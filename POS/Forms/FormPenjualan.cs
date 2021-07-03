@@ -348,7 +348,29 @@ namespace POS.Forms
                         adapterStok.UpdateQueryByBarangID(stk - quantity, barangID);
                     }
                     //hapus faktur------------
-                    btnHapusFaktur_Click(sender, e);
+                    try
+                    {
+                        datasetPOS.tbl_listpenjualan_barang.Clear();
+                        cmbBarang.Text = "";
+                        cmbBarang.Enabled = false;
+                        cmbBarang.DataSource = null;
+                        lblFaktur.Text = "";
+                        subTotalBelanja = 0;
+                        txtSubtotal.Text = subTotalBelanja.ToString("C");
+                        totalBelanja = 0;
+                        lblTotal.Text = totalBelanja.ToString("C");
+                        totalBayar = 0;
+                        totalKembalian = 0;
+                        numPotongan.Value = 0;
+                        numTotalBayar.Value = 0;
+                        txtKeterangan.Text = "";
+                        txtKembalian.Text = "";
+                    }
+                    catch (Exception ex)
+                    {
+                        konfigurasi.showError(ex);
+                    }
+
                     //------------------------
                 }
                 else

@@ -74,9 +74,9 @@
             this.label2.Location = new System.Drawing.Point(0, 18);
             this.label2.Margin = new System.Windows.Forms.Padding(0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(248, 32);
+            this.label2.Size = new System.Drawing.Size(248, 48);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Pjk Batang Serangan\r\n---------------------";
+            this.label2.Text = "Pjk Batang Serangan\r\nTelp. 081264279999\r\n---------------------";
             // 
             // label1
             // 
@@ -95,7 +95,7 @@
             this.labelList.AutoSize = true;
             this.labelList.Dock = System.Windows.Forms.DockStyle.Left;
             this.labelList.Font = new System.Drawing.Font("Courier New", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelList.Location = new System.Drawing.Point(0, 64);
+            this.labelList.Location = new System.Drawing.Point(0, 80);
             this.labelList.Margin = new System.Windows.Forms.Padding(0);
             this.labelList.Name = "labelList";
             this.labelList.Size = new System.Drawing.Size(90, 120);
@@ -108,7 +108,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(0, 212);
+            this.label5.Location = new System.Drawing.Point(0, 228);
             this.label5.Margin = new System.Windows.Forms.Padding(0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(176, 32);
@@ -119,7 +119,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(0, 184);
+            this.label4.Location = new System.Drawing.Point(0, 200);
             this.label4.Margin = new System.Windows.Forms.Padding(0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(176, 16);
@@ -130,7 +130,7 @@
             // 
             this.labelTotal.AutoSize = true;
             this.labelTotal.Font = new System.Drawing.Font("Courier New", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotal.Location = new System.Drawing.Point(3, 200);
+            this.labelTotal.Location = new System.Drawing.Point(3, 216);
             this.labelTotal.Name = "labelTotal";
             this.labelTotal.Size = new System.Drawing.Size(30, 12);
             this.labelTotal.TabIndex = 7;
@@ -140,7 +140,7 @@
             // 
             this.lblTanggalKwitansi.AutoSize = true;
             this.lblTanggalKwitansi.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTanggalKwitansi.Location = new System.Drawing.Point(3, 50);
+            this.lblTanggalKwitansi.Location = new System.Drawing.Point(3, 66);
             this.lblTanggalKwitansi.Name = "lblTanggalKwitansi";
             this.lblTanggalKwitansi.Size = new System.Drawing.Size(49, 14);
             this.lblTanggalKwitansi.TabIndex = 8;

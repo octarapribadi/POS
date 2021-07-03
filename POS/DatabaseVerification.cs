@@ -24,6 +24,27 @@ namespace POS
             database = (String)reg.GetValue("database");
         }
 
+        private Boolean updateIdxPenjualan()
+        {
+            try
+            {
+                SqlConnection koneksi = konfigurasi.getKoneksi();
+                SqlCommand cmd = new SqlCommand("BEGIN TRAN T update tbl_idx_penjualan set idx = (select max(penjualan_id)from tbl_penjualan) COMMIT",koneksi);
+                koneksi.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.StackTrace);
+                return false;
+            }
+            finally
+            {
+                koneksi.Close();
+            }
+            return true;
+        }
+
         public Boolean verify()
         {
             try
@@ -56,6 +77,7 @@ namespace POS
             finally
             {
                 koneksi.Close();
+                updateIdxPenjualan();
             }
         }
     }

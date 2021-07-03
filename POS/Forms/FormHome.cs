@@ -53,6 +53,7 @@ namespace POS.Forms
         {
             try
             {
+                tssl_version.Text = "Version : " + this.ProductVersion;
                 this.Icon = POS.Properties.Resources.icon;
                 konfigurasi.createRegistryBaseDir();
                 //this.Font = new Font(konfigurasi.getRegistryValue("fontFamily").ToString(), Convert.ToSingle(konfigurasi.getRegistryValue("fontSize")), FontStyle.Regular);
