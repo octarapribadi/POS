@@ -1,2 +1,3 @@
-obj/
-bin/
+POS/obj
+POS/bin
+.vs
