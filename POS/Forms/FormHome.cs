@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Reflection;
 
 namespace POS.Forms
 {
@@ -53,7 +54,7 @@ namespace POS.Forms
         {
             try
             {
-                tssl_version.Text = "Version : " + this.ProductVersion;
+                tssVersi.Text = Assembly.GetExecutingAssembly().GetName().Version.ToString();
                 this.Icon = POS.Properties.Resources.icon;
                 konfigurasi.createRegistryBaseDir();
                 //this.Font = new Font(konfigurasi.getRegistryValue("fontFamily").ToString(), Convert.ToSingle(konfigurasi.getRegistryValue("fontSize")), FontStyle.Regular);
@@ -62,6 +63,10 @@ namespace POS.Forms
                 menuStrip1.Font = konfigurasi.getFont();
                 menuStrip1.ForeColor = konfigurasi.getFontColor();
                 menuStrip1.BackColor = konfigurasi.getBackColor();
+
+                statusStrip1.Font = konfigurasi.getFont();
+                statusStrip1.ForeColor = konfigurasi.getFontColor();
+                statusStrip1.BackColor = konfigurasi.getBackColor();
             }
             catch(Exception ex)
             {
@@ -186,6 +191,15 @@ namespace POS.Forms
                 MessageBox.Show("Database berhasil diverifikasi");
             else
                 MessageBox.Show("Database gagal diverifikasi, hubungi administrator");
+        }
+
+        private void lOGToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormDialog frmDialog = new FormDialog();
+            frmDialog.MdiParent = this;
+            frmDialog.form = "log_stok";
+            frmDialog.parent = this;
+            frmDialog.Show();
         }
     }
 }
