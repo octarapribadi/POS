@@ -1,21 +1,33 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 using System.Reflection;
+using POS.Properties;
 
 namespace POS.Forms
 {
+
     public partial class FormHome : Form
     {
         Konfigurasi konfigurasi = new Konfigurasi();
-        public Boolean val=false;
+        Akun akun;
+        Boolean login = false;
+
+        public void setLogin(Akun akun)
+        {
+            this.akun = akun;
+            tssUser.Text = akun.getUsername();
+            login = true;
+            tssUser.BackColor = Color.Green;
+            lOGINToolStripMenuItem.Text = "LOGOUT";
+            lOGINToolStripMenuItem.Image = Resources.arrow_right_from_bracket;
+        }
+
+        public Akun getAkun()
+        {
+            return akun;
+        }
+
         public FormHome()
         {
             InitializeComponent();
@@ -200,6 +212,38 @@ namespace POS.Forms
             frmDialog.form = "log_stok";
             frmDialog.parent = this;
             frmDialog.Show();
+        }
+
+        private void lOGINToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (login == false)
+            {
+                FormLogin frmLogin = new FormLogin();
+                frmLogin.MdiParent = this;
+                frmLogin.Show();
+            }
+            else
+            {
+                login = false;
+                tssUser.Text = "[belum login]";
+                tssUser.BackColor = Color.Red;
+                lOGINToolStripMenuItem.Text = "LOGIN";
+                lOGINToolStripMenuItem.Image = Resources.arrow_right_to_bracket;
+            }
+        }
+
+        private void pENGGUNAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormPengguna frmPengguna = new FormPengguna();
+            frmPengguna.MdiParent = this;
+            frmPengguna.Show();
+        }
+
+        private void hAKAKSESToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormHakAkses frmHakAkses = new FormHakAkses();
+            frmHakAkses.MdiParent = this;
+            frmHakAkses.Show();
         }
     }
 }

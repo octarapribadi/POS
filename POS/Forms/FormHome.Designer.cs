@@ -59,7 +59,7 @@
             this.kELUARToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tsUsername = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tssUser = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tssVersi = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
@@ -68,6 +68,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lOGINToolStripMenuItem,
@@ -86,11 +87,11 @@
             // 
             // lOGINToolStripMenuItem
             // 
-            this.lOGINToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.lOGINToolStripMenuItem.Image = global::POS.Properties.Resources.arrow_right_to_bracket;
             this.lOGINToolStripMenuItem.Name = "lOGINToolStripMenuItem";
             this.lOGINToolStripMenuItem.Size = new System.Drawing.Size(84, 25);
             this.lOGINToolStripMenuItem.Text = "LO&GIN";
+            this.lOGINToolStripMenuItem.Click += new System.EventHandler(this.lOGINToolStripMenuItem_Click);
             // 
             // mASTERToolStripMenuItem
             // 
@@ -281,6 +282,7 @@
             this.pENGGUNAToolStripMenuItem.Name = "pENGGUNAToolStripMenuItem";
             this.pENGGUNAToolStripMenuItem.Size = new System.Drawing.Size(233, 26);
             this.pENGGUNAToolStripMenuItem.Text = "PENGGUNA";
+            this.pENGGUNAToolStripMenuItem.Click += new System.EventHandler(this.pENGGUNAToolStripMenuItem_Click);
             // 
             // hAKAKSESToolStripMenuItem
             // 
@@ -288,6 +290,7 @@
             this.hAKAKSESToolStripMenuItem.Name = "hAKAKSESToolStripMenuItem";
             this.hAKAKSESToolStripMenuItem.Size = new System.Drawing.Size(233, 26);
             this.hAKAKSESToolStripMenuItem.Text = "HAK AKSES";
+            this.hAKAKSESToolStripMenuItem.Click += new System.EventHandler(this.hAKAKSESToolStripMenuItem_Click);
             // 
             // bARCODEToolStripMenuItem
             // 
@@ -306,10 +309,11 @@
             // 
             // statusStrip1
             // 
+            this.statusStrip1.BackColor = System.Drawing.SystemColors.Control;
             this.statusStrip1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsUsername,
-            this.toolStripStatusLabel2,
+            this.tssUser,
             this.toolStripStatusLabel3,
             this.tssVersi});
             this.statusStrip1.Location = new System.Drawing.Point(0, 384);
@@ -324,12 +328,14 @@
             this.tsUsername.Name = "tsUsername";
             this.tsUsername.Size = new System.Drawing.Size(0, 21);
             // 
-            // toolStripStatusLabel2
+            // tssUser
             // 
-            this.toolStripStatusLabel2.Image = global::POS.Properties.Resources.user;
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(66, 21);
-            this.toolStripStatusLabel2.Text = "[user]";
+            this.tssUser.BackColor = System.Drawing.Color.Red;
+            this.tssUser.ForeColor = System.Drawing.Color.White;
+            this.tssUser.Image = global::POS.Properties.Resources.user;
+            this.tssUser.Name = "tssUser";
+            this.tssUser.Size = new System.Drawing.Size(119, 21);
+            this.tssUser.Text = "[belum login]";
             // 
             // toolStripStatusLabel3
             // 
@@ -401,7 +407,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem vERIFIKASIDATABASEToolStripMenuItem;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private System.Windows.Forms.ToolStripStatusLabel tssUser;
         private System.Windows.Forms.ToolStripStatusLabel tssVersi;
         private System.Windows.Forms.ToolStripMenuItem lOGINToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lOGToolStripMenuItem1;
