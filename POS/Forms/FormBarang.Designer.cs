@@ -195,6 +195,7 @@
             // 
             this.toolStripTextBox1.AccessibleName = "Position";
             this.toolStripTextBox1.AutoSize = false;
+            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox1.Name = "toolStripTextBox1";
             this.toolStripTextBox1.Size = new System.Drawing.Size(50, 23);
             this.toolStripTextBox1.Text = "0";
@@ -269,6 +270,7 @@
             // 
             // tstCari
             // 
+            this.tstCari.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.tstCari.Name = "tstCari";
             this.tstCari.Size = new System.Drawing.Size(200, 25);
             this.tstCari.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCari_KeyDown);
@@ -546,6 +548,11 @@
             0,
             0,
             0});
+            this.numStok.Minimum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            -2147483648});
             this.numStok.Name = "numStok";
             this.numStok.Size = new System.Drawing.Size(404, 26);
             this.numStok.TabIndex = 20;

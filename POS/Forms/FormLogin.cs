@@ -24,7 +24,7 @@ namespace POS
             if(username=="octarapribadi" && password == "stmiktime")
             {
                 FormHome frmHome = (FormHome)this.MdiParent;
-                frmHome.setLogin(new Akun("Octara Pribadi", "group1"));
+                frmHome.setLogin(new Akun("Octara Pribadi", "octarapribadi", true));
                 this.Close();
             }
             

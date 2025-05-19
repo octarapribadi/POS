@@ -245,5 +245,11 @@ namespace POS.Forms
             frmHakAkses.MdiParent = this;
             frmHakAkses.Show();
         }
+
+        private void bARCODEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormQR frmQR = new FormQR();
+            frmQR.Show();
+        }
     }
 }

@@ -298,6 +298,7 @@
             this.bARCODEToolStripMenuItem.Name = "bARCODEToolStripMenuItem";
             this.bARCODEToolStripMenuItem.Size = new System.Drawing.Size(60, 25);
             this.bARCODEToolStripMenuItem.Text = "&QR";
+            this.bARCODEToolStripMenuItem.Click += new System.EventHandler(this.bARCODEToolStripMenuItem_Click);
             // 
             // kELUARToolStripMenuItem
             // 
