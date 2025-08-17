@@ -32,8 +32,8 @@ namespace POS.Forms
         {
             try
             {
-                
-                if(e.KeyCode == Keys.F1)
+
+                if (e.KeyCode == Keys.F1)
                 {
                     mode = "barang";
                     cmbBarang.DataSource = datasetPOS.tbl_barang;
@@ -43,16 +43,16 @@ namespace POS.Forms
                     cmbBarang.Select(0, cmbBarang.Text.Length);
 
                 }
-                if(e.KeyCode == Keys.F2)
+                if (e.KeyCode == Keys.F2)
                 {
                     mode = "barcode";
                     cmbBarang.DataSource = null;
                     cmbBarang.Text = "Masukan barcode";
                     cmbBarang.Select(0, cmbBarang.Text.Length);
                 }
-                if(e.KeyCode == Keys.Enter)
+                if (e.KeyCode == Keys.Enter)
                 {
-                    
+
                     if (mode == "barang")
                     {
                         if (cmbBarang.SelectedValue == null)
@@ -76,8 +76,43 @@ namespace POS.Forms
                             cmbBarang.Text = "";
                             cmbBarang.Focus();
                         }
-                    } 
+                    }
+                    else
+                    {
+
+                        DataRow myRow=null;
+                        foreach(DataRow r in datasetPOS.tbl_barang.Rows)
+                        {
+                            if (r["kode_barcode"].Equals(cmbBarang.Text))
+                            {
+                                myRow = r;
+                                break;
+                            }
                            
+                        }
+                        if (myRow!=null)
+                        {
+                            DataRow row = datasetPOS.tbl_listpenjualan_barang.NewRow();
+                            row["penjualan_id"] = penjualanID;
+                            row["barang_id"] = myRow["barang_id"];
+                            row["nama_barang"] = myRow["nama_barang"];
+                            row["quantity"] = 1;
+                            row["harga_jual"] = adapterHarga.GetHargaJualByBarangIDDefault(Convert.ToInt32(row["barang_id"]));
+                            datasetPOS.tbl_listpenjualan_barang.Rows.Add(row);
+                            totalBelanja = getTotal();
+                            lblTotal.Text = totalBelanja.ToString("C");
+                            subTotalBelanja = getSubtotal();
+                            txtSubtotal.Text = subTotalBelanja.ToString("C");
+                            cmbBarang.SelectedIndex = -1;
+                            cmbBarang.Text = "";
+                            cmbBarang.Focus();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Barcode tidak ditemukan");
+                        }
+                    }
+
                     /*
                     {
                         DataRow[] row2 = datasetPOS.tbl_barang.Select(String.Format("kode_barcode = {0}",cmbBarang.Text));
@@ -88,7 +123,7 @@ namespace POS.Forms
 
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 konfigurasi.showError(ex);
             }
@@ -98,12 +133,12 @@ namespace POS.Forms
         {
             try
             {
-                if(cmbBarang.Text == "Masukan nama barang" || cmbBarang.Text == "Masukan barcode")
+                if (cmbBarang.Text == "Masukan nama barang" || cmbBarang.Text == "Masukan barcode")
                 {
                     cmbBarang.Text = "";
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 konfigurasi.showError(ex);
             }
@@ -111,7 +146,7 @@ namespace POS.Forms
 
         private void FormPenjualan_Load(object sender, EventArgs e)
         {
-         try
+            try
             {
                 adapterBarang.Connection = konfigurasi.getKoneksi();
                 adapterPenjualan.Connection = konfigurasi.getKoneksi();
@@ -130,8 +165,8 @@ namespace POS.Forms
 
 
 
-            }   
-            catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 konfigurasi.showError(ex);
             }
@@ -141,7 +176,7 @@ namespace POS.Forms
         {
             try
             {
-                if(e.KeyCode == Keys.F3)
+                if (e.KeyCode == Keys.F3)
                 {
                     cmbBarang.Enabled = true;
                     if (mode == "barcode")
@@ -162,7 +197,7 @@ namespace POS.Forms
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 konfigurasi.showError(ex);
             }
@@ -171,15 +206,15 @@ namespace POS.Forms
         private void btnFakturBaru_Click(object sender, EventArgs e)
         {
             //MessageBox.Show(incrementID("tbl_idx_penjualan").ToString());
-            
+
             try
             {
-                
-                
+
+
                 cmbBarang.Enabled = true;
                 //penjualanID = Convert.ToInt64(adapterPenjualan.getMaxPenjualanID())+1;
                 penjualanID = incrementID("tbl_idx_penjualan");
-                if(penjualanID == -1)
+                if (penjualanID == -1)
                 {
                     MessageBox.Show("Nomor faktur bermasalah, hubungi administrator!");
                 }
@@ -205,13 +240,13 @@ namespace POS.Forms
                         cmbBarang.Focus();
                     }
                 }
-                
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 konfigurasi.showError(ex);
             }
-            
+
         }
 
         private void btnHapusFaktur_Click(object sender, EventArgs e)
@@ -255,7 +290,7 @@ namespace POS.Forms
             {
                 return id.getID(tableName);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 konfigurasi.showError(ex);
                 return 0;
@@ -286,7 +321,7 @@ namespace POS.Forms
                 subTotalBelanja = getSubtotal();
                 txtSubtotal.Text = subTotalBelanja.ToString("C");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 konfigurasi.showError(ex);
             }
@@ -310,13 +345,13 @@ namespace POS.Forms
             }
             else
                 return 0;
-            
+
         }
         private Decimal getTotal()
         {
-                Decimal subtotal = getSubtotal();
-                Decimal potongan = numPotongan.Value;
-                return subtotal - potongan;
+            Decimal subtotal = getSubtotal();
+            Decimal potongan = numPotongan.Value;
+            return subtotal - potongan;
         }
 
         private void btnSimpan_Click(object sender, EventArgs e)
@@ -343,7 +378,7 @@ namespace POS.Forms
                             diskon = 0;
                         keterangan = row["keterangan"].ToString();
                         adapterLstPenjualan.Insert(penjualanID, barangID, quantity, hargaJual, diskon, keterangan);
-                        Int32 stk=0;
+                        Int32 stk = 0;
                         stk = Convert.ToInt32(adapterStok.getStokFromBarangID(barangID));
                         adapterStok.UpdateQueryByBarangID(stk - quantity, barangID);
                     }
@@ -378,7 +413,7 @@ namespace POS.Forms
                     MessageBox.Show("Jumlah Pembayaran kurang dari total belanja", "Perhatian", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 konfigurasi.showError(ex);
             }
@@ -386,7 +421,7 @@ namespace POS.Forms
 
         private void dataGridView1_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
-            
+
         }
 
         private void dataGridView1_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
@@ -411,7 +446,7 @@ namespace POS.Forms
                 totalBelanja = getTotal();
                 lblTotal.Text = totalBelanja.ToString("C");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 konfigurasi.showError(ex);
             }
@@ -422,7 +457,8 @@ namespace POS.Forms
             try
             {
                 totalBayar = numTotalBayar.Value;
-                if (totalBayar >= totalBelanja) {
+                if (totalBayar >= totalBelanja)
+                {
                     totalKembalian = totalBayar - totalBelanja;
                     txtKembalian.Text = totalKembalian.ToString("C");
                 }
@@ -431,7 +467,7 @@ namespace POS.Forms
                     MessageBox.Show("Jumlah Pembayaran kurang dari total belanja", "Perhatian", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 konfigurasi.showError(ex);
             }
@@ -457,8 +493,9 @@ namespace POS.Forms
                         qty = Convert.ToUInt32(row["quantity"]);
                         hargaJual = Convert.ToDecimal(row["harga_jual"]);
                         diskon = row["diskon"] == DBNull.Value ? 0 : Convert.ToDecimal(row["diskon"]);
-                        data = String.Concat(data, row["nama_barang"].ToString(), "\n ", qty.ToString(), " x @", String.Format("{0:N0}", hargaJual- diskon),"     : ",String.Format("{0:N0}",qty * (hargaJual - diskon)));
-                        data = String.Concat(data, "\n");
+                        //data = String.Concat(data, row["nama_barang"].ToString(), "\n ", qty.ToString(), " x @", String.Format("{0:N0}", hargaJual- diskon),"     : ",String.Format("{0:N0}",qty * (hargaJual - diskon)));
+                        data = String.Concat(data, row["nama_barang"].ToString(), "\n ", qty.ToString(), " x @", String.Format("{0:N0}", hargaJual - diskon), "     : ", String.Format("{0:N0}", qty * (hargaJual - diskon)), "\n");
+                        //data = String.Concat(data, "\n");
                         /*
                         if (row["diskon"] == DBNull.Value)
                         {
@@ -483,11 +520,12 @@ namespace POS.Forms
 
                     frmKwitansi.print(data, total);
                 }
-                    else
+                else
                 {
-                        MessageBox.Show("Jumlah Pembayaran kurang dari total belanja", "Perhatian", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    MessageBox.Show("Jumlah Pembayaran kurang dari total belanja", "Perhatian", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 konfigurasi.showError(ex);
             }

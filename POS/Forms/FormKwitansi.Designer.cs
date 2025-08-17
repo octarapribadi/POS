@@ -63,7 +63,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(248, 316);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(248, 882);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // label2
@@ -111,9 +111,10 @@
             this.label5.Location = new System.Drawing.Point(0, 228);
             this.label5.Margin = new System.Windows.Forms.Padding(0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(176, 32);
+            this.label5.Size = new System.Drawing.Size(200, 80);
             this.label5.TabIndex = 3;
-            this.label5.Text = "---------------------\r\n-=Terima kasih=-";
+            this.label5.Text = "---------------------\r\nBarang yang sudah dibeli\r\ntidak dapat dikembalikan\r\n\r\n-=Te" +
+    "rima kasih=-";
             // 
             // label4
             // 
@@ -154,7 +155,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(248, 316);
+            this.ClientSize = new System.Drawing.Size(248, 882);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);

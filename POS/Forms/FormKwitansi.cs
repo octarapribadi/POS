@@ -95,11 +95,15 @@ namespace POS.Forms
                 marginBottom_ = Convert.ToInt32(Math.Round(marginBottom / 0.0264583333, 0));
 
                 Margins margin = new Margins(marginLeft_, marginRight_, marginTop_, marginBottom_);
-                paperHeight_ = Convert.ToInt32(Math.Round(paperHeight / 0.0264583333,0));
-                paperWidth_ = Convert.ToInt32(Math.Round(paperWidth / 0.0264583333, 0));
+                paperHeight_ = Convert.ToInt32(Math.Round(paperHeight * 0.0264583333,0));
+                paperWidth_ = Convert.ToInt32(Math.Round(paperWidth * 0.0264583333, 0));
 
                 printDocument1.PrinterSettings.PrinterName = printerName;
                 printDocument1.DefaultPageSettings.PaperSize = new PaperSize("custom", paperWidth_, paperHeight_);
+                //printDocument1.DefaultPageSettings.PaperSize = new PaperSize();
+                //printDocument1.DefaultPageSettings.PaperSize.Width = paperWidth_;
+                //printDocument1.DefaultPageSettings.PaperSize.Height = paperHeight_;
+                //MessageBox.Show("height: " + paperHeight_);
                 //printDocument1.DefaultPageSettings.PaperSize = new PaperSize("custom", 1000, 1000);
                 printDocument1.DefaultPageSettings.Margins = margin;
                 printDocument1.OriginAtMargins = true;

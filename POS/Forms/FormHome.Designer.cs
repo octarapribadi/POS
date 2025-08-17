@@ -89,7 +89,7 @@
             // 
             this.lOGINToolStripMenuItem.Image = global::POS.Properties.Resources.arrow_right_to_bracket;
             this.lOGINToolStripMenuItem.Name = "lOGINToolStripMenuItem";
-            this.lOGINToolStripMenuItem.Size = new System.Drawing.Size(84, 25);
+            this.lOGINToolStripMenuItem.Size = new System.Drawing.Size(85, 25);
             this.lOGINToolStripMenuItem.Text = "LO&GIN";
             this.lOGINToolStripMenuItem.Click += new System.EventHandler(this.lOGINToolStripMenuItem_Click);
             // 
@@ -110,40 +110,40 @@
             // dATABARANGToolStripMenuItem
             // 
             this.dATABARANGToolStripMenuItem.Name = "dATABARANGToolStripMenuItem";
-            this.dATABARANGToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
+            this.dATABARANGToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
             this.dATABARANGToolStripMenuItem.Text = "DATA &BARANG";
             this.dATABARANGToolStripMenuItem.Click += new System.EventHandler(this.dATABARANGToolStripMenuItem_Click);
             // 
             // kATEGORIToolStripMenuItem
             // 
             this.kATEGORIToolStripMenuItem.Name = "kATEGORIToolStripMenuItem";
-            this.kATEGORIToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
+            this.kATEGORIToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
             this.kATEGORIToolStripMenuItem.Text = "&KATEGORI";
             this.kATEGORIToolStripMenuItem.Click += new System.EventHandler(this.kATEGORIToolStripMenuItem_Click);
             // 
             // sUPPLIERToolStripMenuItem
             // 
             this.sUPPLIERToolStripMenuItem.Name = "sUPPLIERToolStripMenuItem";
-            this.sUPPLIERToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
+            this.sUPPLIERToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
             this.sUPPLIERToolStripMenuItem.Text = "&SUPPLIER";
             this.sUPPLIERToolStripMenuItem.Click += new System.EventHandler(this.sUPPLIERToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(182, 6);
             // 
             // sTOKToolStripMenuItem
             // 
             this.sTOKToolStripMenuItem.Name = "sTOKToolStripMenuItem";
-            this.sTOKToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
+            this.sTOKToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
             this.sTOKToolStripMenuItem.Text = "S&TOK";
             this.sTOKToolStripMenuItem.Click += new System.EventHandler(this.sTOKToolStripMenuItem_Click);
             // 
             // hARGAToolStripMenuItem
             // 
             this.hARGAToolStripMenuItem.Name = "hARGAToolStripMenuItem";
-            this.hARGAToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
+            this.hARGAToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
             this.hARGAToolStripMenuItem.Text = "&HARGA";
             this.hARGAToolStripMenuItem.Click += new System.EventHandler(this.hARGAToolStripMenuItem_Click);
             // 
@@ -162,7 +162,7 @@
             // 
             this.pENJUALANToolStripMenuItem.Image = global::POS.Properties.Resources.cart_arrow_down;
             this.pENJUALANToolStripMenuItem.Name = "pENJUALANToolStripMenuItem";
-            this.pENJUALANToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
+            this.pENJUALANToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
             this.pENJUALANToolStripMenuItem.Text = "&PENJUALAN";
             this.pENJUALANToolStripMenuItem.Click += new System.EventHandler(this.pENJUALANToolStripMenuItem_Click);
             // 
@@ -170,7 +170,7 @@
             // 
             this.bARANGMASUKToolStripMenuItem.Image = global::POS.Properties.Resources.cart_plus;
             this.bARANGMASUKToolStripMenuItem.Name = "bARANGMASUKToolStripMenuItem";
-            this.bARANGMASUKToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
+            this.bARANGMASUKToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
             this.bARANGMASUKToolStripMenuItem.Text = "RE-&STOK BARANG";
             this.bARANGMASUKToolStripMenuItem.Click += new System.EventHandler(this.bARANGMASUKToolStripMenuItem_Click);
             // 
@@ -178,7 +178,7 @@
             // 
             this.bARANGKELUARToolStripMenuItem.Image = global::POS.Properties.Resources.cart_shopping;
             this.bARANGKELUARToolStripMenuItem.Name = "bARANGKELUARToolStripMenuItem";
-            this.bARANGKELUARToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
+            this.bARANGKELUARToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
             this.bARANGKELUARToolStripMenuItem.Text = "&BARANG KELUAR";
             this.bARANGKELUARToolStripMenuItem.Click += new System.EventHandler(this.bARANGKELUARToolStripMenuItem_Click);
             // 
@@ -231,14 +231,14 @@
             this.hAKAKSESToolStripMenuItem});
             this.pENGATURANToolStripMenuItem.Image = global::POS.Properties.Resources.gear;
             this.pENGATURANToolStripMenuItem.Name = "pENGATURANToolStripMenuItem";
-            this.pENGATURANToolStripMenuItem.Size = new System.Drawing.Size(138, 25);
+            this.pENGATURANToolStripMenuItem.Size = new System.Drawing.Size(139, 25);
             this.pENGATURANToolStripMenuItem.Text = "&PENGATURAN";
             // 
             // pRINTERToolStripMenuItem
             // 
             this.pRINTERToolStripMenuItem.Image = global::POS.Properties.Resources.print;
             this.pRINTERToolStripMenuItem.Name = "pRINTERToolStripMenuItem";
-            this.pRINTERToolStripMenuItem.Size = new System.Drawing.Size(233, 26);
+            this.pRINTERToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
             this.pRINTERToolStripMenuItem.Text = "&PRINTER";
             this.pRINTERToolStripMenuItem.Click += new System.EventHandler(this.pRINTERToolStripMenuItem_Click);
             // 
@@ -246,20 +246,20 @@
             // 
             this.tAMPILANToolStripMenuItem.Image = global::POS.Properties.Resources.display;
             this.tAMPILANToolStripMenuItem.Name = "tAMPILANToolStripMenuItem";
-            this.tAMPILANToolStripMenuItem.Size = new System.Drawing.Size(233, 26);
+            this.tAMPILANToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
             this.tAMPILANToolStripMenuItem.Text = "&TAMPILAN";
             this.tAMPILANToolStripMenuItem.Click += new System.EventHandler(this.tAMPILANToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(230, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(232, 6);
             // 
             // dATAToolStripMenuItem
             // 
             this.dATAToolStripMenuItem.Image = global::POS.Properties.Resources.database;
             this.dATAToolStripMenuItem.Name = "dATAToolStripMenuItem";
-            this.dATAToolStripMenuItem.Size = new System.Drawing.Size(233, 26);
+            this.dATAToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
             this.dATAToolStripMenuItem.Text = "&DATABASE";
             this.dATAToolStripMenuItem.Click += new System.EventHandler(this.dATAToolStripMenuItem_Click);
             // 
@@ -267,20 +267,20 @@
             // 
             this.vERIFIKASIDATABASEToolStripMenuItem.Image = global::POS.Properties.Resources.repeat;
             this.vERIFIKASIDATABASEToolStripMenuItem.Name = "vERIFIKASIDATABASEToolStripMenuItem";
-            this.vERIFIKASIDATABASEToolStripMenuItem.Size = new System.Drawing.Size(233, 26);
+            this.vERIFIKASIDATABASEToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
             this.vERIFIKASIDATABASEToolStripMenuItem.Text = "&VERIFIKASI DATABASE";
             this.vERIFIKASIDATABASEToolStripMenuItem.Click += new System.EventHandler(this.vERIFIKASIDATABASEToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(230, 6);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(232, 6);
             // 
             // pENGGUNAToolStripMenuItem
             // 
             this.pENGGUNAToolStripMenuItem.Image = global::POS.Properties.Resources.user;
             this.pENGGUNAToolStripMenuItem.Name = "pENGGUNAToolStripMenuItem";
-            this.pENGGUNAToolStripMenuItem.Size = new System.Drawing.Size(233, 26);
+            this.pENGGUNAToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
             this.pENGGUNAToolStripMenuItem.Text = "PENGGUNA";
             this.pENGGUNAToolStripMenuItem.Click += new System.EventHandler(this.pENGGUNAToolStripMenuItem_Click);
             // 
@@ -288,7 +288,7 @@
             // 
             this.hAKAKSESToolStripMenuItem.Image = global::POS.Properties.Resources.lock_open;
             this.hAKAKSESToolStripMenuItem.Name = "hAKAKSESToolStripMenuItem";
-            this.hAKAKSESToolStripMenuItem.Size = new System.Drawing.Size(233, 26);
+            this.hAKAKSESToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
             this.hAKAKSESToolStripMenuItem.Text = "HAK AKSES";
             this.hAKAKSESToolStripMenuItem.Click += new System.EventHandler(this.hAKAKSESToolStripMenuItem_Click);
             // 

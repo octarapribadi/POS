@@ -67,6 +67,7 @@ namespace POS.Forms
             try
             {
                 tssVersi.Text = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+
                 this.Icon = POS.Properties.Resources.icon;
                 konfigurasi.createRegistryBaseDir();
                 //this.Font = new Font(konfigurasi.getRegistryValue("fontFamily").ToString(), Convert.ToSingle(konfigurasi.getRegistryValue("fontSize")), FontStyle.Regular);
@@ -251,5 +252,6 @@ namespace POS.Forms
             FormQR frmQR = new FormQR();
             frmQR.Show();
         }
+
     }
 }
